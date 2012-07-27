@@ -1,0 +1,139 @@
+
+<div id="update">
+	<p>{L_UPDATE}</p>
+	<p style="color: red">{L_NO_QUIT}</p>
+</div>
+
+<!-- IF DIR_INSTALL_EXIST != "" -->
+	<div class="ui-state-error warning" id="warning_install">
+		<div class="ui-state-error-text">{DIR_INSTALL_EXIST}</div><br />
+		<button id="deleteInstall">{L_DEL_DIR_INSTALL}</button>
+	</div>
+<!-- ENDIF -->
+
+<h2>{L_DASHBOARD}</h2>
+	<div class="state hidden"></div>
+	<div class="column">
+	
+	<div class="portlet">
+		<div class="portlet-header">{L_NEWS_PHPCFORUM}</div>
+		<div class="portlet-content">
+			<div id="phpc_news">
+		
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+
+<div class="column">
+
+	<div class="portlet">
+		<div class="portlet-header">{L_SHARE_NOTE}</div>
+		<div class="portlet-content">
+			<textarea cols="60" rows="10" name="admin_note">{ADM_NOTE}</textarea>
+			<p align="right">
+				<button id="admin_note">{L_SAVE}</button>
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+	
+	$( "#update" ).dialog({
+		resizable: false,
+		height: 200,
+		width: 400,
+		modal: true,
+		autoOpen: false,
+		closeOnEscape: false,
+		disabled: true
+	});
+	
+	Ajax({
+	  url: 'http://www.phpcforum.com/update/index.php?version={VERSION}',
+	  type: 'GET',
+	  dataType: 'json',
+	  error: function(XMLHttpRequest, textStatus, errorThrown) {
+		alert(textStatus);
+	  },
+	  timeout: 4000,
+	  success: function(data) {
+		if (data.update) {
+				$("#update").dialog( "option", "title", '{L_UPDATE_PHPCFORUM} - {VERSION} >> ' + data.last_version);
+				$("#update").dialog('open');
+				$.ajax({
+				  url: '../ajax/adm.php',
+				  type: 'POST',
+				  error: function(XMLHttpRequest, textStatus, errorThrown) {
+					alert( textStatus);
+				  },
+				  data: {f: "update", last_version: data.last_version},
+					success: function(data_install) {
+						location.reload(true);	
+					}
+			   });
+		  }
+	  }
+   });
+	
+	
+	Ajax({
+	  url: 'http://www.phpcforum.com/news/index.php',
+	  type: 'GET',
+	  dataType: 'json',
+	  error: function(XMLHttpRequest, textStatus, errorThrown) {
+		alert(textStatus);
+	  },
+	  timeout: 4000,
+	  success: function(data) {
+		for (var i=0 ; i < data.length ; i++) {
+			$("#phpc_news").append('<div class="new"><div class="new_title"><b>' + data[i].title + '</b> - ' + data[i].date + '</div></div>');	
+		}
+	  }
+   });
+   
+   $('#deleteInstall').click(function() {
+		$.post("../ajax/adm.php", { 'f': 'deleteInstall'}, function(data) {
+			displayEtat(data, '{L_DELETE_DIR_INSTALL}', '{L_NOT_DELETE_DIR_INSTALL}');
+			if (data == 1) {
+				$('#warning_install').remove();
+			}
+		});
+   });
+   
+   $("#admin_note").click(function() {
+		var note = $('textarea[name="admin_note"]').val();
+		$.post("../ajax/adm.php", { 'f': 'admNote' ,adm_note: note }, function(data) {
+			displayEtat(data, "{L_EDIT_NOTE}", "{L_NOT_EDIT_NOTE}");
+		});
+   });
+   
+   $("button, .button").button();
+
+		$( ".column" ).sortable({
+			connectWith: ".column"
+		});
+
+		$( ".portlet" ).addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+			.find( ".portlet-header" )
+				.addClass( "ui-widget-header ui-corner-all" )
+				.prepend( "<span class='ui-icon ui-icon-minusthick'></span>")
+				.end()
+			.find( ".portlet-content" );
+
+		$( ".portlet-header .ui-icon" ).click(function() {
+			$( this ).toggleClass( "ui-icon-minusthick" ).toggleClass( "ui-icon-plusthick" );
+			$( this ).parents( ".portlet:first" ).find( ".portlet-content" ).toggle();
+		});
+
+		//$( ".column" ).disableSelection();
+	});
+	
+
+
+
+</script>

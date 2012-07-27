@@ -1,0 +1,555 @@
+<div id="iconset_setting">
+	<form id="form_iconset_setting">
+	<input type="hidden" name="iconset_mode" />
+	<input type="hidden" name="edit_iconset_id" />
+	<table class="list_options">
+		<tr>
+			<td class="highlight"><label for="iconset_name">{L_ICONSET_NAME}</label></td>
+			<td><input type="text" name="iconset_name" id="iconset_name" size="20" /></td>
+		</tr>
+		<tr>
+			<td class="highlight"><label for="iconset_mandatory">{L_ICONSET_MANDATORY}</label></td>
+			<td><input type="checkbox" name="iconset_mandatory" id="iconset_mandatory" value="1" /></td>
+		</tr>
+	</table>
+	</form>
+</div>
+
+<div id="iconset_delete">
+	<input type="hidden" name="remove_iconset_id" />
+	<p>{L_DELETE_ICONSET}</p>
+</div>
+
+<div id="icon_delete">
+	<input type="hidden" name="remove_icon_id" />
+	<p>{L_DELETE_ICON}</p>
+</div>
+
+<div id="add_icon">
+	<form id="form_icon_setting">
+	<input type="hidden" name="setting_iconset_id" />
+	<input type="hidden" name="icon_mode" />
+	<input type="hidden" name="setting_icon_id" />
+	<table class="list_options">
+		<tr>
+			<td class="highlight"><label for="icon_name">{L_ICON_NAME}</label></td>
+			<td><input type="text" name="icon_name" id="icon_name" size="20" /></td>
+		</tr>
+		<tr>
+			<td class="highlight"><label for="icon_width">{L_ICON_WIDTH}</label></td>
+			<td><input type="text" name="icon_width" id="icon_width" size="10" /> {L_PX}</td>
+		</tr>
+		<tr>
+			<td class="highlight"><label for="icon_height">{L_ICON_HEIGHT}</label></td>
+			<td><input type="text" name="icon_height" id="icon_height" size="10" /> {L_PX}</td>
+		</tr>
+		<tr>
+			<td class="highlight"><label for="icon_display">{L_ICON_DISPLAY}</label></td>
+			<td><label><input type="radio"  name="icon_display" value="1" checked="checked"> {L_YES}</label> <label><input type="radio" name="icon_display" value="0"> {L_NO}</label></td>
+		</tr>
+	</table>
+		<fieldset id="icon_img"><legend><strong>{L_SELECT_IMG}</strong></legend>
+			<input type="file" name="icon_path" id="icon_path" />
+		</fieldset>
+	</form>
+</div>
+
+
+
+<h2>{L_MESSAGES}</h2>
+
+	
+
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_TAB_FORUM}</a></li>
+		<li><a href="#tabs-2">{L_TAB_PM}</a></li>
+		<li><a href="#tabs-3">{L_TAB_EMAIL}</a></li>
+		<li><a href="#tabs-4">{L_TAB_ICONS}</a></li>
+	</ul>
+	
+	
+
+	<form id="tab_forum">
+	<div id="tabs-1">
+		<p>{L_TAB_FORUM_HELP}</p>
+		<br />
+				<fieldset><legend>{L_LIST_SUBJECT}</legend>
+				<table class="list_options">
+					<tr>
+						<td class="highlight" width="60%">{L_DISPLAY_LABEL_POLL}</td>
+						<td><label><input type="radio"  name="display_label_poll" value="1" <!-- IF VAL_DISPLAY_LABEL_POLL == 1 -->checked=checked"<!-- ENDIF -->> {L_YES}</label> <label><input type="radio" name="display_label_poll" value="0" <!-- IF VAL_DISPLAY_LABEL_POLL != 1 -->checked=checked"<!-- ENDIF -->> {L_NO}</label></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="subject_per_page">{L_NB_SUBJECT}</label></td>
+						<td><input type="text" name="subject_per_page" id="subject_per_page" size="10" value="{VAL_SUBJECT_PER_PAGE}"></td>
+					</tr>
+				</table>
+				</fieldset>
+				<fieldset><legend>{L_SETTING_MSG}</legend>
+				<table class="list_options">
+					<tr>
+						<td class="highlight"  width="60%"><label for="post_per_page">{L_NB_MSG}</label></td>
+						<td><input type="text" name="post_per_page" id="post_per_page" size="10" value="{VAL_POST_PER_PAGE}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="msg_min_char_post">{L_MIN_CHAR_POST}</label></td>
+						<td><input type="text" name="msg_min_char_post" id="msg_min_char_post" size="10" value="{VAL_MSG_MIN_CHAR_POST}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="max_poll_options">{L_MAX_POLL_OPIONS}</label></td>
+						<td><input type="text" name="max_poll_options" id="max_poll_options" size="10" value="{VAL_MAX_POLL_OPTIONS}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="subject_maxlength">{L_SUBJECT_MAXLENGTH}</label></td>
+						<td><input type="text" name="subject_maxlength" id="subject_maxlength" size="10" value="{VAL_SUBJECT_MAXLENGTH}"></td>
+					</tr>
+				</table>
+				</fieldset>
+			<button name="submit_msg" type="button">{L_SUBMIT_MSG}</button>
+			
+	</div> 
+
+		<div id="tabs-2">
+			<p>{L_TAB_PM_HELP}</p>
+			<br />
+				<fieldset><legend>{L_SETTING_PM}</legend>
+				<table class="list_options">
+					<tr>
+						<td class="highlight"><label for="max_destina_msg_private">{L_NB_DEST}</label></td>
+						<td><input type="text" name="max_destina_msg_private" id="max_destina_msg_private" size="10" value="{VAL_MAX_DESTINA_MSG_PRIVATE}"></td>
+					</tr>
+				</table>
+				</fieldset>
+			<button name="submit_msg" type="button">{L_SUBMIT_MSG}</button>
+					
+		</div> 
+		
+		<div id="tabs-3">
+		
+			<div class="subtabs-layout">
+				<ul>
+					<li><a href="#subtabs-1">{L_EMAIL_VALIDATION_TEXT}</a></li>
+					<li><a href="#subtabs-2">{L_FORGET_PASS_TEXT}</a></li>
+					<li><a href="#subtabs-3">{L_AVERT_NEW_MP_TEXT}</a></li>
+					<li><a href="#subtabs-4">{L_AVERT_NEW_REPLY_TEXT}</a></li>
+				</ul>
+				
+				<div id="subtabs-1">
+					<fieldset><legend>{L_HELP}</legend>
+						{L_EMAIL_VALIDATION_TEXT_HELP}
+					</fieldset>
+					<textarea name="email_validation_text" id="email_validation_text" cols="100" rows="15">{VAL_EMAIL_VALIDATION_TEXT}</textarea>
+	
+				</div>
+				
+				<div id="subtabs-2">
+					<fieldset><legend>{L_HELP}</legend>
+						{L_FORGET_PASS_TEXT_HELP}
+					</fieldset>
+					<textarea name="forget_pass_text" id="forget_pass_text" cols="100" rows="15">{VAL_FORGET_PASS_TEXT}</textarea>
+
+				</div>
+				
+				<div id="subtabs-3">
+					<fieldset><legend>{L_HELP}</legend>
+						{L_AVERT_NEW_MP_TEXT_HELP}
+					</fieldset>
+					<textarea name="avert_new_mp_text" id="avert_new_mp_text" cols="100" rows="15">{VAL_AVERT_NEW_MP_TEXT}</textarea>
+				
+				</div>
+				
+				<div id="subtabs-4">
+					<fieldset><legend>{L_HELP}</legend>
+						{L_AVERT_NEW_REPLY_TEXT_HELP}
+					</fieldset>
+					<textarea name="avert_new_reply_text" id="avert_new_reply_text" cols="100" rows="15">{VAL_AVERT_NEW_REPLY_TEXT}</textarea>
+	
+				</div>
+			</div>
+				
+				
+			<br />	
+				
+			
+			<button name="submit_msg" type="button">{L_SUBMIT_MSG}</button>		
+		</div>
+	</form>
+	
+	
+	
+	<div id="tabs-4">
+
+	
+			<p>{L_TAB_ICON_HELP}</p>
+			<button name="iconset_create">{L_CREATE_ICON_SET}</button>
+			<br />
+			<br />
+
+			<div id="list_iconset">
+				<!-- BEGIN iconset -->
+				 <h3><a href="#">{iconset.NAME}</a></h3>
+				 <div data-id="{iconset.ID}">
+					<fieldset><legend>{L_ICONSET_SETTING}</legend>
+						<button class="iconset_edit">{L_EDIT_ICON_SET}</button> <button class="iconset_delete">{L_DELETE_ICON_SET}</button>
+					</fieldset>
+					<fieldset><legend>{L_ICON_SETTING}</legend>
+						<button class="add_icon_btn">{L_ADD_ICON}</button>  <button class="icon_edit">{L_EDIT_ICON}</button> <button class="icon_delete">{L_BTN_DELETE_ICON}</button> 
+					</fieldset>
+						<ul id="icon_sortable_{iconset.ID}" class="icon_sortable">
+							<!-- BEGIN iconset.icon -->
+							<li class="ui-state-default li-icon" id="icon_{iconset.icon.ID}"><img src="{iconset.icon.PATH}"  data-id="{iconset.icon.ID}" alt="{iconset.icon.NAME}" title="{iconset.icon.NAME}" class="icon_thumb" <!-- IF iconset.icon.MIN --> width="90" <!-- ENDIF --> /> <input type="radio" name="iconset_{iconset.ID}" class="radio-icon" /></li>
+							<!-- END iconset.icon -->
+						</ul>
+					<br />
+				</div>
+				<!-- END iconset -->
+			</div>
+					
+	</div> 
+
+</div>
+
+<script> 
+
+$(function() {
+
+	$( "#list_iconset" ).accordion();
+
+	$(".tabs-layout").tabs();
+	$(".subtabs-layout").tabs();
+	$("button, .button").button();
+	
+	nb_open.message++;
+	
+	$('.icon_edit').hide();
+	$('.icon_delete').hide();
+	
+	icon_sortable();
+	function icon_sortable() { 
+		$( ".icon_sortable" ).sortable({
+			stop: function(event, ui) { 
+				var new_position = $(this).sortable('serialize');
+				 $.post('../ajax/adm.php', 'f=positionIcons&' + new_position, function(ret) {
+					displayEtat(ret.success, "{L_POS_CHANGED}", "{L_NOT_POS_CHANGED}");	
+				 }, "json");	 
+			}
+		}); 
+	}
+	
+	
+	
+	$( ".icon_sortable" ).disableSelection();
+	
+	function addCKEditor(name) {
+		 var instance = CKEDITOR.instances[name];
+		 if (instance) {
+			CKEDITOR.remove(instance);
+		 }
+		 CKEDITOR.replace(name,{
+			toolbar : 'Full'
+		 });
+		 
+	}
+	
+	addCKEditor("email_validation_text");
+	addCKEditor("forget_pass_text");
+	addCKEditor("avert_new_mp_text");
+	addCKEditor("avert_new_reply_text");
+
+	
+	$('button[name="submit_msg"]').click(function() {
+		CKEDITOR.instances["email_validation_text"].updateElement();
+		CKEDITOR.instances["forget_pass_text"].updateElement();
+		CKEDITOR.instances["avert_new_mp_text"].updateElement();
+		CKEDITOR.instances["avert_new_reply_text"].updateElement();
+		var str_data = $('#tab_forum').serialize();
+		$.post('index.php?page=messages', 'submit=submit_msg&' + str_data, function(data) {
+			displayEtat(data.success, '{L_CONFIG_MSG}', '{L_NOT_CONFIG_MSG}');
+		}, "json");
+	});
+	
+	$( "#iconset_setting" ).dialog({
+		resizable: false,
+		height: 200,
+		width: 500,
+		modal: true,	
+		autoOpen: false,
+		disabled: true,
+		open: function(event, ui) {
+			var mode = $( "input[name='iconset_mode']" ).val();
+			var field = ['iconset_mandatory', 'iconset_name'];
+			if (mode == 'edit') {
+				var iconset_id = $('input[name="edit_iconset_id"]').val();
+				$.post('../ajax/adm.php', 'f=readIconset&iconset_id=' + iconset_id, function(ret) {
+					$('input[name="iconset_name"]').val(ret.iconset_name);
+					$('input[name="iconset_mandatory"]').attr('checked', ret.iconset_mandatory == 1);
+				}, "json");
+			}
+			else {
+				$('input[name="iconset_name"]').val('');
+				$('input[name="iconset_mandatory"]').attr('checked', false);
+			}
+		},
+		buttons: {
+				"{L_OK}": function() {
+					var data = $('#form_iconset_setting').serialize();
+					var mode = $( "input[name='iconset_mode']" ).val();
+					var iconset_id = $('input[name="edit_iconset_id"]').val();
+					//alert(data);
+					$.post('../ajax/adm.php', 'f=settingIconset&' + data + '&iconset_id=' + iconset_id, function(ret) {
+						if (mode == 'add') {
+							displayEtat(ret.success, "{L_ICONSET_ADD}", "{L_ICONSET_NOT_ADD}");	
+						}
+						else {
+							displayEtat(ret.success, "{L_ICONSET_EDIT}", "{L_ICONSET_NOT_EDIT}");	
+						}
+						if (ret.success) {
+							if (mode == 'add') {
+								$("#list_iconset").append("<h3><a href=\"#\">" + $('#iconset_name').val() + "</a></h3><div data-id=\"" + ret.id + "\"><fieldset><legend>{L_ICONSET_SETTING}</legend><button class=\"iconset_edit\">{L_EDIT_ICON_SET}</button> <button class=\"iconset_delete\">{L_DELETE_ICON_SET}</button></fieldset><fieldset><legend>{L_ICON_SETTING}</legend><button class=\"add_icon_btn\">{L_ADD_ICON}</button>  <button class=\"icon_edit\">{L_EDIT_ICON}</button> <button class=\"icon_delete\">{L_BTN_DELETE_ICON}</button> </fieldset><ul id=\"icon_sortable_" +  ret.id + "\" class=\"icon_sortable\"></ul>").accordion('destroy').accordion();
+								$("button, .button").button();
+								$('.icon_edit').hide();
+								$('.icon_delete').hide();
+								$('.radio-icon').attr('checked', false);
+							}
+							else {
+								$('div[data-id="' + iconset_id + '"]').prev('h3').children('a').text($('#iconset_name').val());
+							}
+						}
+					}, 'json');
+					$( this ).dialog( "close" );
+					
+				},
+				"{L_CANCEL}": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+	
+	$( "#iconset_delete" ).dialog({
+		resizable: false,
+		height: 150,
+		width: 350,
+		title: "{L_DELETE_ICON_SET}",
+		modal: true,
+		autoOpen: false,
+		disabled: true,
+		buttons: {
+				"{L_OK}": function() {
+					var iconset_id = $('input[name="remove_iconset_id"]').val();
+					$.post('../ajax/adm.php', 'f=deleteIconset&iconset_id=' + iconset_id, function(ret) {
+						displayEtat(ret.success, "{L_ICONSET_DELETE}", "{L_ICONSET_NOT_DELETE}");	
+						if (ret.success) {
+							var accordeon_iconset = $('div[data-id="' + iconset_id + '"]');
+							accordeon_iconset.prev('h3').remove();
+							accordeon_iconset.remove();
+							$("#list_iconset").accordion('destroy').accordion();
+						}
+					}, 'json');
+					$( this ).dialog( "close" );
+					
+				},
+				"{L_CANCEL}": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+	
+	$( "#icon_delete" ).dialog({
+		resizable: false,
+		height: 150,
+		width: 350,
+		title: "{L_DELETE_ICON}",
+		modal: true,
+		autoOpen: false,
+		disabled: true,
+		buttons: {
+				"{L_OK}": function() {
+					var icon_id = $('input[name="remove_icon_id"]').val();
+					$.post('../ajax/adm.php', 'f=deleteIcon&icon_id=' + icon_id, function(ret) {
+						displayEtat(ret.success, "{L_ICON_DELETE}", "{L_ICON_NOT_DELETE}");	
+						if (ret.success) {
+							$('#icon_' + icon_id).remove();
+							$('.icon_edit').hide();
+							$('.icon_delete').hide();
+							$('.radio-icon').attr('checked', false);
+						}
+					}, 'json');
+					
+					$( this ).dialog( "close" );
+					
+				},
+				"{L_CANCEL}": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+	
+	$( "#add_icon" ).dialog({
+		height: 420,
+		width: 500,
+		modal: true,
+		autoOpen: false,
+		disabled: true,	
+		open: function(event, ui) {
+			$('#cancel-add_icon').button("enable");
+			var mode = $( "input[name='icon_mode']" ).val();
+			if (mode == 'edit') {
+				$( "#add_icon" ).dialog('option', 'title', "{L_EDIT_ICON}");
+				var icon_id = $( "input[name='setting_icon_id']" ).val();
+				$('#submit-add_icon').button("enable");
+				$.post('../ajax/adm.php', 'f=readIcon&icon_id=' + icon_id, function(ret) {
+					$('input[name="icon_name"]').val(ret.icon_name);
+					$('input[name="icon_height"]').val(ret.icon_height);
+					$('input[name="icon_width"]').val(ret.icon_width);
+					$('input[name="icon_display"]').each(function(index) {
+						if (ret.icon_display == $(this).val()) {
+							$(this).attr('checked', true);
+						}
+						else {
+							$(this).attr('checked', false);
+						}	
+					});
+				}, "json");
+			}
+			else {
+				$('input[name="icon_name"]').val('');
+				$('input[name="icon_height"]').val('');
+				$('input[name="icon_width"]').val('');
+				$('input[name="icon_display"]').each(function(index) {
+					if (index == 0) {
+						$(this).attr('checked', true);
+					}
+					else {
+						$(this).attr('checked', false);
+					}	
+				});
+				$( "#add_icon" ).dialog('option', 'title', "{L_ADD_ICON}");
+				$('#submit-add_icon').button("disable");
+			}
+		},
+		buttons: [{
+				id: "submit-add_icon",
+				text: "{L_OK}",
+				click: function() {
+					var mode = $('input[name="icon_mode"]').val();
+					if (mode == 'add') {
+						$('#icon_path').uploadifyUpload();
+					}
+					else {
+						var data = $('#form_icon_setting').serialize();
+						var icon_id = $('input[name="setting_icon_id"]').val();
+						$.post('../ajax/adm.php', 'f=settingIcon&' + data , function(ret) {
+								displayEtat(ret.success, "{L_ICON_EDIT}", "{L_ICON_NOT_EDIT}");	
+								if (ret.success) {
+									var icon_name = $('#icon_name').val();
+									$('#icon_' + icon_id).children('img').attr('title', icon_name);
+								}
+						}, "json");
+						$( this ).dialog( "close" );
+					}
+				}
+			},
+			{
+				id: "cancel-add_icon",
+				text: "{L_CANCEL}",
+				click: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		]
+	});
+	
+	if (nb_open.message == 1) {
+		$('#icon_path').uploadify({
+			'uploader': 'uploadify.swf',
+			'script': '../ajax/adm.php',
+			'cancelImg': 'cancel.png',
+			'scriptData': {f: "uploadIcon"},
+			'fileExt'     : '*.jpg;*.gif;*.png',
+			'fileDesc'    : 'Images (JPG, GIF, PNG)',
+			'buttonText'  : 'Parcourir',
+			'auto': false,
+			'onComplete': function(event, queueID, fileObj, response, data) {
+				$(".ui-dialog-titlebar-close").show(); 
+				$('#submit-add_icon').button("enable");
+				var data = $('#form_icon_setting').serialize();
+				$.post('../ajax/adm.php', 'f=settingIcon&icon_path=' + response + '&' + data , function(ret) {
+					displayEtat(ret.success, "{L_ICON_ADD}", "{L_ICON_NOT_ADD}");
+					$('#icon_sortable_' + ret.iconset_id).append("<li class=\"ui-state-default li-icon\"><img src=\"" + ret.icon_path + "\" alt=\"" + ret.icon_name + "\" title=\"" + ret.icon_name + "\"" + (ret.icon_min ? "width=\"90\"" : "") + "data-id=\"" + ret.id + "\" class=\"icon_thumb\" id=\"icon_" + ret.id + "\" /> <input type=\"radio\" name=\"iconset_" + ret.iconset_id + "\" class=\"radio-icon\" /></li>");
+					$('.icon_sortable').sortable( "destroy" );
+					icon_sortable();
+				}, "json");
+				$( "#add_icon" ).dialog( "close" );
+			},
+			'onSelect'    : function(event,ID,fileObj) {
+				$('#submit-add_icon').button("enable");
+			},
+			 'onCancel'    : function(event,ID,fileObj,data) {
+				$('#submit-add_icon').button("disable");
+			},
+			'onOpen'      : function(event,ID,fileObj) {
+				$('#submit-add_icon').button("disable");
+				$('#cancel-add_icon').button("disable");
+				$(".ui-dialog-titlebar-close").hide(); 
+			}
+			
+		});
+	}
+	
+	$('.iconset_edit').live('click', function() {
+		$('input[name="iconset_mode"]').val('edit');
+		$('input[name="edit_iconset_id"]').val($(this).parent('fieldset').parent('div').attr('data-id'));
+		$( "#iconset_setting" ).dialog( "option" , 'title' , "{L_EDIT_ICON_SET}");
+		$( "#iconset_setting" ).dialog('open');
+	});
+	
+	$('button[name="iconset_create"]').click(function() {
+		$( "input[name='iconset_mode']" ).val('add');
+		$( "#iconset_setting" ).dialog( "option" , 'title' , "{L_CREATE_ICON_SET}");
+		$( "#iconset_setting" ).dialog('open');
+	});
+	
+	$('.iconset_delete').live('click', function() {	
+		var value = $(this).parent('fieldset').parent('div').attr('data-id');
+		$('input[name="remove_iconset_id"]').val(value);
+		$( "#iconset_delete" ).dialog('open');
+	});
+	
+	$('.icon_delete').live('click', function() {	
+		$( "#icon_delete" ).dialog('open');
+	});
+	
+
+	$('.add_icon_btn, .icon_edit').live('click', function() {
+		var value = $(this).parent('fieldset').parent('div').attr('data-id');
+		$('input[name="setting_iconset_id"]').val(value);
+		var mode = $(this).hasClass('add_icon_btn') ? 'add' : 'edit';
+		if (mode == 'edit') {
+			$('#icon_img').hide();
+		}
+		else {
+			$('#icon_img').show();
+		}
+		$('input[name="icon_mode"]').val(mode);
+		
+		$( "#add_icon" ).dialog('open');
+	});
+	
+	$('.li-icon').live('click', function() {
+		var icon = $(this).children('.icon_thumb');
+		var val = icon.attr('data-id');
+		icon.next().attr('checked', true);
+		var iconset = 'div[data-id="' + $(this).parent('ul').parent('div').attr('data-id') + '"]';
+		$(iconset + ' .icon_edit').show();
+		$(iconset + ' .icon_delete').show();
+		$('input[name="setting_icon_id"]').val(val);
+		$('input[name="remove_icon_id"]').val(val);
+	});
+	
+	
+
+});
+</script> 
+ 

@@ -1,0 +1,117 @@
+<h2><!-- IF MODE == "edit" -->{L_TAB_EDIT}<!-- ELSE -->{L_TAB_ADD}<!-- ENDIF --></h2>
+
+<button type="button" id="previous">< {L_BACK}</button>
+
+<div class="state hidden"></div>
+<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1"><!-- IF MODE == "edit" -->{L_TAB_EDIT}<!-- ELSE -->{L_TAB_ADD}<!-- ENDIF --></a></li>
+	</ul>
+	
+	<div id="tabs-1">
+			<input type="hidden" value="{GROUP_ID}" name="group_id" />
+			<input type="hidden" value="{MODE}" name="mode" />
+			<form id="group_form">
+
+				
+				<table class="list_options">
+					<tr>
+						<td class="highlight"  width="60%"><label for="group_name">{L_GROUP_NAME}</label></td>
+						<td><input type="text" name="group_name" id="group_name" size="40" value="{VAL_GROUP_NAME}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="group_desc">{L_GROUP_DESC}</label></td>
+						<td><textarea name="group_desc" id="group_desc" cols="45" rows="6">{VAL_GROUP_DESC}</textarea></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="group_type">{L_GROUP_TYPE}</label></td>
+						<td><label><input type="radio"  name="group_type" value="2" <!-- IF VAL_GROUP_TYPE == 2 -->checked=checked"<!-- ENDIF -->> {L_CLOSE}</label> <label><input type="radio" name="group_type" value="0" <!-- IF VAL_GROUP_TYPE == 0 -->checked=checked"<!-- ENDIF -->> {L_OPEN_WAIT}</label>
+						<label><input type="radio" name="group_type" value="1" <!-- IF VAL_GROUP_TYPE == 1 -->checked=checked"<!-- ENDIF -->> {L_OPEN}</label>
+						</td>
+					</tr>
+					<!-- IF VAL_GROUP_FOUNDER_MANAGE != "0" -->
+					<tr>
+						<td class="highlight"  width="60%"><label for="group_founder_manage">{L_GROUP_FOUNDER_MANAGE}</label></td>
+						<td><input type="text" name="group_founder_manage" id="group_founder_manage" size="40" value="{VAL_GROUP_FOUNDER_MANAGE}"></td>
+					</tr>
+					<!-- ENDIF -->
+					<tr>
+						<td class="highlight"  width="60%"><label for="group_color">{L_GROUP_COLOR}</label></td>
+						<td><input type="text" name="group_color" id="group_color" size="40" value="{VAL_GROUP_COLOR}"></td></td>
+					</tr>
+				</table>
+				<button name="submit_group" type="button">{L_VALID}</button>
+				
+		</form>
+
+   </div>
+</div>
+
+
+
+<script>
+$(function() {
+	$("button, .button").button();
+	$(".tabs-layout").tabs();
+
+	$('input[name="group_color"]').ColorPicker({
+		onShow: function (colpkr) {
+			$(colpkr).fadeIn(500);
+			return false;
+		},
+		onHide: function (colpkr) {
+			$(colpkr).fadeOut(500);
+		},
+		onChange: function (hsb, hex, rgb) {
+			$('input[name="group_color"]').val(hex);
+		}
+	});
+
+	$("#previous").click(function() {
+		clickSlide('page=groups');
+	});
+
+	$( "#group_founder_manage" ).autocomplete({
+		source: "../ajax/adm_users.php",
+		minLength: 2
+	});
+
+
+	$("button[name='submit_group']").click(function(data) {
+		var mode = $("input[name='mode']").val();
+		var group_id = $("input[name='group_id']").val();
+		var data = $('#group_form').serialize();
+	
+		$.post('../ajax/adm.php', 'f=settingGroup&group_id=' + group_id + '&mode=' + mode + '&' + data, function(ret) {
+			if (mode == 'add') {
+				displayEtat(ret.success, "{L_GROUP_CREATE}", "{L_GROUP_NOT_CREATE}");
+				clickSlide('page=groups');
+			}
+			else {
+				displayEtat(ret.success, "{L_GROUP_EDIT}", "{L_GROUP_NOT_EDIT}");
+			}
+		}, 'json');
+	});
+
+	$("#group_form").validate({
+			errorClass: "form_error",
+			validClass: "form_valid",
+			success: function(label) {
+				label.html("&nbsp;").addClass("form_valid");
+			},
+			rules: {
+				group_founder_manage: {
+					required: true,
+					remote: "../ajax/user_exist.php"
+				}
+			},
+			messages: {
+				group_founder_manage: {
+					remote: "Cet utilisateur n'existe pas"
+				}
+			}
+		}
+	);
+
+});
+</script>

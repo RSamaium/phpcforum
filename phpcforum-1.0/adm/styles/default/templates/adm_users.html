@@ -1,0 +1,343 @@
+<div id="confirm_inactive_window">
+	<p>{L_CONFIRM_DELETE_INACTIVE}</p>
+</div>
+
+
+<h2>{L_USERS}</h2>
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_MANAGE_USERS}</a></li>
+		<li><a href="#tabs-2">{L_INACTIVE}</a></li>
+		<li><a href="#tabs-3">{L_BAN}</a></li>
+		<li><a href="#tabs-4">{L_AVERT}</a></li>
+	</ul>
+	
+
+
+	<div id="tabs-1">
+		<p>{L_USERS_HELP}</p>
+		<br />
+		
+			<div id="layout_search" align="center">
+				<input type="text" name="setting_username" id="auto-users" size="40" style="padding: 8px; font-size: 15px;" />
+				<button type="button" id="submit_search" style="padding: 6px">{L_VALID}</button>
+			</div>
+			<br />
+			<div id="layout_setting_user" class="hidden">
+			
+			</div>
+		</div>
+
+
+	<div id="tabs-2">
+			
+			<p>{L_INACTIVE_HELP}</p>
+			<br />
+			
+			<table width="100%" class="border table" border="1" id="table-inactive">
+				<thead>
+				<tr>
+					<th>
+						{L_USER}
+					</th>
+					<th width="10%">
+						{L_REGISTER_DATE}
+					</th>
+					<th>
+						{L_REASON}
+					</th>
+					<th>
+						{L_LAST_VISIT}
+					</th>
+					<th>
+						{L_CHECK}
+					</th>
+				</tr>
+				</thead>
+		<!-- BEGIN inactive -->
+				<tbody>
+				<tr>
+					<td>
+						{inactive.USERNAME}
+					</td>
+					<td>
+						{inactive.REGDATE}
+					</td>
+					<td>
+						{inactive.REASON}
+					</td>
+					<td>
+						{inactive.LAST_VISIT}
+					</td>
+					<td>
+						<input type="checkbox" id="i{inactive.USER_ID}" class="check_inactive" />
+					</td>
+				</tr>
+				</tbody>
+		<!-- END inactive -->
+		</table>
+		<br />
+		<button name="activ_user_inactive">{L_ACTIV_INACTIVE_BTN}</button> <button name="delete_user_inactive">{L_DELETE_INACTIVE_BTN}</button>
+	</div> 
+	
+	
+	<div id="tabs-3">
+		
+		<table width="100%" class="border table" border="1" id="table-ban">
+			<thead>
+				<tr>
+					<th>
+						{L_USER}
+					</th>
+					<th>
+						{L_BAN_TO}
+					</th>
+					<th>
+						{L_REASON}
+					</th>
+					<th>
+						{L_EXPIRE_TO} 
+					</th>
+					<th>
+						{L_INTERACTION}
+					</th>
+				</tr>
+			</thead>
+		<!-- BEGIN user_ban -->
+			<tbody>
+				<tr>
+					<td>
+						{user_ban.USERNAME}
+					</td>
+					<td>
+						{user_ban.BAN_DATE}
+					</td>
+					<td>
+						{user_ban.BAN_REASON}
+					</td>
+					<td>
+						{user_ban.BAN_EXPIRE}
+					</td>
+					<td>
+						<a href="{user_ban.U_PANEL_BAN}" target="_blanck" class="button">{L_ADMIN}</a>
+					</td>
+				</tr>
+			</tbody>
+		<!-- END user_ban -->
+		</table>
+		
+	</div>
+	
+	<div id="tabs-4">
+		
+		<table width="100%" class="border table" border="1" id="table-averts">
+			<thead>
+				<tr>
+					<th>
+						{L_USER}
+					</th>
+					<th width="10%">
+						{L_NB_AVERT}
+					</th>
+					<th>
+						{L_AVERT_TO}
+					</th>
+					<th>
+						{L_REASON}
+					</th>
+					<th>
+						{L_EXPIRE_TO} 
+					</th>
+					<th>
+						{L_INTERACTION}
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+		<!-- BEGIN user_avert -->
+				<tr>
+					<td>
+						{user_avert.USERNAME}
+					</td>
+					<td>
+						{user_avert.USER_AVERT}
+					</td>
+					<td>
+						{user_avert.AVERT_DATE}
+					</td>
+					<td>
+						{user_avert.AVERT_REASON}
+					</td>
+					<td>
+						{user_avert.AVERT_EXPIRE}
+					</td>
+					<td>
+						<a href="{user_avert.U_PANEL_AVERT}" target="_blanck" class="button">{L_ADMIN}</a>
+					</td>
+				</tr>
+		<!-- END user_avert -->
+			</tbody>
+		</table>
+		
+	</div>
+	
+	
+	
+</div>
+<script> 
+var group_id = 1;
+var num = 1;
+
+$(function() {
+	
+	/*$.ajax({ 
+		   type: "POST", 
+		   url: "../ajax/search.php", 
+		   data: null, 
+		   success: function(msg){ 
+			alert(msg);
+			}
+	});*/
+
+	$(".tabs-layout").tabs();
+	$("button, .button").button();
+
+	
+	$('#table-averts, #table-inactive, #table-ban').dataTable({
+		"bJQueryUI": true,
+		"sPaginationType": "full_numbers",
+		"oLanguage": table_lang
+	});
+	
+	$("#auto-users").autocomplete({
+		source: "../ajax/adm_users.php",
+		minLength: 2
+	});
+	
+	
+	//initialize();
+	
+	
+	
+		
+	/*$(".openwindow").overlay({ 
+		expose: { 
+			color: '#000',  
+			opacity: 0.8 
+		}, 
+		closeOnClick: true, 
+		api: true,
+		onBeforeLoad: function() {
+			var crud_id = this.getTrigger().attr("id");
+			$("#window_content").load("?page=" + $('#' + crud_id).attr('data-name'), {
+				'crud_where':  "group_id=" + group_id,
+				'mode':  $('#' + crud_id).attr('data-mode'),
+				'num':  num
+			})
+		}
+	});*/
+	
+	
+	
+	$( "#confirm_inactive_window" ).dialog({
+			resizable: false,
+			height:150,
+			width: 300,
+			title: 'Confirmation',
+			modal: true,
+			autoOpen: false,
+			buttons: {
+				"Ok": function() {
+					var str_id = strCheckInactiveUser();
+					$.ajax({
+						url: '../ajax/adm.php',
+						type: 'POST',
+						data: {f: "deleteUserInactive", users_id: str_id},
+						success: function(data) {
+							displayEtat(data, "{L_DELETE_INACTIVE}", "{L_NOT_DELETE_INACTIVE}");
+						}
+					});
+					$( this ).dialog( "close" );
+				},
+				"Annuler": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+	
+	
+	function userLayout() {
+		var username = $("input[name='setting_username']").val();
+		$("#layout_setting_user").html("");
+		if (username != "") {
+			clickSlide({username: username}, 'POST', "?page=setting_user" );
+		}
+	}
+	
+	$("#auto-users").keypress(function(e) {
+		if (e.which == 13) {
+			userLayout();
+		}
+	});
+	
+	$("#submit_search").click(function() {
+			userLayout();
+	});
+	
+	$("button[name='activ_user_inactive']").click(function() {
+		var str_id = strCheckInactiveUser();
+		if (str_id != "") {
+			$.ajax({
+				url: '../ajax/adm.php',
+				type: 'POST',
+				data: {f: "activUserInactive", users_id: str_id},
+				success: function(data) {
+					displayEtat(data, "{L_ACTIV_INACTIVE}", "{L_NOT_ACTIV_INACTIVE}");
+				}
+			});
+		}
+		
+	});
+	
+	$("button[name='delete_user_inactive']").click(function() {
+		$( "#confirm_inactive_window" ).dialog('open');
+	});
+	
+	clearButtonInactive();
+	$('.check_inactive').click(function() {
+		 if ($('.check_inactive:checked').length == 0) {
+			clearButtonInactive();
+		 }
+		 else {
+			$("button[name='activ_user_inactive']").show();
+			$("button[name='delete_user_inactive']").show();
+		 }
+	});
+	
+	
+	function strCheckInactiveUser() {
+		var str_id = "";
+		var j=0;
+		for (var i=0 ; i < $('.check_inactive').length ; i++) {
+			var checkbox = $('.check_inactive')[i];
+			if (checkbox.checked) {
+				str_id += ident(checkbox.id) + ",";
+				$('#' + checkbox.id).parent('td').parent('tr').remove();
+				j++;
+			}
+		}
+		return str_id;
+	}
+	
+	function clearButtonInactive() {
+		$("button[name='activ_user_inactive']").hide();
+		$("button[name='delete_user_inactive']").hide();
+	}
+	
+	
+	
+});
+
+
+</script> 

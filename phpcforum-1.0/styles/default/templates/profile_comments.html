@@ -1,0 +1,83 @@
+<!-- INCLUDE main_header.html -->
+<div class="global">
+<!-- INCLUDE error.html -->
+<form method="post">
+	<table class="globalbox" width="100%">
+	<!-- IF PERMISSION == "" -->
+		<!-- IF SUBMIT -->
+			<!-- INCLUDE confirm.html -->
+		<!-- ELSE -->	
+			<!-- IF MODE == "search_user" -->
+			<tr>
+				<th class="header_title">{L_SEARCH_MEMBER}</th>
+			</tr>
+			<tr>
+				<td class="global_content">
+				{L_FIND_MEMBER} : <input type="text" name="search_user" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="global_content">
+					<button type="submit" name="submit_profile" class="button">{L_SEND}</button>
+				</td>
+			</tr>
+			<!-- ELSEIF MODE == "user_comment" -->
+			<tr>
+				<th class="header_title" colspan="2">{L_COMMENT_ABOUT} : {PROFILE_USERNAME}</th>
+			</tr>
+			<tr>
+				<td class="global_content" valign="top" align="center">	
+				<!-- IF PROFILE_USER_AVATAR != "" -->			
+					<fieldset><legend><span style="color: #{PROFILE_USER_COLOR}">{PROFILE_USERNAME}</span></legend>
+						<img src="{PROFILE_USER_AVATAR}" />
+					</fieldset>
+				<!-- ENDIF -->
+				</td>
+				<td class="global_content" valign="top">
+					<fieldset><legend>{L_GLOBAL_INFO}</legend>
+					<table>
+						<tr>
+							<td><span class="label">{L_REGDATE} :</span></td><td>{PROFILE_USER_REGDATE}</td>
+						</tr>
+						<tr>
+							<td><span class="label">{L_LAST_VISIT} :</span></td><td>{PROFILE_USER_LASTVISIT}</td>
+						</tr>
+						<tr>
+							<td><span class="label">{L_NB_POST} :</span></td><td> {PROFILE_USER_NB_MESSAGE}</td>
+						</tr>	
+					</table>
+					</fieldset>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="global_content"  colspan="2" align="center">
+				<input type="hidden" value="{PROFILE_USER_ID}" name="user_id" />
+				<fieldset><legend>{L_COMMENT}</legend>
+					<textarea rows="5" cols="80" name="user_comment">{PROFILE_USER_EDIT_COMMENT}</textarea>
+				</fieldset>
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content"  colspan="2" align="center">
+				<button type="submit" name="edit_comment" class="button">{L_EDIT_COMMENT}</button>
+				<a href="{COMMENT_RETURN}" class="button">{L_RETURN}</a>
+				</td>
+			</tr>		
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+	<!-- ELSE -->
+		<tr>
+			<th class="header_title">{L_ACCESS_COMMENT}</th>
+		</tr>
+		<tr>
+			<td class="global_content" align="center">
+				<p>{PERMISSION}</p>
+			</td>
+		</tr>
+	<!-- ENDIF -->
+		</table>
+		
+</form>
+</div>
+<!-- INCLUDE main_footer.html -->

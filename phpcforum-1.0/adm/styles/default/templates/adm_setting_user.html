@@ -1,0 +1,757 @@
+<!-- IF IS_USER -->
+
+<div id="move_all_msg">
+	<p>{L_MOVE_ALL_MSG}</p>
+	<div id="select_forum">
+	
+	</div>
+</div>
+
+<div id="delete_all_msg">
+	<p>{L_DELETE_ALL_MSG}</p>
+</div>
+
+<div id="delete_user">
+	<p>{L_DELETE_USER}</p>
+</div>
+
+
+<input type="hidden" name="user_id" value="{PROFILE_USER_ID}" />
+
+<h2>{L_MANAGE_USER} - {PROFILE_USERNAME}</h2>
+<button type="button" id="previous">< {L_BACK}</button>
+<br clear="all" />
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_GLOBAL}</a></li>
+		<li><a href="#tabs-2">{L_PROFILE}</a></li>
+		<li><a href="#tabs-3">{L_PREF}</a></li>
+		<li><a href="#tabs-4">{L_AVATAR}</a></li>
+		<li><a href="#tabs-5">{L_SIG}</a></li>
+		<li><a href="#tabs-6">{L_GROUP}</a></li>
+		<li><a href="#tabs-7">{L_COMMENT}</a></li>
+	</ul>
+	
+
+
+<div id="tabs-1">
+				<div id="info_activ">
+				<!-- IF !PROFILE_USER_ACTIV -->
+					<div class="ui-state-error">
+					<p><strong style="font-size: 120%" class="ui-state-error-text">{L_PROFILE_USER_UNACTIV}</strong>
+					<br /><span style="font-size: 90%" class="ui-state-error-text">{L_REASON} : {PROFILE_USER_ACTIV_REASON}</span></p>
+					</div>
+				<!-- ENDIF -->
+				</div>
+				<fieldset><legend>{L_INFO}</legend>
+						<table>
+						<tr>
+							<td>
+								{L_NB_MSG} :
+							</td>
+							<td>
+								<span id="user_nb_message">{PROFILE_USER_NB_MESSAGE}</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{L_REGISTER_DATE} :
+							</td>
+							<td>
+								{PROFILE_USER_REGDATE}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{L_LAST_VISIT} :
+							</td>
+							<td>
+								{PROFILE_USER_LASTVISIT}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{L_IP} :
+							</td>
+							<td>
+								{PROFILE_USER_IP}
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+				<fieldset><legend>{L_INTERACTION}</legend>
+					<table>
+						<tr>
+							<td>
+								<button name="user_<!-- IF PROFILE_USER_ACTIV -->desallow">{L_UNACTIV}<!-- ELSE -->allow">{L_ACTIV}<!-- ENDIF --></button>
+								<button name="edit_user_permission">{L_EDIT_PERMISSION}</button>
+								<!-- IF !PROFILE_IS_FONDATOR --><button class="confirm"  data-id="delete_user">{L_DELETE_USER_BTN}</button><!-- ENDIF -->
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+				<fieldset><legend>{L_ID}</legend>
+				<p>{L_PASS_HELP}</p>
+					<form id="global_profil">
+					<table>
+						<tr>
+							<td>
+								{L_USERNAME}
+							</td>
+							<td>
+								<input type="text"  name="username" value="{PROFILE_USERNAME}" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{L_PASSWORD}
+							</td>
+							<td>
+								<input type="password"  name="user_password" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{L_CONFIRM_PASSWORD}
+							</td>
+							<td>
+								<input type="password"  name="user_password_confirm" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{L_EMAIL}
+							</td>
+							<td>
+								<input type="text"  name="user_email" value="{PROFILE_USER_MAIL}" />
+							</td>
+						</tr>
+					</table>
+					</form>
+				<button name="submit_global_profil">{L_VALID}</button>
+				</fieldset>
+				
+		</div>
+		
+		<div id="tabs-2">
+			<form id="form_user_profile">
+				<table class="list_options">
+					<tr>
+						<td class="highlight"  width="60%"><label for="user_msn">{L_MSN}</label></td>
+						<td><input type="text" name="user_msn" id="user_msn" size="40" value="{VAL_USER_MSN}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_yahoo">{L_YAHOO}</label></td>
+						<td><input type="text" name="user_yahoo" id="user_yahoo" size="40" value="{VAL_USER_YAHOO}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_skype">{L_SKYPE}</label></td>
+						<td><input type="text" name="user_skype" id="user_skype" size="40" value="{VAL_USER_SKYPE}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_facebook">{L_FACEBOOK}</label></td>
+						<td><input type="text" name="user_facebook" id="user_facebook" size="40" value="{VAL_USER_FACEBOOK}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_twitter">{L_TWITTER}</label></td>
+						<td><input type="text" name="user_twitter" id="user_twitter" size="40" value="{VAL_USER_TWITTER}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_hobbies">{L_HOBBIES}</label></td>
+						<td><input type="text" name="user_hobbies" id="user_hobbies" size="40" value="{VAL_USER_HOBBIES}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_website">{L_WEBSITE}</label></td>
+						<td><input type="text" name="user_website" id="user_website" size="40" value="{VAL_USER_WEBSITE}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_from">{L_FROM}</label></td>
+						<td><input type="text" name="user_from" id="user_from" size="40" value="{VAL_USER_FROM}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_job">{L_EMPLOYMENT}</label></td>
+						<td><input type="text" name="user_job" id="user_job" size="40" value="{VAL_USER_JOB}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_sexe">{L_SEX}</label></td>
+						<td>
+							<label><input type="radio"  name="user_sexe" value="m" <!-- IF VAL_USER_SEXE == "m" -->checked="checked"<!-- ENDIF --> /> {L_MALE}</label> 
+							<label><input type="radio" name="user_sexe" value="f" <!-- IF VAL_USER_SEXE == "f" -->checked="checked"<!-- ENDIF --> /> {L_WOMEN}</label>
+							 <label><input type="radio" name="user_sexe" value="i" <!-- IF VAL_USER_SEXE == "i" -->checked="checked"<!-- ENDIF --> /> {NOT_SPECIFY}</label></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="user_birthday">{L_BIRTHDAY}</label></td>
+						<td><input type="text" name="user_birthday" id="user_birthday" size="40" value="{VAL_USER_BIRTHDAY}"></td>
+					</tr>
+				</table>
+			<button name="submit_user_profile" type="button">{L_VALID}</button>
+			</form>
+		</div>
+		
+		<div id="tabs-3">
+				
+				
+	<form id="user_pref">	
+	<fieldset><legend>{L_EDIT_GLOBAL_SETTING}</legend>
+	<table width="100%">
+		<tr>
+			<td class="global_content" width="70%">{L_USER_ALLOW_CONTACT_PM}</td>
+			<td>
+				<input type="radio" name="user_allow_contact_pm[]" value="1" <!-- IF USER_ALLOW_CONTACT_PM -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="user_allow_contact_pm[]" value="0" <!-- IF !USER_ALLOW_CONTACT_PM -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">{L_USER_MASK_STATUT}</td>
+			<td>
+				<input type="radio" name="user_mask_statut[]" value="1" <!-- IF USER_MASK_STATUT -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="user_mask_statut[]" value="0" <!-- IF !USER_MASK_STATUT -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">{L_NEW_PM_AVERT}</td>
+			<td>
+				<input type="radio" name="new_pm_avert[]" value="1" <!-- IF NEW_PM_AVERT -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="new_pm_avert[]" value="0" <!-- IF !NEW_PM_AVERT -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">{L_NEW_PM_POPUP}</td>
+			<td>
+				<input type="radio" name="new_pm_popup[]" value="1" <!-- IF NEW_PM_POPUP -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="new_pm_popup[]" value="0" <!-- IF !NEW_PM_POPUP -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+</table>
+		</fieldset>
+		<fieldset><legend>{L_EDIT_POST_SETTING}</legend>
+	<table width="100%">
+		<tr>
+			<td class="global_content" width="70%">{L_USER_SIG}</td>
+			<td>
+			<input type="radio" name="user_sig[]" value="1" <!-- IF USER_SIG -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+			<input type="radio" name="user_sig[]" value="0" <!-- IF !USER_SIG -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">{L_USER_REPLY_AVERT}</td>
+			<td>
+			<input type="radio" name="user_reply_avert[]" value="1" <!-- IF USER_REPLY_AVERT -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+			<input type="radio" name="user_reply_avert[]" value="0" <!-- IF !USER_REPLY_AVERT -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+	</table>
+	</fieldset>
+	<fieldset><legend>{L_EDIT_DISPLAY_SETTING}</legend>
+	<table width="100%">
+			<tr>
+			<td class="global_content" width="70%">{L_DISPLAY_SIG}</td>
+			<td>
+			<input type="radio" name="display_sig[]" value="1" <!-- IF DISPLAY_SIG -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+			<input type="radio" name="display_sig[]" value="0" <!-- IF !DISPLAY_SIG -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">{L_DISPLAY_FLASH}</td>
+			<td>
+			<input type="radio" name="display_flash[]" value="1" <!-- IF DISPLAY_FLASH -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+			<input type="radio" name="display_flash[]" value="0" <!-- IF !DISPLAY_FLASH -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">{L_DISPLAY_IMG_POST}</td>
+			<td>
+			<input type="radio" name="display_img_post[]" value="1" <!-- IF DISPLAY_IMG_POST -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+			<input type="radio" name="display_img_post[]" value="0" <!-- IF !DISPLAY_IMG_POST -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">{L_DISPLAY_SMILIES_IMG}</td>
+			<td>
+			<input type="radio" name="display_smilies_img[]" value="1" <!-- IF DISPLAY_SMILIES_IMG -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+			<input type="radio" name="display_smilies_img[]" value="0" <!-- IF !DISPLAY_SMILIES_IMG -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">{L_DISPLAY_AVATAR}</td>
+			<td>
+			<input type="radio" name="display_avatar[]" value="1" <!-- IF DISPLAY_AVATAR -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+			<input type="radio" name="display_avatar[]" value="0" <!-- IF !DISPLAY_AVATAR -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+			</td>
+		</tr>
+	</table>
+	</fieldset>
+	</form>
+	<button name="submit_user_pref">{L_VALID}</button>
+	</div>
+		
+		<div id="tabs-4">
+				
+				<p align="center"><img src="../{PROFILE_USER_AVATAR}" id="user_avatar" /></p>
+				<input type="file" name="uploadify" id="uploadify" />
+		</div>
+		
+		<div id="tabs-5">
+				<textarea class="ckeditor" cols="80" id="text_user_sign" rows="20">{PROFILE_USER_SIG}</textarea>
+				<p><button name="submit_sign">{L_VALID}</button></p>
+		</div>
+		
+		<div id="tabs-6">
+				<table width="100%" class="table" id="table-usergroups">
+				<thead>
+				<tr>
+					<th>
+						{L_GROUP_NAME}
+					</th>
+					<th>
+						{L_DEFAULT}
+					</th>
+					<th>
+						{L_RESPONSIBLE}
+					</th>
+					<th>
+						{L_INTERACTION}
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<!-- BEGIN user_group -->
+				<tr>
+					<td>
+						<span style="color: #{user_group.GROUP_COLOR}">{user_group.GROUP_NAME}</span>
+					</td>
+					<td align="center">
+						<!-- IF user_group.MY_GROUP_ID -->X<!-- ENDIF -->
+					</td>
+					<td align="center">
+						<!-- IF user_group.IS_MANAGE -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF -->
+					</td>
+					<td align="center">
+						<input type="radio" name="user_group_id" value="{user_group.GROUP_ID}">
+						<input type="hidden" value="{user_group.NUM}">
+					</td>
+				</tr>
+				<!-- END user_group -->
+				</tbody>
+				</table>
+				
+				<br />
+				<button name="submit_group_default">{L_GROUP_DEFAULT}</button>
+				<button name="submit_delete_user_group">{L_GROUP_DELETE}</button>
+				<fieldset><legend>{L_GROUP_ADD_USER}</legend>
+				
+				<select name="user_group_id">
+					<!-- BEGIN group -->
+						<option value="{group.ID}">{group.NAME}</option>
+					<!-- END group -->
+				</select>
+				<button name="submit_add_usergroup">{L_VALID}</button>
+				</fieldset>
+		</div>
+		
+		<div id="tabs-7">
+				<textarea cols="80" name="text" rows="10" id="text_user_comment">{PROFILE_USER_COMMENT_EDIT}</textarea>
+				<p><button name="submit_comment">{L_VALID}</button></p>
+		</div>
+		
+	</div> 
+
+	
+			
+
+
+<script> 
+var ugroup_id = 0;
+var unum = 0;
+var user_id  = 0;
+
+$(function() {
+	
+	$(".tabs-layout").tabs({selected: "{TAB}"});
+
+	
+	$('#table-usergroups').dataTable({
+		"bJQueryUI": true,
+		"sPaginationType": "full_numbers",
+		"oLanguage": table_lang
+	});
+	
+	user_id = $("input[name='user_id']").val();
+	
+	$(".crud_edit").jcrud("edit", function(data) {
+		var record = data.username != "";
+		displayUserEtat(record);
+	});
+	
+	
+	userClearButton();
+
+	$("button[name='submit_user_pref']").click(function() {
+			$.ajax({
+				 url: '../ajax/adm.php',
+				type: 'POST',
+				data: "user_id=" + user_id + "&f=userPref&" + $("#user_pref").serialize(),
+				success: function(data) {
+					displayUserEtat(data);
+				}
+			});
+	});
+	
+	$("button[name='submit_user_profile']").click(function() {
+		$.post('../ajax/adm.php', "user_id=" + user_id + "&f=userProfile&" + $("#form_user_profile").serialize(),  function(data) {
+			displayUserEtat(data.success);
+		}, 'json');
+	});
+	
+	$("input[name='user_group_id']").click(userClickRadio);
+	
+	$("button[name='submit_group_default']").click(function() {
+			$.ajax({
+				 url: '../ajax/adm.php',
+				type: 'POST',
+				data: {user_id: user_id, f: "groupDefault", group_id: ugroup_id},
+				success: function(data) {
+					displayUserEtat(data);
+					if (data) {
+						var col = $("#table-usergroups tr").length - 1;
+						for (var i=1 ; i <= col ; i++) {
+							$("#table-usergroups tr:eq(" + i + ") > td:eq(1)").text('');
+						}
+						
+						$("#table-usergroups tr:eq(" + (parseInt(unum)+1) + ") td:eq(1)").text('X');
+						userClearButton();
+					}
+				}
+			});
+	});
+	
+	$("button[name='submit_delete_user_group']").click(function() {
+			$.ajax({
+				 url: '../ajax/adm.php',
+				type: 'POST',
+				data: {user_id: user_id, f: "userGroupDelete", group_id: ugroup_id},
+				success: function(data) {
+					if (data) {
+						clickSlide({username: "{PROFILE_USERNAME}"}, 'POST', "?page=setting_user&t=5" );
+					}
+					displayUserEtat(data);
+				}
+			});
+			
+			
+			
+	});
+	
+	$("button[name='submit_add_usergroup']").click(function() {
+			var user_group_id = $("select[name='user_group_id'] option:selected").val();
+			var user_group_name = $("select[name='user_group_id'] option:selected").text();
+			$.ajax({
+				 url: '../ajax/adm.php',
+				type: 'POST',
+				data: {user_id: user_id, f: "userGroupAdd", group_id: user_group_id},
+				success: function(data) {
+				/*var num = $("#table-usergroups tr").length - 1;
+				$("#table-usergroups").append('<tr><td>' + user_group_name + '</td><td align="center"></td><td align="center">{L_NO}</td><td align="center"><input type="radio" name="user_group_id" value="' + user_group_id + '" /><input type="hidden" name="num" value="' + num + '" /></td></tr>');
+				$("#table-usergroups tr:eq(" + (num+1) + ") input[name='user_group_id']").click(userClickRadio);*/
+				
+			/*	$('#table-usergroups').dataTable().fnAddData( [
+					user_group_name,
+					"",
+					"{L_NO}",
+					'<input type="radio" name="user_group_id" value="' + user_group_id + '" />'] 
+				);*/
+				
+					//displayUserEtat(data);
+					clickSlide({username: "{PROFILE_USERNAME}"}, 'POST', "?page=setting_user&t=5" );
+				
+				
+				}
+			});
+			
+	});
+	
+	
+	$('#uploadify').uploadify({
+		'uploader': 'uploadify.swf',
+		'script': '../ajax/adm.php',
+		'cancelImg': 'cancel.png',
+		'scriptData': {user_id: user_id, f: "userAvatar"},
+		'onComplete': function(event, queueID, fileObj, response, data) {
+			var regex = new RegExp("[\n,\r ]","g");
+			response = response.replace(regex, "");
+			$("#user_avatar").attr('src', '../images/avatars/' + response);
+			displayUserEtat(response != "");
+		},
+		'auto': true
+	});
+	
+	function activUser(activ, user_id) {
+		$.ajax({
+			url: '../ajax/adm.php',
+			type: 'POST',
+			data: {user_id: user_id, f: "userActiv", activ: activ},
+			success: function(data) {
+				if (activ == 0) {
+					/*changeInfoActiv(activ, "Activer", "user_allow", '<div class="warning"><p><strong style="font-size: 120%">Le compte est actuellement désactivé</strong><br /><span style="font-size: 90%">Raison : {PROFILE_USER_ACTIV_REASON}</span></p></div>');*/
+					clickSlide({username: "{PROFILE_USERNAME}"}, 'POST', "?page=setting_user" );
+				}
+				else {
+					clickSlide({username: "{PROFILE_USERNAME}"}, 'POST', "?page=setting_user" );
+					
+				}
+				displayUserEtat(data);
+			}
+		});
+	}
+	
+	/*function changeInfoActiv(activ, text, attr, html) {
+		var str = activ == 0 ? 'desallow' : 'allow';
+		$("button[name='user_" + str + "']").text(text);
+		$("button[name='user_" + str + "']").attr("name", attr);
+		$("#info_activ").html(html);
+		/*$("button[name='" + attr + "']").click(function() {
+			activUser(activ == 0 ? 1 : 0, user_id);	
+		});
+	}
+	
+	activClick();
+	function activClick() {
+		
+	}*/
+	
+	$("button[name='user_allow']").click(function() {
+			activUser(1, user_id);	
+	});
+	
+	$("button[name='user_desallow']").click(function() {
+		activUser(0, user_id);	
+	});
+		
+	$( "#delete_all_msg, #delete_user, #move_all_msg" ).dialog({
+			resizable: false,
+			height: 200,
+			width:  350,
+			title: 'Confirmation',
+			modal: true,
+			autoOpen: false,
+			buttons: {
+				"Ok": function() {
+					submitGlobalAction($(this).attr('id'));
+					$( this ).dialog( "close" );
+				},
+				"Annuler": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+	
+	
+	$(".confirm").click(function() { 
+			var mode = $(this).attr("data-id");
+			var str = "";
+			switch(mode) {
+				case 'move_all_msg':
+					$.ajax({
+						url: 'index.php',
+						type: 'GET',
+						data: 'page=forumlist_jump',
+						success: function(data) {
+							$("#select_forum").html(data);
+							$("#move_all_msg").dialog( "open" );
+						}
+					});
+				break;
+				case 'delete_all_msg':
+					$("#delete_all_msg").dialog( "open" );
+				break;
+				case 'delete_user':
+					$("#delete_user").dialog( "open" );
+				break;
+			}
+			
+	});
+	
+	/*$("button[name='submit_global_action']").click(function() {
+		
+	 });*/
+	 
+	 $("button[name='submit_comment']").click(function() {
+		var user_comment = $("#text_user_comment").val();
+		$.ajax({
+			url: '../ajax/adm.php',
+			type: 'POST',
+			data: {user_id: user_id, f: "userComment", user_comment: user_comment},
+			success: function(data) {
+				displayUserEtat(data);
+			}
+		});
+	 });
+	 
+	  var instance = CKEDITOR.instances["text_user_sign"];
+     if (instance) {
+        CKEDITOR.remove(instance);
+     }
+	  CKEDITOR.replace("text_user_sign");
+    
+	 
+	 $("button[name='submit_sign']").click(function() {
+		CKEDITOR.instances["text_user_sign"].updateElement();
+		var user_sig = $("#text_user_sign").val();
+		$.ajax({
+			url: '../ajax/adm.php',
+			type: 'POST',
+			data: {user_id: user_id, f: "userSign", user_sig: user_sig},
+			success: function(data) {
+				displayUserEtat(data);
+			}
+		});
+	 });
+	 
+	
+			
+	
+	
+	 
+	 $("button[name='submit_global_profil']").click(function() {
+		var data = $("#global_profil").serialize();
+		$.ajax({
+			url: '../ajax/adm.php',
+			type: 'POST',
+			data: "user_id=" + user_id + "&f=userGlobalProfil&" + data,
+			success: function(reponse) {
+				displayUserEtat(reponse);
+			}
+		});
+	 });
+	 
+	$("#global_profil").validate({
+		errorClass: "form_error",
+		validClass: "form_valid",
+		success: function(label) {
+			label.html("&nbsp;").addClass("form_valid");
+		},
+		rules: {
+			username: {
+				required: true,
+				minlength: 3,
+				remote: "../ajax/username.php?user_id=" + user_id
+			},
+			user_password: {
+				minlength: 5
+			},
+			user_password_confirm: {
+				equalTo: $("input[name='user_password']")
+			},
+			user_email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			username: {
+				required: "{L_USERNAME_REQUIRED}",
+				minlength: "{L_USERNAME_MINLENGTH}",
+				remote: "{L_USERNAME_EXIST}"
+			},
+			user_password: {
+				required: "{L_PASS_REQUIRED}",
+				minlength: "{L_PASS_MINLENGTH}"
+			},
+			user_password_confirm: {
+				required: "{L_PASS_REQUIRED}",
+				minlength: "{L_PASS_MINLENGTH}",
+				equalTo: "{L_PASS_NOT_EQUAL}"
+			},
+			user_email: {
+				required: "{L_EMAIL_REQUIRED}",
+				email: "{L_EMAIL_VALID_REQUIRED}"
+			}
+		}
+	});
+	
+/*	$("button[name='edit_user_permission']").overlay({ 
+		expose: { 
+			color: '#000',  
+			opacity: 0.8 
+		}, 
+		closeOnClick: true, 
+		api: true,
+		onBeforeLoad: function() {
+			var left = [];
+			left.push(user_id);
+			$("#window_content").load("?page=permission_list&mode=user",  {left: left, right: []});
+		}
+	});
+	*/	
+	
+	$("button[name='edit_user_permission']").click(function () { 	
+		var left = [];
+		left.push(user_id);
+		$("#page_permission").trigger('load_permission');
+		clickSlide({left: left, right: []}, "POST", "?page=permission_list&mode=user");
+	});
+	
+});
+
+
+function userClearButton() {
+	$("button[name='submit_delete_user_group']").hide();
+	$("button[name='submit_group_default']").hide();
+}
+
+function userClickRadio() {
+	userClearButton();
+	ugroup_id = $(this).val();
+	unum = $(this).next().val();
+	var is_default = $("#table-usergroups tr:eq(" + (parseInt(unum)+1) + ") td:eq(1)").text().match(new RegExp("X", "gi"));
+	if (!is_default) {
+		$("button[name='submit_delete_user_group']").show();
+		$("button[name='submit_group_default']").show();
+	}
+}
+
+
+function displayUserEtat(record) {
+	displayEtat(record, "{L_PROFILE_MODIFIED}", "{L_PROFILE_NOT_MODIFIED}");
+}
+
+function submitGlobalAction(mode) {
+	//var mode = $("input[name='mode_global']").val();
+	var forum_id = mode == 'move_all_msg' ? $("select[name='forumlist'] option:selected").val() : '';
+	$.ajax({
+		url: '../ajax/adm.php',
+		type: 'POST',
+		data: {user_id: user_id, f: "userGlobal", mode: mode, forum_id: forum_id},
+		success: function(data) {
+			if (mode == "delete_user") {
+				clickSlide('page=users');
+			}
+			else if (mode == "delete_all_msg") {
+				$('#user_nb_message').text('0');
+				$('button[data-id="move_all_msg"]').hide();
+				$('button[data-id="delete_all_msg"]').hide();	
+			}
+			
+			displayUserEtat(data);
+		}
+	});
+}
+
+</script>
+<!-- ELSE -->
+<div class="ui-state-error">
+	<p class="ui-state-error-text">{L_USER_NO_EXIST}</p>
+</div>
+<br />
+<button type="button" id="previous">< {L_BACK}</button>
+<!-- ENDIF -->
+
+<script>
+$(function() {
+	$("button, .button").button();
+	$("#previous").click(function() {
+		clickSlide('page=users');
+	});
+});
+</script>

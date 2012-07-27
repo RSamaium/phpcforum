@@ -1,0 +1,141 @@
+<!-- INCLUDE main_header.html -->
+<div class="tooltip"></div>
+<div id="confirm"><div id="text_confirm"></div>
+		<p align="center"><button name="submit_avert">{L_OK}</button> <button type="button" class="close">{L_CANCEL}</button></p>
+	</div>
+<div class="global">
+	<!-- INCLUDE error.html -->
+	<form method="post">
+	<table class="globalbox" width="100%">
+		<!-- IF SUBMIT -->
+			<!-- INCLUDE confirm.html -->
+		<!-- ELSE -->	
+<!-- IF TXT_NOT_POSTING == "" -->	
+			<tr>
+				<th colspan="2" class="header_title">{L_POST}</th>
+			</tr>
+				<!-- IF DISPLAY_ICONSET -->
+				<tr>
+					<td  class="global_content">
+						{L_ICONSET} :
+					</td>
+					<td>
+						<table>
+							<tr>
+								<!-- IF !ICONSET_MANDATORY -->
+								<td>
+									<input type="radio" name="icon" id="null" value="0" <!-- IF DEFAULT_CHECKED -->checked="checked"<!-- ENDIF --> />
+								</td>
+								<td style="padding-right: 20px">
+									<label for="null">{L_NULL}</label>
+								</td>
+								<!-- ENDIF -->
+								<!-- BEGIN icon -->
+								<td>
+									<input type="radio" name="icon" value="{icon.ID}" id="{icon.NAME}" <!-- IF icon.CHECKED -->checked="checked"<!-- ENDIF --> />
+								</td>
+								<td style="padding-right: 20px">
+									<label for="{icon.NAME}"> <img src="{icon.PATH}" alt="{icon.NAME}" title="{icon.NAME}" <!-- IF icon.WIDTH > 0 -->width="{icon.WIDTH}px"<!-- ENDIF --> <!-- IF icon.HEIGHT > 0 -->height="{icon.HEIGHT}px"<!-- ENDIF --> /></label>
+								</td>
+								<!-- END icon -->
+								</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- ENDIF -->
+				<tr>
+					<td  class="global_content">
+						{L_SUBJECT} :
+					</td>
+					<td>
+						 <input type="text" name="subject" value="{SUBJECT}" maxlength="{SUBJECT_MAXLENGTH}" size="80" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea class="ckeditor" cols="80" id="editor1" name="text" rows="20">{TEXT}</textarea>
+					</td>
+				</tr>
+				<!-- IF MODE == "edit" -->
+				<tr>
+					<td  class="global_content">
+						{L_REASON} :
+					</td>
+					<td>
+						 <input type="text" name="post_edit_reason" value="{POST_EDIT_REASON}" size="40" maxlength="255" />
+					</td>
+				</tr>
+				<!-- ENDIF -->
+				<tr>
+					<td colspan="2">
+						<p align="center"><button type="submit" name="submit_post">{L_SEND}</button></p>
+					</td>
+				</tr>
+		</table>
+		<!-- IF POLL -->
+		<table class="globalbox" width="100%">
+			<tr>
+				<th colspan="2" class="header_title">{L_CREATE_POLL}</th>
+			</tr>
+					<td  class="global_content">
+						{L_QUESTION_POLL}
+					</td>
+					<td>
+						 <input type="text" name="poll_title" value="{POLL_TITLE}" size="50" maxlength="255" />
+					</td>
+				</tr>
+				<tr>
+					<td  class="global_content">
+						{L_OPTIONS_POLL}
+					</td>
+					<td>
+						<textarea rows="10" cols="30" name="poll_options" class="viewtooltip" title="{L_HELP_OPTION_POLL}<!-- IF MODE == "edit" --><p style='color: red'>{L_HELP_EDIT_OPTION_POLL}</p><!-- ENDIF -->">{POLL_OPTIONS}</textarea>
+						<!-- IF MODE == "edit" --><input type="hidden" type="text" value="{EDIT_POLL_OPTIONS}" name="edit_poll_options" /><!-- ENDIF -->
+					</td>
+				</tr>
+				
+				<tr>
+					<td  class="global_content">
+						{L_NB_CHECK_OPTION}
+					</td>
+					<td>
+						<input type="text" name="poll_max_options" value="{POLL_MAX_OPTIONS}" size="2" />
+					</td>
+				</tr>
+				<tr>
+					<td  class="global_content">
+						{L_DURATION_POLL}
+					</td>
+					<td>
+						<input type="text" name="poll_length" value="{POLL_LENGTH}" size="2" class="viewtooltip" title="{L_HELP_DURATION_POLL}" /> {L_DAYS}
+					</td>
+				</tr>
+				<tr>
+					<td  class="global_content">
+						{L_USER_CHANGE_VOTE}
+					</td>
+					<td>
+						<input type="checkbox" name="poll_vote_change" <!-- IF POLL_VOTE_CHANGE -->checked="checked"<!-- ENDIF --> />
+					</td>
+				</tr>
+		</table>
+		<!-- ENDIF -->
+		<!-- ELSE -->
+			<tr>
+				<th class="header_title">{L_INFO}</th>
+			</tr>
+			<tr>
+				<td class="global_content"><p align="center">{TXT_NOT_POSTING}</p></td>
+			</tr>
+			</table>
+			<!-- ENDIF -->
+	</form>
+	<!-- ENDIF -->
+	 
+</div>
+
+<script>
+	<!-- INCLUDE posting_body.js -->
+</script>
+
+<!-- INCLUDE main_footer.html -->

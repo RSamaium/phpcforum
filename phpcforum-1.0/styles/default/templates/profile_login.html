@@ -1,0 +1,55 @@
+<!-- INCLUDE main_header.html -->
+<div class="tooltip"></div>
+<div class="global">
+<!-- INCLUDE error.html -->
+	<form method="post" id="form">
+	<table class="globalbox" width="100%">
+		<tr>
+			<th colspan="2" class="header_title">{L_CONNECT}</th>
+		<tr>
+			<td  class="global_content" valign="top">
+	<!-- IF USER_NOT_REGISTER -->
+				
+				<fieldset><legend>{L_CONNECT}</legend>
+					<table>
+						<tr>
+							<td><label>{L_USER} :</label></td>
+							<td><input type="text" name="username" value="{LOGIN_USERNAME}" title="{L_HELP_USERNAME}" /></td>
+						</tr>
+						<tr>
+							<td><label>{L_PASSWORD} :</label></td>
+							<td> <input type="password" name="password" title="{L_HELP_PASSWORD}" /><br />
+								<a href="{U_FORGET_PASS}" class="link">{L_FORGET_PASS}</a>
+							
+						</tr>
+					</table>
+				</fieldset>
+			</td >
+			<td valign="top" class="global_content">
+				<fieldset><legend>{L_OPTIONS}</legend>
+					<table>
+						<tr>
+							<td><input type="checkbox" name="user_autologin" title="{L_HELP_CONNECT_PERMANENT}" /></td>
+							<td><label>{L_CONNECT_PERMANENT}</label></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="user_viewonline" title="{L_HELP_CONNECT_INVISIBLE}" /></td>
+							<td><label>{L_CONNECT_INVISIBLE}</label></td>
+							
+						</tr>
+					</table>
+				</fieldset>
+			</td>
+			<tr>
+			</tr>
+			<td colspan="2">		
+				<p align="center"><button type="submit" name="submit_login" title="{L_HELP_SUBMIT}" class="button">{L_LOGIN_SUBMIT}</button></p>		
+	<!-- ELSE -->
+		<p> {TXT_USER_NOT_REGISTER}</p>
+	<!-- ENDIF -->
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+<!-- INCLUDE main_footer.html -->

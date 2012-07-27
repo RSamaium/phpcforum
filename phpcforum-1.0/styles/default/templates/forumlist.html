@@ -1,0 +1,73 @@
+<div id="forumlist">
+<!-- IF SUB_FORUM -->
+	<table class="globalbox catrow" width="100%">
+			<tr>
+				<th class="header_title" colspan="5">Forum</th>
+		<!-- BEGIN forum1 -->
+				<tr class="row">
+					<td width="5%"><img src="{forum1.UNREAD_IMG}" alt="{forum1.UNREAD}" title="{forum1.UNREAD}" /></td>
+					<td <!-- IF forum1.IMAGE != "" -->width="10%"<!-- ELSE -->width="1%"<!-- ENDIF -->>
+						<!-- IF forum1.IMAGE != "" -->
+						<img src="{forum1.IMAGE}" alt="" />
+						<!-- ENDIF -->
+					</td>
+					<td class="name"><a href="{forum1.U_LINK}" class="link">{forum1.NAME}</a><br />
+								<p>{forum1.DESC}</p>
+					</td>
+						<td class="lastpost">{forum1.NB_POST}<br />
+						{forum1.NB_SUBJECT}</td>
+					</td>
+						<td>
+						<!-- IF forum1.HAS_LASTPOST -->
+						{forum1.LASTPOST_TIME}<br />
+										<!-- IF forum1.LASTPOST_POSTER_IS_ANONYMOUS -->
+										{forum1.LASTPOST_POSTER_NAME}
+										<!-- ELSE -->
+										<a href="{forum1.U_LASTPOST_POSTER}" style="color: #{forum1.LASTPOST_POSTER_COLOR}" class="link">{forum1.LASTPOST_POSTER_NAME}</a> <!-- ENDIF -->
+										<img src="{forum1.I_POST_LAST}" alt="" />
+						<!-- ENDIF -->
+						</td>
+					</td>
+				</tr>
+		<!-- END forum1 -->
+	</table>
+<!-- ELSE -->
+	<!-- BEGIN forum1 -->
+					<table class="globalbox catrow" width="100%">
+							<tr>
+								<th class="header_title" colspan="5"><a href="{forum1.U_LINK}">{forum1.NAME}</a></th>
+						<!-- BEGIN forum1.forum2 -->
+								<tr class="row">
+									<td width="5%">
+									<img src="{forum1.forum2.UNREAD_IMG}" alt="{forum1.forum2.UNREAD}" title="{forum1.forum2.UNREAD}" /></td>
+									<td <!-- IF forum1.forum2.IMAGE != "" -->width="10%"<!-- ELSE -->width="1%"<!-- ENDIF -->>
+									<!-- IF forum1.forum2.IMAGE != "" -->
+										<img src="{forum1.forum2.IMAGE}" alt="" />
+									<!-- ENDIF -->
+									</td>
+									<td class="name"><a href="{forum1.forum2.U_LINK}" class="link">{forum1.forum2.NAME}</a><br />
+												<p>{forum1.forum2.DESC}</p>
+									</td>
+										<td class="lastpost">{forum1.forum2.NB_POST}<br />
+										{forum1.forum2.NB_SUBJECT}</td>
+									</td>
+									
+										<td>
+										<!-- IF forum1.forum2.HAS_LASTPOST -->
+										{forum1.forum2.LASTPOST_TIME}<br />
+											<!-- IF forum1.forum2.LASTPOST_POSTER_IS_ANONYMOUS -->
+											{forum1.forum2.LASTPOST_POSTER_NAME}
+											<!-- ELSE -->
+											<a href="{forum1.forum2.U_LASTPOST_POSTER}" style="color: #{forum1.forum2.LASTPOST_POSTER_COLOR}" class="link">{forum1.forum2.LASTPOST_POSTER_NAME}</a> 
+											<!-- ENDIF -->
+											<img src="{forum1.forum2.I_POST_LAST}" alt="" />
+											
+										<!-- ENDIF -->
+										</td>
+									</td>
+								</tr>
+						<!-- END forum1.forum2 -->
+					</table>
+			<!-- END forum1 -->	
+<!-- ENDIF -->
+</div>

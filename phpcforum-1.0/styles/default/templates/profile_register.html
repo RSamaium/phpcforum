@@ -1,0 +1,82 @@
+<!-- INCLUDE main_header.html -->
+<div class="global">
+<div class="tooltip"></div>
+<!-- INCLUDE error.html -->
+<form method="post" id="signupForm" class="form">
+	<div id="confirm"><div id="text_confirm"></div>
+		<p align="center"><button name="submit_avert" class="button">{L_OK}</button> <button type="button" class="close button">{L_CANCEL}</button></p>
+	</div>
+	<h1 class="title">{L_REG}</h1>
+	<div id="result"></div>
+	
+	<table class="globalbox" width="100%">
+	<!-- IF SUBMIT -->
+			<!-- INCLUDE confirm.html -->
+		<!-- ELSE -->	
+	<tr>
+			<th colspan="2" class="header_title">
+				{L_REG}
+			</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="global_content">
+				<p>{L_REG_HELP}
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="global_content" width="25%">
+				<label class="bullet">{L_USERNAME}</label><br />
+			</td>
+			<td>
+				<input type="text" name="username" maxlength="{MAXLENGTH_USERNAME}" value="{REG_USERNAME}" title="{L_HELP_USERNAME}" />
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">
+				<label class="bullet">{L_EMAIL}</label>
+			</td>
+			<td>
+				<input type="text" name="email" id="email" value="{REG_EMAIL}" />
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">
+				<label class="bullet">{L_CONFIRM_EMAIL}</label>
+			</td>
+			<td>
+				<input type="text" name="confirm_email" value="{REG_CONFIRM_EMAIL}" />
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">
+				<label class="bullet">{L_PASSWORD}</label>
+			</td>
+			<td>
+				<input type="password" name="password" id="password" title="{L_HELP_PASSWORD}"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">
+				<label class="bullet">{L_CONFIRM_PASSWORD}</label>
+			</td>
+			<td>
+				<input type="password"  name="confirm_password" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" class="global_content">
+				<div class="captc"><label>{L_NO_FILL}</label><input type="text"  name="captc" /></div>
+				<button type="submit" name="submit_profile" class="button">{L_SUBMIT}</button>
+			</td>
+		</tr>
+		<!-- ENDIF -->
+	</table>	
+</form>
+
+<script language="javascript">
+	<!-- INCLUDE profile_register.js -->
+</script>
+
+<!-- INCLUDE main_footer.html -->

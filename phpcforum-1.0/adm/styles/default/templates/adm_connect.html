@@ -1,0 +1,47 @@
+<!-- INCLUDE main_header.html -->
+
+<div id="admin_connect">
+	<h1>{L_CONNECT_TITLE}</h1>
+	<!-- IF ERROR != "" -->
+	<p align="center" style="font-size: 10px; color: red;">{ERROR}</p>
+	<!-- ENDIF -->
+	<table>
+		<tr>
+			<td>
+				<p>{L_CONNECT_HELP}</p>
+			</td>
+			<td>
+		<fieldset><legend>{L_CONNECTION}</legend>
+			<form method="post">
+			<table>
+				<tr>
+					<td>
+						<p>{L_USERNAME}</p>
+					</td>
+					<td>
+						<input type="text" name="admin_login" value="{ADM_LOGIN}" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>{L_PASSWORD}</p>
+					</td>
+					<td>
+						<input type="password" name="admin_password" value="{ADM_PASSWORD}" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button name="admin_submit">{L_CONNECT}</button>
+					</td>
+				</tr>
+			
+			</table>
+			</form>
+		</fieldset>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<!-- INCLUDE main_footer.html -->

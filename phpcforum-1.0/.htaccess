@@ -1,0 +1,14 @@
+<Files "commons.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+<Files "config.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+IndexIgnore *
+
+SetEnv PHP_VER 5
+

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{LANG}">
+
+<head>
+	<title>{L_TITLE}</title>
+<meta name="description" content="{HEAD_DESCRIPTION}">
+<meta name="keywords" content="{HEAD_KEYWORDS}">
+<meta name="subject" content="{HEAD_SUBJECT}">
+<meta name="author" content="{HEAD_AUTHOR}">
+<meta name="revisit-after" content="1 days">
+<meta name="Robots" content="all">
+<meta name="Rating" content="General">
+<meta http-equiv="Content-Language" content="fr">
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<!-- IF HAS_RSS -->
+<link rel="alternate" type="application/rss+xml" href="{U_RSS}" />
+<!-- ENDIF -->
+{META_REFRESH}
+
+<!-- BEGIN js --><script language="javascript" src="{js.SRC}"></script>
+<!-- END js -->
+
+<!-- BEGIN css --><link rel="stylesheet" type="text/css" href="{css.HREF}" />
+<!-- END css -->
+
+<style>{STYLE_GENERATE}</style>
+
+<script type='text/javascript'>
+	<!-- INCLUDE main_header.js -->
+</script>
+
+</head>
+<body>
+
+<!-- IF CHANGE_DESIGN -->
+<div id="view_select"></div>
+<!-- ENDIF -->
+
+
+	<div class="global_overlay">
+		<div class="global_overlay_content" >
+	
+		</div>
+	</div>
+	
+	<div id="activ_compte" class="window" style="width: 300px">
+		<div>
+			<h1>{L_ACTIV_TITLE}</h1>
+			<p>{L_IS_ACTIV}</p>
+			<button class="close button">{L_CLOSE}</button>
+		</div>
+	</div>
+
+<div id="body">
+
+<!-- IF CHANGE_DESIGN -->	
+	<!-- INCLUDE[adm] adm_graphic_editor.html -->
+<!-- ENDIF -->
+
+
+	
+		<!-- IF NEW_REPORTS -->
+		<div id="report_popup">
+		<h1>{L_NEW_REPORT}</h1>
+			<div id="reportlist">
+				<table width="100%">
+				<!-- BEGIN newreports -->
+					<tr>
+						<td class="report_popup_border" width="30%">
+							<a href="{newreports.U_VIEWPOST_REPORT}">{newreports.REPORT_POST_SUBJECT}</a><br />
+							<span class="gensmall">{newreports.REPORT_POST_TIME}</span>
+						</td>
+						<td class="report_popup_border" width="20%">
+							{newreports.REASON_DESC}
+						</td>
+						<td class="report_popup_border" width="30%">
+							 {newreports.REPORT_USERNAME}<br />
+							 <span class="gensmall">{newreports.REPORT_TIME}</span>
+						</td>
+						<td width="20%" align="center">
+							<a href="{newreports.U_READ_REPORT}" class="button">{L_VIEW_REPORT}</a>
+						</td>
+					</tr>
+				<!-- END newreports -->
+				</table>
+			</div>
+		</div>
+		<!-- ENDIF -->
+		
+	<div id="header">
+		<a href="{ROOT}"><div id="banner"></div></a>
+				<!-- IF USER_LOGIN -->
+				<!-- IF DISPLAY_QUICK_PROFILE -->
+					<div id="profile_menu_" class="quick_menu" style="width: {QUICK_PROFILE_WIDTH}px">
+					  <!-- IF CAN_CHANGE_AVATAR -->
+					  <a href="{U_PANEL_AVATAR}"><img src="{I_ICON_AVATAR}" title="{L_PANEL_AVATAR}" /></a>
+					   <!-- ENDIF -->
+					  <!-- IF CAN_CHANGE_SIGN -->
+					  <a href="{U_PANEL_PROFILE_SIG}"><img src="{I_ICON_SIG}" title="{L_PANEL_PROFILE_SIG}" /></a>
+					  <!-- ENDIF -->
+					  <a href="{U_PANEL_PROFILE_INFO}"><img src="{I_ICON_INFO}" title="{L_PANEL_PROFILE_INFO}" /></a>
+					  <a href="{U_PANEL_PROFILE_PERSONAL}"><img src="{I_ICON_PERSONAL}" title="{L_PANEL_PROFILE_PERSONAL}" /></a>
+					  <a href="{U_PANEL_PROFILE_POST}"><img src="{I_ICON_POST}" title="{L_PANEL_PROFILE_POST}" /></a>
+					  <a href="{U_PANEL_PROFILE_VIEW}"><img src="{I_ICON_VIEW}" title="{L_PANEL_PROFILE_VIEW}" /></a>
+					  <!-- IF CAN_READ_REPORT -->
+						<a href="{U_PANEL_REPORT}"><img src="{I_ICON_REPORT}" title="{L_PANEL_REPORT}" /></a>
+					<!-- ENDIF -->
+					 <!-- IF CAN_READ_COMMENT -->
+						<a href="{U_PANEL_COMMENT}"><img src="{I_ICON_COMMENT}" title="{L_PANEL_COMMENT}" /></a>
+					<!-- ENDIF -->
+					<!-- IF CAN_READ_AVERT -->
+						<a href="{U_PANEL_AVERT}"><img src="{I_ICON_AVERT}" title="{L_PANEL_AVERT}" /></a>
+					<!-- ENDIF -->
+					<!-- IF USER_IS_ADMIN -->
+						<a href="{U_PANEL_ADMIN}"><img src="{I_ICON_ADMIN}" title="{L_PANEL_ADMIN}" /></a>
+					<!-- ENDIF -->
+					</div>
+				<!-- ENDIF -->
+				<!-- ELSE -->
+				<form method="post">	
+				<table id="quick_login" class="quick_menu">
+						<tr>
+							<td><label>{L_USER} :</label><br />
+							<input type="text" name="username" /></td>
+						</tr>
+						<tr>
+							<td><label>{L_PASSWORD} :</label><br />
+							<input type="password" name="password" /></td>
+							
+						</tr>
+						<tr>
+						
+							<td>
+								<div id="quick_login_options" style="display: none">
+								<p align="center"><button type="submit" name="submit_login" class="button">{L_LOGIN_SUBMIT}</button></p>
+								<input type="checkbox" name="user_autologin" />{L_CONNECT_PERMANENT}<br />
+								<input type="checkbox" name="user_viewonline" />{L_CONNECT_INVISIBLE}
+								<p align="center"><a href="{U_FORGET_PASS}">{L_FORGET_PASS}</a> - <a href="{U_REGISTER}">{L_REGISTER}</a></p>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</form>
+			<!-- ENDIF -->
+	<div class="button_header">
+		<div id="button_header_l">
+				<a href="{U_INDEX}">{L_INDEX}</a> 
+				<a href="{U_SEARCH}">{L_SEARCH}</a>
+			<!-- IF USER_LOGIN -->
+				<span id="pm"><a href="{U_USER_MP}">{L_USER_MP}</a></span>
+				<a href="{U_PROFILE}">{L_PROFILE}</a> 
+				<a href="{U_MEMBERS_LIST}">{L_MEMBERS_LIST}</a>
+				
+			<!-- ELSE -->	
+				<a href="{U_REGISTER}">{L_REGISTER}</a>
+			<!-- ENDIF -->
+		</div>
+		<div id="button_header_r">
+			<!-- IF USER_LOGIN --><a href="{U_DECONNEXION}">{L_DECONNEXION}</a><!-- ELSE --><a href="{U_LOGIN}">{L_LOGIN}</a><!-- ENDIF -->	
+		</div>
+			
+		</div>
+		
+	</div>
+<div id="body_l2">
+<div class="above">
+	<span class="current_date">{CURRENT_DATE}</span>
+</div>
+<table width="100%" id="body_content" border="0" align="center">
+<tr>
+	<td>

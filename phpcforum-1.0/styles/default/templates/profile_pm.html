@@ -1,0 +1,241 @@
+<!-- INCLUDE main_header.html -->
+<div class="global">
+<div class="tooltip"></div>
+<!-- IF SUBMIT -->
+	<table class="globalbox" width="100%" border="0">
+		<!-- INCLUDE confirm.html -->
+	</table>
+<!-- ELSE -->	
+	<!-- INCLUDE error.html -->
+	<!-- IF NOT_PERMISSION -->
+		<table class="globalbox" width="100%" border="0">
+					<tr>
+						<th  class="header_title">{L_INFO}</th>
+					<tr>
+						<td  class="global_content" width="10%"><p>{TXT_NOT_PERMISSION}</p></td>
+					</tr>
+		</table>
+	<!-- ELSE -->
+	<!-- IF READ_PM -->
+					<table class="globalbox" width="100%">
+		<tr>
+			<th class="header_title" colspan="3">{L_READ_PM}</th>
+		</tr>
+		<tr>
+			<td  class="global_content" align="center" width="20%">
+			<!-- IF PROFILE_IS_ANONYMOUS -->
+				{PROFILE_USERNAME}
+			<!-- ELSE -->
+				<a href="{U_VIEWPROFILE}" style="color: #{PROFILE_USER_COLOR}" class="link">{PROFILE_USERNAME}</a>
+			<!-- ENDIF -->
+			</td>
+			<td  class="global_content" width="50%">
+				<span class="gensmall" >{PM_SUBJECT}</span>
+			</td>
+			<td  class="global_content" width="30%"  align="right" >
+				<span class="gensmall">{PM_DATE}</span>
+			</td>
+		</tr>
+		<tr>
+			<td  class="global_content" valign="top">
+				<img src="{PROFILE_USER_AVATAR}" alt="" />
+				<p>{L_REGDATE} : {PROFILE_USER_REGDATE}</p>
+				<p>{L_NB_POST} : {PROFILE_USER_NB_MESSAGE}</p>
+			</td>
+			<td  class="global_content" valign="top" colspan="2">
+				{PM_TEXT}
+			</td>
+		</tr>
+		<!-- IF !READ_SEND_PM -->
+			<!-- IF CAN_REPLY_PM -->
+				<!-- IF !PROFILE_IS_ANONYMOUS -->
+				<tr>
+					<td class="global_content" colspan="3"><a href="{U_REPLY_PM}" class="button">{L_REPLY_PM}</a></td>
+				</tr>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+		</table>
+		
+		
+<!-- ELSEIF LIST_PM -->
+
+
+<table class="globalbox" width="100%" border="0">
+<tr>
+		<th  class="header_title">{L_FILTER_ORDER}</th>
+<tr>
+	<td class="global_content">
+		<form id="filter">
+  
+  <table width="100%">
+	<tr>
+		<td valign="top">
+			 <fieldset>
+				<legend><strong>{L_FILTER}</strong></legend>
+				<label><input type="radio" name="type" value="all" checked="checked">{L_ALL}</label><br />
+				<label><input type="radio" name="type" value="pm_read">{L_PM_READ}</label><br />
+				<label><input type="radio" name="type" value="pm_unread">{L_PM_UNREAD}</label>
+			  </fieldset>
+		</td>
+		<td valign="top">
+			  <fieldset>
+				<legend><strong>{L_ORDER_BY}</strong></legend>
+				<label><input type="radio" name="sort" value="date" checked="checked">{L_TIME}</label><br />
+				<label><input type="radio" name="sort" value="name">{L_SUBJECT_NAME}</label><br />
+				<label><input type="radio" name="sort" value="author">{L_MEMBERS}</label> 
+			</fieldset>
+			<label><input type="checkbox" name="sort" value="reverse" />{L_REVERSE}</label> 
+		</td>
+	</tr>
+	</table>
+	</form>
+</td>
+</tr>
+</table>
+
+
+<table class="globalbox" width="100%" border="0">
+<tr>
+		<th  class="header_title">{L_YOUR_PM} <!-- IF IS_LIST -->({L_YOUR_PM_TOTAL}, {L_YOUR_PM_READ}, {L_YOUR_PM_UNREAD})<!-- ENDIF --></th>
+<tr>
+	<td>
+<form method="post" id="setting_pm">
+	<div id="confirm">
+		<h1>{L_CONFIRM_TITLE}</h1>
+		<p></p>
+		<div id="text_confirm">
+			
+		</div>
+		<p align="center"><span><button name="submit_delete_pm" class="button">{L_OK}</button></span> <button type="button" class="close button">{L_CANCEL}</button></p>
+	</div>
+	<div class="button_new_pm">
+	<!-- IF CAN_NEW_PM --><a href="{U_NEW_PM}" class="button">{L_NEW_PM}</a><!-- ENDIF -->
+	<!-- IF VIEW_SEND_PM -->
+		<a href="{U_VIEW_RECEIVE_PM}" class="button">{L_VIEW_RECEIVE_PM}</a>
+	<!-- ELSE -->
+		<a href="{U_VIEW_SEND_PM}" class="button">{L_VIEW_SEND_PM}</a>
+	<!-- ENDIF -->
+	<a href="javascript://" rel="#confirm" id="confirm_pm" class="button">{L_DELETE_PM}</a>
+	</div>
+	
+	<br clear="all" />
+		<table width="100%" class="pm-grid-title highlight">
+			<tr>
+			<td width="10%">
+				
+			</td>
+			<td width="30%">
+				{L_SUBJECT}
+			</td>
+			<td width="20%">
+				<!-- IF VIEW_SEND_PM --> {L_DEST} <!-- ELSE -->{L_AUTHOR}<!-- ENDIF -->
+			</td>
+			<td width="30%">
+				 {L_POSTDATE}
+			</td>
+			<td width="10%">
+				<a href="javascript://" id="check_all_pm" class="highlight">{L_CHECK}</a>
+			</td>
+		</tr>
+		</table>
+	
+		<ul id="list_pm" class="pm-grid">
+  <!-- BEGIN pmrow_read -->
+		<li data-id="{pmrow_read.PM_ID}" data-type="pm_read" >
+		<table width="100%">
+			<tr>
+			<td width="10%">
+				<img src="{pmrow_read.PM_READ_IMG}" alt="{pmrow_read.PM_READ}" title="{pmrow_read.PM_READ}" class="img_read_pm" />
+			</td>
+			<td width="30%">
+			
+				<strong><a href="{pmrow_read.U_PM_READ}" id="title_{pmrow_read.PM_ID}">{pmrow_read.PM_SUBJECT}</a></strong>
+			</td>
+			<td width="20%">
+				<span style="color:#{pmrow_read.PM_AUTHOR_COLOR}" class="author_name">{pmrow_read.PM_AUTHOR_NAME}</span>
+			</td>
+			<td width="30%">
+				<span class="gensmall">{pmrow_read.PM_DATE}</span>
+				<span data-type="date" class="hidden">{pmrow_read.PM_TIMESTAMP}</span>
+			
+			</td>
+			<td width="10%">
+				<input type="checkbox" name="pm[]" value="{pmrow_read.PM_ID}" />	
+			</td>
+		</tr>
+		</table>
+		</li>
+  <!-- END pmrow_read -->
+  <!-- BEGIN pmrow_unread -->
+		<li data-id="{pmrow_unread.PM_ID}" data-type="pm_unread" >
+		<table width="100%">
+			<tr>
+			<td width="10%">
+				<img src="{pmrow_unread.PM_READ_IMG}" alt="{pmrow_unread.PM_READ}" title="{pmrow_unread.PM_READ}" class="img_unread_pm" />
+			</td>
+			<td width="30%">
+				<strong><a href="{pmrow_unread.U_PM_READ}" id="title_{pmrow_unread.PM_ID}">{pmrow_unread.PM_SUBJECT}</a></strong>
+			</td>
+			<td width="20%">
+				<span style="color:#{pmrow_unread.PM_AUTHOR_COLOR}" class="author_name">{pmrow_unread.PM_AUTHOR_NAME}</span>
+			</td>
+			<td width="30%">
+				
+				
+				<span class="gensmall">{pmrow_unread.PM_DATE}</span>
+				<span data-type="date" class="hidden">{pmrow_unread.PM_TIMESTAMP}</span>
+			
+			</td>
+			<td width="10%">
+				<input type="checkbox" name="pm[]" value="{pmrow_unread.PM_ID}" />	
+			</td>
+		</tr>
+		</table>
+		</li>
+  <!-- END pmrow_unread -->
+
+</ul>
+ </form>
+ <br />
+	</td>
+</tr>
+
+</table>
+		
+			<!-- ELSEIF SEND_PM -->
+			
+			<form method="post">
+		
+					<table class="globalbox" width="100%" border="0">
+					<tr>
+						<th colspan="2" class="header_title">{L_WRITE_PM}</th>
+					<tr>
+						<td  class="global_content" width="10%">{L_RECIPIENT} : </td>
+						<td><input type="text" name="pm_user" value="{PM_USER}" /></td>
+					</tr>
+						
+					<tr>
+						<td  class="global_content">{L_SUBJECT} </td>
+						<td><input type="text" name="pm_subject" value="{PM_SUBJECT}" /></td>
+					</tr>
+				
+					<tr>
+						<td  class="global_content" colspan="2">
+							<textarea class="ckeditor" cols="80" name="pm_text" rows="10">{PM_TEXT}</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td  class="global_content" align="center" colspan="2">
+							<p align="center"><button type="submit" name="submit_profile" class="button">{L_SEND}</button></p>
+						</td>
+					</tr>
+				</table>
+			</form>
+					
+			<!-- ENDIF -->
+	</form>
+	<!-- ENDIF -->
+<!-- ENDIF -->
+</div>
+<!-- INCLUDE main_footer.html -->

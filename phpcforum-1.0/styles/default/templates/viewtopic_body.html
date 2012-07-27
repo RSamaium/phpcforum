@@ -1,0 +1,416 @@
+<!-- IF IS_RSS -->
+<!-- INCLUDE rss.html -->
+<!-- ELSE -->
+<!-- INCLUDE main_header.html -->
+<!-- IF QUICK_MOD_TOOLS -->
+<div id="content_quick_modo" class="hidden">
+	<div class="content_global">
+		<h1>{L_TITLE_QUICK_MODO}</h1>
+		<input type="hidden" name="mod"/>
+	</div>
+	<div class="modo_topic_move">
+		{L_MODO_MOVE} <br />
+		<!-- INCLUDE forumlist_jump.html -->
+	</div>
+	<div class="modo_topic_lock">
+		{L_MODO_LOCK}
+	</div>
+	<div class="modo_topic_split">
+		{L_MODO_SPLIT}
+	</div>
+	<div class="modo_topic_sticky">
+		{L_MODO_STICKY}
+	</div>
+	<div class="modo_topic_annonce">
+		{L_MODO_ANNONCE}
+	</div>
+	<div class="modo_topic_global">
+		{L_MODO_GLOBAL}
+	</div>
+	<div class="modo_topic_delete">
+		{L_MODO_DELETE}
+	</div>
+	<div class="modo_move_corbeile">
+		{L_MODO_MOVE_CORBEILLE}
+	</div>
+	<div class="modo_msg_delete">
+		{L_MODO_MSG_DELETE}
+	</div>
+	<div class="msg_delete">
+		<input type="hidden" name="delete_post_id"/>
+		{L_MSG_DELETE}
+	</div>
+
+	<div class="modo_topic_merge">
+		{L_MODO_MERGE}<br /><br />
+		<span class="label">{L_NUM_SUBJECT} :</span><br />
+		<input type="text" size="2" name="modo_topic_merge" />
+	</div>
+</div>
+	<!-- ENDIF -->
+	<div class="global">
+	<div class="tooltip"></div>
+	<div id="confirm"><div id="text_confirm"></div>
+		<p align="center"><button name="submit_avert" class="button">{L_OK}</button> <button type="button" class="close button" >{L_CANCEL}</button></p>
+	</div>
+	<!-- IF ACCESS == "" -->
+		
+		<h1 class="title">{H1_NAME}</h1>
+		
+		<!-- IF LIST_TOPIC -->
+			
+			<!-- IF CAN_REPLY_TOPIC -->
+					<!-- IF TOPIC_LOCK -->
+							<a href="{U_REPLY_TOPIC}" class="button">{L_LOCK}</a>
+					<!-- ELSEIF CAN_REPLY_TOPIC -->
+							<a href="{U_REPLY_TOPIC}" class="button">{L_REPLY}</a>
+		
+					<!-- ENDIF -->
+			<!-- ENDIF -->
+			<div class="share_topic">
+				<!-- IF DISPLAY_SHARE_FACEBOOK -->
+				<div class="share_topic-fb">
+				<a name="fb_share" type="button_count">{L_SHARE}</a>
+				<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+				</div>
+				<!-- ENDIF -->
+				<!-- IF DISPLAY_SHARE_TWITTER -->
+				<div class="share_topic-tw">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="{LANG_SHARE_TWITTER}">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				</div>
+				<!-- ENDIF -->
+			</div>
+			<br clear="all" />
+		<!-- ENDIF -->
+		<div class="ariana-pages">
+			<div class="ariana">
+				<!-- BEGIN ariana -->
+					<a href="{ariana.U_LINK}" class="link">{ariana.NAME}</a> <!-- IF !ariana.LAST --> > <!-- ENDIF -->
+				<!-- END ariana -->
+			</div>
+			<div class="pages">
+				<span>{PAGINATION}</span>
+			</div>
+		</div>
+		<!-- IF LIST_TOPIC -->
+			<!-- IF SUBMIT -->
+				
+				<table class="postbox" width="100%">
+				<!-- INCLUDE confirm.html -->
+			<!-- ELSE -->	
+			
+			<!-- IF POLL -->
+			<!-- INCLUDE error.html -->
+			<form method="post">
+			<table class="globalbox" width="100%">
+				<tr>
+					<th class="header_title">{L_POLL}</th>
+				</tr>
+				<tr>
+					<td style="padding-left: 30px">
+					<p style="font-weight: bold; font-size: 110%;">{POLL_TITLE}</b>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px">
+						<table width="60%">
+						<!-- BEGIN poll -->
+							<tr>
+								<td><!-- IF poll.POLL_USER_VOTE --><u><!-- ENDIF -->{poll.POLL_OPTION_TEXT}<!-- IF poll.POLL_USER_VOTE --></u><!-- ENDIF --></td>
+								<!-- IF POLL_VIEW -->
+								<td width="40%">						
+									<div style="width: 100%; height: 100%;" class="viewtooltip"  title="{poll.POLL_OPTION_TOTAL} <!-- IF poll.POLL_USER_VOTE --> - {L_CHOISE_THIS_OPTION}<!-- ENDIF -->">
+									<div class="pollbar" style="width: {poll.POLLBAR_WIDTH}%;"></div>
+								  </div>
+								</td>
+								<td>
+									[{poll.POLLBAR_WIDTH}%]
+								</td>
+								<!-- ENDIF -->
+								<!-- IF POLL_OPTION -->
+								<td>
+									<input type="<!-- IF POLL_MAX_OPTIONS > 1 -->checkbox<!-- ELSE -->radio<!-- ENDIF -->" value="{poll.POLL_OPTION_ID}" name="poll_option_id[]" />
+								</td>
+								<!-- ENDIF -->
+								
+							</tr>
+						<!-- END poll -->
+						</table>
+						<!-- IF POLL_VIEW -->
+						<br />
+						<p align="center">{POLL_TOTAL}</p>
+						<!-- ENDIF -->
+						<!-- IF POLL_OPTION -->
+						<p class="gensmall">{POLL_MAX_OPTIONS}</p>
+						<p align="center"><button type="submit" name="submit_poll" class="button">{L_VOTE}</button><!-- IF !POLL_VIEW --><a href="{U_POLL_VIEW}" class="button">{L_POLL_VIEW_RESULT}</a><!-- ENDIF --></p>
+						<!-- ENDIF -->
+					</td>
+				</tr>
+			</table>
+			</form>
+			<!-- ENDIF -->
+		<form method="post">
+		<!-- BEGIN post -->
+			
+			<table class="globalbox postbox" width="100%">
+					<!-- IF post.HEADER_TITLE -->
+					<th class="header_title">{L_AUTHOR}
+					</th>
+					<th class="header_title">
+						{L_POST}
+					</th>
+					<th class="header_title">
+						
+					</th>
+					<!-- ENDIF -->
+					<tr>
+					
+						<td class="post_profile">
+							<a name="p{post.POST_ID}"></a>
+							<p align="center">
+							<!-- IF post.PROFILE_IS_ANONYMOUS -->
+								{post.PROFILE_USERNAME}
+							<!-- ELSE -->
+								<a href="{post.U_VIEWPROFILE}" style="color: #{post.PROFILE_USER_COLOR}; font-weight: bold;" class="link">{post.PROFILE_USERNAME}</a>
+							<!-- ENDIF -->
+							</p>
+						</td>
+						<td>
+						<!-- IF post.REPORT_ID != "" -->
+							<!-- IF CAN_READ_REPORTS -->
+								<!-- IF post.REPORT_CLOSED -->
+									<p class="correct" align="left"><b><a href="{post.U_READ_REPORT}" class="link">{post.L_REPORT_CLOSED}</a></b><br />
+									<span class="gensmall">{post.REPORT_CLOSE_TIME}</span><p>
+								<!-- ELSE -->
+									<p class="error"><b><a href="{post.U_READ_REPORT}" class="link">{post.L_HAS_REPORT}</a></b><p>
+								<!-- ENDIF -->
+							<!-- ENDIF --> 
+						<!-- ENDIF -->
+							<!-- IF post.ICON_EXIST --> <img src="{post.ICON_PATH}" alt="{post.ICON_NAME}" title="{post.ICON_NAME}"  <!-- IF post.ICON_WIDTH > 0 -->width="{post.ICON_WIDTH}px"<!-- ENDIF --> <!-- IF post.TOPIC_HEIGHT > 0 -->height="{post.ICON_HEIGHT}px"<!-- ENDIF --> /><!-- ENDIF --> <span class="gensmall">{post.SUBJECT}</span>  
+						</td>
+						<td align="right" class="post_profile">
+							<span class="gensmall">{post.POST_TIME}</span>
+						</td>
+						</tr>
+						<tr>
+						<td class="post_profile">
+							<!-- IF DISPLAY_AVATAR --><img src="{post.PROFILE_USER_AVATAR}" /><!-- ENDIF -->
+							<p>- {L_REGDATE} : {post.PROFILE_USER_REGDATE}<br />
+								- {L_NB_POSTS} : {post.PROFILE_USER_NB_MESSAGE} </p>
+						</td>
+						<td valign="top" colspan="2" border="1">
+							<div  class="post_text">{post.TEXT}</div>
+							<!-- IF post.POST_EDIT -->
+							<p class="gensmall">{post.L_POST_EDIT}
+							<br />
+								<!-- IF post.POST_EDIT_REASON != "" --><span class="label">{L_REASON} : </span> {post.POST_EDIT_REASON}</p><!-- ENDIF -->
+							<!-- ENDIF -->
+							<!-- IF post.PROFILE_OPTION_SIG --><br />
+							<hr />
+							{post.PROFILE_USER_SIG}
+							<!-- ENDIF -->
+						</td>
+					</tr>
+					<tr>
+						<td class="post_profile" align="center">
+						<a href="{post.PROFILE_USER_PM}" class="button">{L_PM}</a>
+						</td>
+						<td align="left">
+							<!-- IF post.PROFILE_USER_FACEBOOK != "" -->
+							<a href="{post.PROFILE_USER_FACEBOOK}" target="_blank"><img src="{I_FACEBOOK}" alt=""   /></a>
+							<!-- ENDIF -->
+							<!-- IF post.PROFILE_USER_TWITTER != "" -->
+							<a href="{post.PROFILE_USER_TWITTER}" target="_blank"><img src="{I_TWITTER}" alt="" /></a>
+							<!-- ENDIF -->
+							
+						</td>
+						
+						<td align="right" width="40%">
+							<!-- IF post.CAN_EDIT_MSG --><a href="{post.U_POST_EDIT}" class="button">{L_EDIT}</a><!-- ENDIF --> 
+							<!-- IF CAN_ALERT_MSG --><a href="{post.U_POST_REPORT}" class="button">{L_REPORT}</a><!-- ENDIF --> 
+							<!-- IF CAN_INFORMATION_MSG --><a href="{post.U_POST_DETAILS}" class="button">{L_INFOS}</a><!-- ENDIF -->
+							<!-- IF post.CAN_DELETE_MSG --><button type="button" rel="#window_confirm" data-id="{post.POST_ID}" class="mod_delete_msg button">{L_DELETE}</button><!-- ENDIF --> 
+							<!-- IF QUICK_MOD_TOOLS -->
+							<span class="button">{L_CHECK} :<input type="checkbox" value="{post.POST_ID}" name="post_id[]" /></span>
+							<!-- ENDIF -->
+						</td>
+					</tr>
+				</table>	
+			<!-- END post -->
+				<table width="100%">
+					<tr>
+						<td class="global_content" width="10%">
+							<!-- IF TOPIC_LOCK -->
+								<a href="{U_REPLY_TOPIC}" class="button">{L_LOCK}</a>
+							<!-- ELSEIF CAN_REPLY_TOPIC -->
+								<a href="{U_REPLY_TOPIC}" class="button">{L_REPLY}</a>
+							<!-- ENDIF -->
+						</td>
+						<td>
+							<img src="{I_RSS}" alt="" /><a href="{U_RSS}" class="link rss"> {L_RSS}</a>
+						</td>
+						<td align="right">
+							{PAGINATION}
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" align="right" valign="top">
+							<!-- IF QUICK_MOD_TOOLS -->
+								<b>{L_SUBJECT_MODO} :</b><br />
+								<select name="quick_mod_tools" class="select">
+								<!-- BEGIN quick_mod_tools -->
+									<!-- IF quick_mod_tools.CAN_USE_MOD_TOOL -->
+										<option value="{quick_mod_tools.OPTION_VALUE}">{quick_mod_tools.TOOL_NAME}</option>
+									<!-- ENDIF -->
+								<!-- END quick_mod_tools -->
+								</select>
+								<button type="button" id="mod_tools" rel="#window_confirm" class="button">{L_VALID}</button>
+								<div id="window_confirm">
+									
+									<div id="content_window_confirm"></div>
+									<p align="center"><button type="submit" name="submit_mod_tools" class="button">{L_OK}</button> <button type="button" class="close button">{L_CANCEL}</button></p>
+								</div>
+							<!-- ENDIF -->
+						</td>
+					</tr>
+					<!-- ENDIF -->
+				</table>
+				</form>
+			
+		<!-- ELSE -->
+			<!-- IF SUBMIT -->
+				<table class="globalbox" width="100%">
+				<!-- INCLUDE confirm.html -->
+			<!-- ELSE -->	
+			<form method="post">
+			<table class="globalbox" width="100%">
+					<th class="header_title" colspan="<!-- IF ICON_DISPLAY -->3<!-- ELSE -->2<!-- ENDIF -->">
+						{L_SUBJECT}
+					</th>
+					<th class="header_title">
+						{L_AUTHOR}
+					</th>
+					<th class="header_title">
+						{L_STATS}
+					</th>
+					<th class="header_title">
+						{L_LAST_POST}
+					</th>
+					<!-- IF QUICK_MOD_TOOLS -->
+					<th class="header_title">
+						{L_CHECK}
+					</th>
+					<!-- ENDIF -->
+					<!-- IF TOPIC_HEADER -->
+					<tr>
+						<td colspan="<!-- IF ICON_DISPLAY -->7<!-- ELSE -->6<!-- ENDIF -->">
+						<p class="gensmall_title" style="margin: 10px;">{L_STICKY}</p>
+						</td>
+					</tr>
+				<!-- BEGIN topic_header -->
+					<tr>
+						<td class="global_content" ><img src="{topic_header.READ_IMG}" alt="{topic_header.READ}" title="{topic_header.READ}" /></td>
+						<!-- IF ICON_DISPLAY -->	
+							<td width="5%"><!-- IF topic_header.ICON_EXIST --> <img src="{topic_header.ICON_PATH}" alt="{topic_header.ICON_NAME}" title="{topic_header.ICON_NAME}"  <!-- IF topic_header.ICON_WIDTH > 0 -->width="{topic_header.ICON_WIDTH}px"<!-- ENDIF --> <!-- IF topic_header.ICON_HEIGHT > 0 -->height="{topic_header.ICON_HEIGHT}px"<!-- ENDIF --> /><!-- ENDIF --></td>
+						<!-- ENDIF -->
+						<td width="35%"><!-- IF topic_header.IS_POLL -->[{L_POLL}]<!-- ENDIF --> <a href="{topic_header.U_LINK}" alt="{topic_header.TIME}" >{topic_header.TITLE}</a></td>
+						<td class="global_content">
+						<!-- IF topic_header.POSTER_IS_ANONYMOUS -->
+							{topic_header.POSTER_NAME}
+						<!-- ELSE -->
+						<a href="" style="color: #{topic_header.GROUP_COLOR}">{topic_header.POSTER_NAME}</a>
+						<!-- ENDIF --></td>
+						<td class="global_content">{topic_header.NB_VIEW}<br />
+						{topic_header.NB_REPLIES}</td>
+						<td class="global_content">{topic_header.LAST_POST_TIME}
+							<br /><span class="gensmall">
+							<!-- IF topic_header.POSTER_IS_ANONYMOUS -->
+							{topic_header.LAST_POST_AUTHOR}
+							<!-- ELSE -->
+							<a href="{topic_header.U_LAST_POST_POSTER}" style="color: #{topic_header.LAST_POST_GROUP_COLOR}">{topic_header.LAST_POST_AUTHOR}</a>
+							<!-- ENDIF -->
+						</span>
+						</td>
+						<!-- IF QUICK_MOD_TOOLS --><td><input type="checkbox" value="{topic_header.TOPIC_ID}" name="topic_id[]" /></td><!-- ENDIF -->
+					</tr>
+				<!-- END topic_header -->
+					<tr>
+						<td colspan="<!-- IF ICON_DISPLAY -->7<!-- ELSE -->6<!-- ENDIF -->">
+						<p class="gensmall_title" style="margin: 10px;">{L_SUBJECT}</p>
+						</td>
+					</tr>
+					<!-- ENDIF -->
+				<!-- BEGIN topic -->
+					<tr>
+						<td class="global_content"><img src="{topic.READ_IMG}" alt="{topic.READ}" title="{topic.READ}" /></td>
+						<!-- IF ICON_DISPLAY -->	
+							<td width="5%"><!-- IF topic.ICON_EXIST --> <img src="{topic.ICON_PATH}" alt="{topic.ICON_NAME}" title="{topic.ICON_NAME}"  <!-- IF topic.ICON_WIDTH > 0 -->width="{topic.ICON_WIDTH}px"<!-- ENDIF --> <!-- IF topic.TOPIC_HEIGHT > 0 -->height="{topic.ICON_HEIGHT}px"<!-- ENDIF --> /><!-- ENDIF --></td>
+						<!-- ENDIF -->
+						<td width="35%"><!-- IF topic.IS_POLL -->[{L_POLL}]<!-- ENDIF --> <a href="{topic.U_LINK}" alt="{topic.TIME}" >{topic.TITLE}</a></td>
+						<td class="global_content">
+							<!-- IF topic.POSTER_IS_ANONYMOUS -->
+								{topic.POSTER_NAME}
+							<!-- ELSE -->
+							<a href="{topic.U_POSTER}" style="color: #{topic.GROUP_COLOR}">{topic.POSTER_NAME}</a>
+							<!-- ENDIF -->
+						</td>
+						<td class="global_content">{topic.NB_VIEW} <br />
+						{topic.NB_REPLIES}</td>
+						<td class="global_content">{topic.LAST_POST_TIME}<br /><span class="gensmall">
+						<!-- IF topic.POSTER_IS_ANONYMOUS -->
+						{topic.LAST_POST_AUTHOR}
+						<!-- ELSE -->
+						<a href="{topic.U_LAST_POST_POSTER}" style="color: #{topic.LAST_POST_GROUP_COLOR}">{topic.LAST_POST_AUTHOR}</a>
+						<!-- ENDIF -->
+						</span></td>
+						<!-- IF QUICK_MOD_TOOLS --><td><input type="checkbox" value="{topic.TOPIC_ID}" name="topic_id[]" /></td><!-- ENDIF -->
+					</tr>
+				<!-- END topic -->
+			</table>
+			<table width="100%">
+					<tr>
+						<td class="global_content">
+							<!-- IF CAN_NEW_TOPIC -->
+								<a href="{U_NEW_TOPIC}" class="button">{L_NEW_SUBJECT}</a>
+							<!-- ENDIF -->
+						</td>
+						<td align="right">
+							{PAGINATION}
+						</td>
+					</tr>
+					<!-- IF QUICK_MOD_TOOLS -->
+					<tr>
+						<td colspan="2" align="right" valign="top">
+							
+								<b>{L_SUBJECT_MODO} :</b><br />
+								<select name="quick_mod_tools" class="select">
+								<!-- BEGIN quick_mod_tools -->
+									<!-- IF quick_mod_tools.CAN_USE_MOD_TOOL -->
+										<option value="{quick_mod_tools.OPTION_VALUE}">{quick_mod_tools.TOOL_NAME}</option>
+									<!-- ENDIF -->
+								<!-- END quick_mod_tools -->
+								</select>
+								<button type="button" id="mod_tools" rel="#window_confirm" class="button">{L_VALID}</button>
+								<div id="window_confirm">
+									<div id="content_window_confirm"></div>
+									<p align="center"><button type="submit" name="submit_mod_tools" class="button">{L_OK}</button> <button type="button" class="close button">{L_CANCEL}</button></p>
+								</div>
+							
+						</td>
+					</tr>
+					<!-- ENDIF -->
+				</table>
+				</form>
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+	<!-- ELSE -->
+		<table class="globalbox" width="100%">
+			<th class="header_title">{L_INFOS}</th>
+			<tr>
+			</tr>
+			<td class="global_content"><p align="center">{ACCESS}</p></td>
+		</table>
+	<!-- ENDIF -->
+	</div>
+	<!-- INCLUDE main_footer.html -->
+<!-- ENDIF -->

@@ -1,0 +1,80 @@
+ <div id="window_design" title="{L_WIN_TITLE}">
+	<fieldset id="field_activ"><legend>{L_ACTIV}</legend>
+	<label><input type="checkbox" name="activ" />{L_ACTIV_CONTAINER}</label><br />
+	</fieldset>
+	<fieldset id="field_bg"><legend>{L_BACKGROUND}</legend>
+		<p><u>{L_COLOR}</u></p>
+		<table>
+			<tr>
+			<td>
+				<div class="colorSelector" id="backgroundColor"><div></div></div>
+			</td>
+			<td>
+				<label><input type="checkbox" id="backgroundColor_null" />{L_NO}</label>
+			</td>
+			</tr>
+		</table>
+		<p><u>{L_PATH_IMG}</u></p>
+		<label><input type="text" id="backgroundImage" size="27"/>  </label><br />
+		<label><input type="checkbox" name="repeat-x" />{L_REPEAT_X}</label><br />
+		<label><input type="checkbox" name="repeat-y" />{L_REPEAT_Y}</label><br />
+		<label><input type="checkbox" name="no-repeat" />{L_NO_REPEAT}</label>
+		
+	</fieldset>
+	<fieldset id="field_text"><legend>{L_TEXT}</legend>
+	<table width="100%">
+			<td valign="top">
+				<p><u>{L_COLOR}</u></p>
+				<div class="colorSelector" id="color"><div></div></div>
+			</td>
+			<td valign="top" width="70%">
+				<p><u>{L_SIZE}</u></p>
+				<div id="fontSize">{L_PX}</div>
+				<div id="slider-range-min"></div>
+			</td>
+			</tr>
+		</table>
+		</fieldset>
+	<fieldset id="field_opacity"><legend>{L_OPACITY}</legend>
+		<div id="opacity">0%</div>
+		<div id="slider-opacity"></div>
+	</fieldset>
+	<fieldset id="field_height"><legend>{L_HEIGHT_CONTAINER}</legend>
+		<div id="height">{L_PX}</div>
+		<div id="slider-height"></div>
+	</fieldset>
+	<fieldset id="field_width"><legend>{L_WIDTH_CONTAINER}</legend>
+		<div id="width">{L_PX}</div>
+		<div id="slider-width"></div>
+	</fieldset>
+	<fieldset id="field_border"><legend>{L_BORDER}</legend>
+		<table width="100%">
+			<td valign="top">
+				<p><u>{L_COLOR}</u></p>
+				<div class="colorSelector" id="borderColor"><div></div></div>
+			</td>
+			<td valign="top" width="70%">
+				<p><u>{L_SIZE}</u></p>
+				<div id="borderSize">{L_PX}</div>
+				<div id="slider-border-size"></div>
+			</td>
+			</tr>
+		</table>
+	</fieldset>
+	
+	
+	
+</div>
+
+ <div id="window_selector_design" title="{L_CONTAINERS}">
+	<ul>
+	<h2>{L_CONTAINER_GLOBAL}</h2>
+	<!-- BEGIN selector_global -->
+		<li data-id="{selector_global.SELECTOR}" data-exception="{selector_global.EXCEPTION}"><a href="javascript://">{selector_global.NAME}</a></li>
+	<!-- END selector_global -->
+	<h2>{L_CONTAINER_SPECIFIC}</h1>
+	<!-- BEGIN selector_specific -->
+		<li data-id="{selector_specific.SELECTOR}" data-exception="{selector_specific.EXCEPTION}" data-activ="{selector_specific.ACTIV}"><a href="javascript://">{selector_specific.NAME}</a></li>
+	<!-- END selector_specific -->
+	</ul>
+</div>

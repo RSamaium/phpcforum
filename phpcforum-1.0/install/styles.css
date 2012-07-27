@@ -1,0 +1,513 @@
+
+	body{
+		font: 14px Calibri, Tahoma, Helvetica, Arial, sans-serif;
+		background: #eaf1f5;
+	}
+	
+	#container{
+		width: 960px;
+		margin: 0 auto;
+		
+	}
+	
+	.wizard-default-style{
+		background: #FFF;
+		border: 1px solid #cdd6db;
+		width: 960px;
+		margin: 0 auto;
+	}
+	
+		/* Links */
+		a:link,
+		a:active,
+		a:visited{
+			color: #2d659b;
+			text-decoration:none;
+		}
+		
+			a:hover{
+				color: #f78f00;
+			}
+		
+		/* No Javascript */
+		.wizard-default-style .no_javascript{
+			text-align: center;
+			padding: 10px;
+		}
+	
+		
+		
+		
+		/* Wizard steps */
+		.wizard-default-style ul.steps{
+			list-style-type: none;
+			margin:0;padding:0;
+			overflow:auto;
+			border-bottom: 1px solid #cdd6db;
+			background: #ebeced;
+			height: 34px;
+		}
+		
+			.wizard-default-style ul.steps li{
+				float:left;
+				font-weight:bold;
+				color: #a0a8ac;
+				background: #ebeced;
+				position:relative;
+				height: 34px;
+			}
+			
+				.wizard-default-style p{
+					margin: 8px 0 0 0;
+				}
+			
+				.wizard-default-style ul.steps li span{
+					background: url('images/grey_arrow.png') no-repeat right;
+					width: 15px;
+					height: 34px;
+					position:absolute;
+					top: 0;
+					right: 0;
+				}
+			
+				.wizard-default-style ul.steps li.current{
+					color: #353535;
+					background: #FFF;
+				}
+				
+					.wizard-default-style ul.steps li.current span{
+						background: #eaebed  url('images/white_arrow.png') no-repeat right;
+						z-index: 999;
+					}
+					
+				.wizard-default-style ul.steps li.completed span{
+					background-color:#FFF;
+					z-index: 999;
+				}
+		
+	
+		.step_content{
+			padding: 20px;
+			overflow:hidden;
+			position: relative;
+			clear: both;
+		}
+		
+			.wizard-default-style .step_content .blockuser{
+				position: absolute;
+				left: 0;
+				top:0;
+				background: url('images/blockbg.png');
+				width: 100% !important;
+			    height: 100%;
+				z-index: 999;
+				padding: 0;margin: 0;
+				display: none;
+			}
+			
+				.wizard-default-style .step_content .blockuser span{
+					background: url('images/ajax-loader.gif') no-repeat;
+					height: 32px;
+					width: 32px;
+					position: absolute;
+					left: 48%;
+					top: 45%;
+				}
+			
+			/* Error Message */
+			.wizard-default-style .step_content .errormsg{
+				background: #ffeeee;
+				color: #9b3330;
+				padding: 5px;
+				margin-bottom: 10px;
+			}
+			
+			/* Help Text */
+			.wizard-default-style .step_content .helper{
+				position: absolute;
+				background: #f3f6fb;
+				top:0;
+				left: 0;
+				width: 310px;
+				border-right: 1px solid #cdd6db;
+				display: none;			
+			}
+			
+				.wizard-default-style .step_content .helper span.arrow{
+					background: url('images/helper_arrow.png') no-repeat right;
+					display: block;
+					width: 15px;
+					height: 34px;
+					position: absolute;
+					right: -10px;
+					z-index: 888;
+				}
+			
+				.wizard-default-style .step_content .helper .text{
+					padding: 10px;
+					overflow: hidden;
+					min-width: 280px;
+				}
+			
+			/* One column wizard */
+			.wizard-default-style .step_content div.one_column{
+				padding: 10px;
+			}
+			
+			/* Two column wizard */
+			.wizard-default-style .step_content div.two_column div.column_one{
+				float:left;
+				width: 295px;
+				padding: 10px;
+			}
+			
+				.wizard-default-style .step_content div.two_column div.column_one p{
+					line-height: 20px;
+				}
+			
+			.wizard-default-style .step_content div.two_column div.column_two{
+				float:right;
+				width:610px;
+				padding: 10px;
+			}	
+			
+			.wizard-default-style .step_content a.show_helper{
+				color: #353535;
+				display: block;
+			}
+			
+				.wizard-default-style .step_content .show_helper span{
+					float: right;
+					margin-right: 10px;
+					color: #2e6c90;
+				}
+				
+					.wizard-default-style .step_content .show_helper span:hover,
+					.wizard-default-style .step_content a.show_helper:hover span{
+						color: #1696df;
+					}
+			
+			/* Form styling */
+			.wizard-default-style form.defaultRequest{
+			
+			}
+			
+				.wizard-default-style form.defaultRequest fieldset{
+						border: 0;
+				}		
+					
+					.wizard-default-style form.defaultRequest label {
+  						display: block;
+  						float: left;
+  						width: 190px;
+  						font-weight: bold;
+  						color: #353535;
+  						padding: 2px;
+					}
+					
+					.wizard-default-style form.defaultRequest label.error{
+						float: none;
+						margin-left: 190px;
+						padding-top: 8px;
+						color: #9b3330;
+						font-size: 11px;
+						background: url('images/error.png') no-repeat 0 7px;
+						padding-left: 18px;
+					}
+					
+					
+					.wizard-default-style form.defaultRequest textarea{
+  						font-family: Calibri, Tahoma, Helvetica, Arial, sans-serif;
+  						font-size: 1em;
+  						color: #727780;
+  						padding: 2px;
+  						border: 1px solid;
+  						border-color: #888e98 #ced6db #ced6db #888e98;
+  						width: 354px;
+  						height: 174px;
+					}
+					
+						.wizard-default-style form.defaultRequest textarea.error{
+  							border: 1px solid;
+  					 		border-color: #993333 #cc6666 #cc6666 #993333;
+							background: #ffeeee;
+							color: #990000;
+						}
+						
+					
+					.wizard-default-style form.defaultRequest input[type="text"],
+					.wizard-default-style form.defaultRequest input[type="password"] {
+					  font-family: Calibri, Tahoma, Helvetica, Arial, sans-serif;
+					  font-size: 1em;
+					  border: 1px solid;
+  					  border-color: #888e98 #ced6db #ced6db #888e98;
+					  width: 164px;
+					  color: #727780;
+					  padding: 2px;
+					  height: 18px;
+					}
+					
+						.wizard-default-style form.defaultRequest input[type="checkbox"]{
+							padding: 2px 2px 2px 0;
+							margin: 2px 2px 2px 0;
+						}
+					
+						.wizard-default-style form.defaultRequest input[type="text"].error,
+						.wizard-default-style form.defaultRequest input[type="password"].error{
+							border: 1px solid;
+  					 		border-color: #993333 #cc6666 #cc6666 #993333;
+							background: #ffeeee;
+							color: #990000;
+						}
+			
+			/* Thanks to Filament Group (http://bit.ly/TIxFT) */	
+					
+			.wizard-default-style button { 
+				position: relative;
+				border: 0; 
+				padding: 0;
+				cursor: pointer;
+				overflow: visible; /* removes extra side padding in IE */
+			}
+			
+			.wizard-default-style button::-moz-focus-inner {
+				border: none;  /* overrides extra padding in Firefox */
+			}
+			
+			.wizard-default-style button span { 
+				position: relative;
+				display: block; 
+				white-space: nowrap;	
+			}
+			
+
+			a.button-back, a.button-next, input.finish { 
+				padding: 0 16px 0 0; 
+				font-size: 2em; 
+				text-align: center; 
+				background: transparent url(images/submit_bg.png) no-repeat right -151px; 
+			}
+
+			
+			a.button-back span, a.button-next span , input.finish span {
+				padding: 5px 5px 0 20px; 
+				height:24px; 
+				background: transparent url(images/submit_bg.png) no-repeat left top; 
+				font-size: 12px;
+				text-shadow: 0 1px #FFF;
+				color: #6f6f6f;
+				cursor: pointer;
+				text-decoration: none;
+				float: left;
+				
+			}
+			
+			a.button-back:hover, a.button-next:hover, input.finish:hover { 
+				background-position: right -102px; 
+			}
+				
+			a.button-back:hover span, a.button-next:hover span, input.finish:hover span{
+				background-position: 0 -54px;
+				color:#5e5e5e;
+				text-shadow: 0 1px #FFF;
+			}
+
+			
+
+
+input.finish {
+	padding: 3px 9px;
+}
+
+a.button-back {
+	float: left;
+	text-decoration: none;
+}
+
+a.button-next {
+	float: right;
+	text-decoration: none;
+}
+
+fieldset.step {
+	border: 1px solid #DDD;
+	clear: left;
+}
+
+
+fieldset.step legend {
+	color: #4080BF;
+	padding: 0 2px 3px 2px;
+}
+
+
+
+input.finish {
+	border-style: none;
+	cursor: pointer;
+	float: right;
+	text-decoration: none;
+}
+
+li.error-image {
+	background: url('../img/error.png') no-repeat right top;
+}
+
+ul.stepy-titles {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+ul.stepy-titles li {
+	color: #DDD;
+	cursor: pointer;
+	font: bold 18px verdana;
+	float: left;
+	padding: 10px;
+}
+
+ul.stepy-titles li.current-step {
+	color: #369;
+	cursor: auto;
+}
+
+ul.stepy-titles li span {
+	font: 11px verdana;
+	display: block;
+}
+
+
+label.form_error {
+	color: red;
+	margin-left: 10px;
+	background: url(images/exclamation.png) no-repeat left top;
+	height: 16px;
+	font-style: italic;
+	padding-left: 20px;
+}
+
+label.form_valid {
+	margin-left: 10px;
+	background: url(images/accept.png) no-repeat left top;
+	height: 16px;
+	width: 16px;
+}
+
+
+#license {
+	height: 300px;
+	overflow: auto;
+	background: #fff;
+	margin: 10px;
+	margin-top: 20px;
+	border: 1px solid #DDD;
+}
+
+.table {
+	border: 1px solid #DDD;
+	width: 98%;
+	border-collapse: collapse;
+	margin: 10px;
+}
+
+.no-border {
+	border: none;
+}
+
+.table td {
+	padding: 10px;
+	background: #fff;
+}
+
+.table th {
+	background: #999;
+	padding: 10px;
+}
+
+.tooltip { 
+    background-color:#000; 
+    border:1px solid #fff; 
+    padding:10px 15px;  
+    display:none; 
+    color:#fff; 
+    text-align:left; 
+    font-size:12px; 
+ 
+    -moz-box-shadow:0 0 10px #000; 
+    -webkit-box-shadow:0 0 10px #000; 
+	
+	max-width: 200px;
+	z-index: 100;
+	
+}
+
+
+
+.hidden {
+	display: none;
+}
+
+#install_failed {
+	color: red;
+	background-color: #FF9797;
+	border: 1px solid red;
+	font-weight: bold;
+}
+
+#install_success {
+	color: green;
+	background-color: #BFFFBF;
+	border: 1px solid green;
+	font-weight: bold;
+}
+
+
+
+#install_failed a:hover {
+	color: red;
+}
+
+#install_success a:hover {
+	color: green;
+	
+}
+
+#install_success div {
+	font-size: 20px;
+	margin: 10px;
+	text-align: center;
+}
+
+.choise_lang  {
+	margin-top: 20px;
+}
+
+.choise_lang li {
+	margin: 10px;
+	list-style-type: none;
+}
+
+.choise_lang li  a {
+	height: 40px;
+	margin-left: 10px;
+	font-size: 25px;
+	cursor: pointer;
+	
+}
+
+.choise_lang li  img {
+	width: 50px;
+	height: 33px;
+	cursor: pointer;
+ }
+ 
+ .select_lang {
+	color: red;
+ }
+ 
+ #error_db {
+	text-align: center;
+	color: red;
+ }

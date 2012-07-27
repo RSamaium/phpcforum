@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{LANG}">
+
+<head>
+	<title>{L_TITLE}</title>
+<meta NAME="revisit-after" CONTENT="7 days">
+<meta NAME="Robots" CONTENT="all">
+<meta NAME="Rating" CONTENT="General">
+<meta http-equiv="Content-Language" CONTENT="fr">
+<meta http-equiv="Content-type" CONTENT="text/html;charset=iso-8859-1">
+<meta http-equiv="Content-Script-Type" CONTENT="text/javascript">
+{META_REFRESH}
+
+<script src="http://www.google.com/jsapi"></script>
+
+<script>
+	google.load("chrome-frame", "1.0.2");
+	google.load("jquery", "1.4.4");
+	google.load("jqueryui", "1.8.9");
+	google.load("swfobject", "2.1");	
+</script>
+
+<!--
+<script language="javascript" src="../js/jquery/jquery/jquery-1.4.3.min.js"></script>
+<script language="javascript" src="../js/jquery-ui-1.8.6.custom.min.js"></script>
+-->
+
+<script language="javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.pack.js"></script>
+
+
+<script language="javascript" src="../js/colorpicker.js"></script>
+<script language="javascript" src="../js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="../js/jquery.uploadify.v2.1.0.min.js"></script>
+
+<script language="javascript" src="../js/jquery.dataTables.min.js"></script>
+<script language="javascript" src="../js/jquery.jstree.js"></script>
+<script type="text/javascript" src="../js/crud.functions.js"></script>
+<script type="text/javascript" src="../js/crud.functions-2.0.js"></script>
+<script type="text/javascript" src="../js/functions.js"></script>
+<script type="text/javascript" src="../js/adm/edit_area_full.js"></script>
+<script type="text/javascript" src="../js/adm/adm_forums.js"></script>
+
+<link rel="stylesheet" type="text/css" title="Design" href="styles/{STYLE}/styles.css" />
+<link rel="stylesheet" type="text/css" title="Design" href="styles/{STYLE}/table_jui.css" />
+<link rel="stylesheet" type="text/css" title="Design" href="styles/{STYLE}/colorpicker.css" />
+<link rel="stylesheet" type="text/css" href="themes/{THEME}/jquery-ui.css" />
+
+<script>
+var current_index = 0;
+var click_index = 0;
+var table_lang =  {
+			"sLengthMenu": "{L_TABLE_DISPLAY_NB_DATA}",
+			"sZeroRecords": "{L_TABLE_NO_DATA}",
+			"sInfo": "{L_TABLE_INFO}",
+			"sInfoEmpty": "{L_TABLE_INFO_EMPTY}",
+			"sInfoFiltered": "{L_TABLE_INFO_FILTERED}",
+			"sSearch": "{L_TABLE_SEARCH}",
+			"oPaginate": {
+				"sFirst": "{L_TABLE_FIRST}",
+				"sLast": "{L_TABLE_LAST}",
+				"sNext": "{L_TABLE_NEXT}",
+				"sPrevious": "{L_TABLE_PREVIOUS}",
+			}
+		};
+		
+		
+
+var button = ['portail', 'index', 'forums', 'messages', 'users', 'groups', 'permission', 'design', 'templates', 'plugins'];
+var nb_open = {'message': 0};
+
+var tab_selected;
+var menu;
+
+
+		
+$(function() {
+
+	var get = urlGet();
+	menu = get['m'];
+	tab_selected = get['t'];
+	
+	$("#ajax-state").ajaxSend(function(evt, request, settings){ 
+		 $(this).html('<img src="styles/default/images/indicator.gif" /> {L_LOADING}'); 
+	});
+	
+	$("#ajax-state").ajaxSuccess(function(evt, request, settings){ 
+		$(this).html(""); 
+	});
+	
+	$("#ajax-state").ajaxError(function(request, settings){ 
+			
+	});
+	
+	$("#page_portail").bind('click load_portail', function() {
+			click_index = 0;
+			clickSlide("page=portail");	
+			menuClick(this);
+			
+	});	
+	
+	if (menu != undefined) {
+		click_index = menu;
+		clickSlide("page=" + button[menu]);	
+		menuClick($("#page_" + button[menu]));
+	}
+	else {
+		$("#page_portail").trigger('load_portail');
+	}
+	if (tab_selected == undefined) {
+		tab_selected = 0;
+	}
+	
+	$("#page_index").click(function() {
+			click_index = 1;
+			clickSlide("page=global_setting");	
+			menuClick(this);
+			
+	});	
+	$("#page_forums").click(function() {
+			click_index = 2;
+			clickSlide("page=forums");	
+			menuClick(this);
+	});	
+	$("#page_messages").click(function() {
+			click_index = 3;
+			clickSlide("page=messages");
+			menuClick(this);
+			
+	});
+	$("#page_users").click(function() {
+			click_index = 4;
+			clickSlide("page=users");
+			menuClick(this);
+			
+	});
+	$("#page_groups").click(function() {
+			click_index = 5;
+			clickSlide("page=groups");
+			menuClick(this);
+			
+	});
+	$("#page_permission").bind('click load_permission', function() {
+			click_index = 6;
+			clickSlide("page=permission");
+			menuClick(this);
+			
+	});
+	$("#page_design").click(function() {
+			click_index = 7;
+			clickSlide("page=design");
+			menuClick(this);
+			
+	});
+	$("#page_templates").click(function() {
+			click_index = 8;
+			clickSlide("page=templates");
+			menuClick(this);
+			
+	});
+	$("#page_plugins").click(function() {
+			click_index = 9;
+			clickSlide("page=plugins");
+			menuClick(this);
+	});
+	
+	$("#menu > a[id^='page_plugins-']").click(function() {
+			click_index = 10;
+			clickSlide({f: 'plugins', name: $(this).attr("data-name")}, 'POST', '../ajax/adm.php');
+			menuClick(this);
+	});
+	
+	
+	
+	$('#menu div').hover(
+			function () {
+			$(this).addClass("ui-state-hover");
+		  },
+		  function () {
+			$(this).removeClass("ui-state-hover");
+		  }
+	);
+	
+	
+	$('#theme').change(function() {
+		var theme = $(this).children('option:selected').attr('value');
+		$.ajax({
+				url: '../ajax/adm.php',
+				type: 'POST',
+				data: {f: "changeTheme", theme: theme},
+				success: function(data) {
+					location.reload(true);	
+				}
+			});
+	});
+	
+	$('#theme').children('option[value="{THEME}"]').attr('selected', 'selected');
+	
+	
+	
+});
+
+function buttonInitState() {
+	$('#menu > a').children('div').removeClass('ui-state-active');
+	$('#menu > a').children('div').children('span').removeClass('ui-icon-carat-2-e-w');
+	$('#menu > a').children('div').children('span').addClass('ui-icon-carat-1-e');
+}
+
+	
+
+function urlGet() {
+	var get = {};
+    param = window.location.search.slice(1,window.location.search.length);
+    first = param.split("&");
+    for(i=0;i<first.length;i++){
+        second = first[i].split("=");
+		get[second[0]] = second[1];
+    }
+	return get;
+}
+
+function menuClick(div) {
+	buttonInitState();
+	$(div).children('div').addClass('ui-state-active');
+	$(div).children('div').children('span').addClass('ui-icon-carat-2-e-w');
+}
+
+function clickSlide(data_get, type, url) {
+		
+		
+		//if (current_index != click_index) {
+		if (type == undefined) {
+			type = "GET";
+		}
+		if (url == undefined) {
+			url = "index.php";
+		}
+		$.ajax({ 
+			 type: type, 
+		     url: url, 
+			 data: data_get, 
+				   success: function(data_msg){ 
+					
+						$("#right").html(data_msg);
+		
+								/*$("#right").hide('fade', null, 500, function() {
+								
+								
+									
+									
+									$("#right").show('fade', {direction: 'right'}, 500);
+								});*/
+							
+							
+							current_index = click_index;
+							
+							
+							
+							
+							
+						
+					}
+			   });
+		//}
+	}
+ </script>
+  
+
+</head>
+
+<body>
+
+
+
+
+<!-- IF ADMIN_PANEL -->
+<div id="header" class="ui-widget-header">
+	<h1 id="sitename"><a href="../">{SITENAME}</a></h1>
+	<div id="ajax-state"></div>
+	<p id="deco"><a href="{U_DECONNEXION}">{L_DECONNEXION} [{USERNAME}]</a></p>
+</div>
+<div id="body_l2">
+<div id="left">
+		<div class="ui-widget" id="menu">
+				<a href="javascript://" id="page_portail" ><div class="ui-state-default ui-state-active ui-corner-all"><span class="ui-icon ui-icon-carat-2-e-w"></span>{L_DASHBOARD}</div></a>
+		
+				<a href="javascript://" id="page_index" ><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_GLOBAL}</div></a>
+				<a href="javascript://" id="page_forums"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_FORUMS}</div></a>
+				<a href="javascript://" id="page_messages"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_MESSAGES}</div></a>
+				<a href="javascript://" id="page_users"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_USERS}</div></a>
+				<a href="javascript://" id="page_groups"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_GROUPS}</div></a>
+				<a href="javascript://" id="page_permission"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_PERMISSIONS}</div></a>
+				<a href="javascript://" id="page_design"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_DESIGN}</div></a>
+				<a href="javascript://" id="page_templates"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_TEMPLATES}</div></a>
+				<a href="javascript://" id="page_plugins"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{L_EXTENSIONS}</div></a>
+				
+				<!-- IF NB_PLUGINS > 0 -->
+					<hr />
+				
+					
+					<span class="left-label">{L_YOUR_EXTENSIONS}</span>
+					<br />
+					<!-- BEGIN menu_plugins -->
+					<a href="javascript://" id="page_plugins-{menu_plugins.NAME}" data-name="{menu_plugins.NAME}"><div class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-carat-1-e"></span>{menu_plugins.TITLE}</div></a>
+					<!-- END menu_plugins -->
+				<!-- ENDIF -->
+				
+				<hr />
+			
+				<span class="left-label">{L_YOUR_THEMES}</span>
+				<select name="theme" id="theme"> 
+					<option value="smoothness">Smoothness ({L_DEFAULT})</option>
+					<option value="ui-lightness">UI lightness</option>	
+					<option value="ui-darkness">UI darkness</option>	
+					<option value="start">Start</option>
+					<option value="redmond">Redmond</option> 
+					<option value="sunny">Sunny</option> 
+					<option value="overcast">Overcast</option>
+					<option value="le-frog">Le Frog</option>
+					<option value="flick">Flick</option> 
+					<option value="pepper-grinder">Pepper Grinder</option> 
+					<option value="eggplant">Eggplant</option> 
+					<option value="dark-hive">Dark Hive</option> 
+					<option value="cupertino">Cupertino</option> 
+					<option value="south-street">South Street</option> 
+					<option value="blitzer">Blitzer</option>	
+					<option value="humanity">Humanity</option>	
+					<option value="hot-sneaks">Hot Sneaks</option> 
+					<option value="excite-bike">Excite Bike</option> 
+					<option value="vader">Vader</option> 
+					<option value="dot-luv">Dot Luv</option> 
+					<option value="mint-choc">Mint Choc</option> 
+					<option value="black-tie">Black Tie</option> 
+					<option value="trontastic">Trontastic</option> 
+					<option value="swanky-purse">Swanky Purse</option> 
+				</select> 
+				
+				<hr />
+				
+				<span class="left-label">{L_API_KEY}</span><br />
+				<span style="font-size: 10px">{API_KEY}</span>
+				
+
+		</div>
+
+</div>
+<div id="right">
+
+</div>
+
+
+
+
+</div>
+</div>
+
+
+ 
+
+<br clear="all" />
+ <div id="main">
+<!-- ENDIF -->

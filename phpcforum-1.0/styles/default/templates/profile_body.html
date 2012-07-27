@@ -1,0 +1,147 @@
+<!-- INCLUDE main_header.html -->
+		
+<div class="global">
+	<table class="globalbox" width="100%">
+		<tr>
+			<th colspan="1" class="header_title">{L_YOUR_PROFILE}</th>
+		<tr>
+			<td  class="global_content">
+				
+				<fieldset><legend><strong>{L_PROFILE}</strong></legend>
+				
+					<table width="100%">
+						<!-- IF CAN_CHANGE_AVATAR -->
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_AVATAR}" class="link"><img src="{I_ICON_AVATAR}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_AVATAR}" class="link">{L_PANEL_AVATAR}</a>
+								<p>{L_DESC_AVATAR}</p>
+							</td>
+						</tr>
+						<!-- ENDIF -->
+						<!-- IF CAN_CHANGE_SIGN -->
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_PROFILE_SIG}" class="link"><img src="{I_ICON_SIG}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_PROFILE_SIG}" class="link">{L_PANEL_PROFILE_SIG}</a>
+								<p>{L_DESC_SIG}</p>
+							</td>
+						</tr>
+						<tr>
+						<!-- ENDIF -->
+							<td class="global_content"><a href="{U_PANEL_PROFILE_INFO}" class="link"><img src="{I_ICON_INFO}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_PROFILE_INFO}" class="link">{L_PANEL_PROFILE_INFO}</a>
+								<p>{L_DESC_INFO}</p>
+							</td>
+						</tr>
+						
+					</table>
+				</fieldset>		
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">
+			
+			
+			<fieldset><legend><strong>{L_PROFILE_PREFERENCE}</strong></legend>
+				
+					<table width="100%">
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_PROFILE_PERSONAL}" class="link"><img src="{I_ICON_PERSONAL}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_PROFILE_PERSONAL}" class="link">{L_PANEL_PROFILE_PERSONAL}</a>
+								<p>{L_DESC_PERSONAL}</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_PROFILE_POST}" class="link"><img src="{I_ICON_POST}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_PROFILE_POST}" class="link">{L_PANEL_PROFILE_POST}</a>
+								<p>{L_DESC_POST}</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_PROFILE_VIEW}" class="link"><img src="{I_ICON_VIEW}" /></a>
+								</td>
+							<td>
+									<a href="{U_PANEL_PROFILE_VIEW}" class="link">{L_PANEL_PROFILE_VIEW}</a>
+								<p>{L_DESC_VIEW}</p>
+							</td>
+						</tr>
+					</table>
+				</fieldset>		
+
+			</td>
+		</tr>
+		<!-- IF PROFILE_MODO -->
+		<tr>
+			<td class="global_content">
+			
+			<fieldset><legend><strong>{L_MODO_TOOLS}</strong></legend>
+				
+					<table width="100%">
+							<!-- IF CAN_READ_REPORT -->
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_REPORT}" class="link"><img src="{I_ICON_REPORT}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_REPORT}" class="link">{L_PANEL_REPORT}</a>
+								<p>{L_DESC_REPORT}</p>
+							</td>
+						</tr>
+						<!-- ENDIF -->
+						<!-- IF CAN_READ_COMMENT -->
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_COMMENT}" class="link"><img src="{I_ICON_COMMENT}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_COMMENT}" class="link">{L_PANEL_COMMENT}</a>
+								<p>{L_DESC_COMMENT}</p>
+							</td>
+						</tr>
+						<!-- ENDIF -->
+						<!-- IF CAN_READ_AVERT -->
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_AVERT}" class="link"><img src="{I_ICON_AVERT}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_AVERT}" class="link">{L_PANEL_AVERT}</a>
+								<p>{L_DESC_AVERT}</p>
+							</td>
+						</tr>
+						<!-- ENDIF -->
+					</table>
+				</fieldset>		
+	
+			</td>
+		</tr>
+			<!-- ENDIF -->
+		<!-- IF USER_IS_ADMIN -->
+		<tr>
+			<td class="global_content">
+			<fieldset><legend><strong>{L_ADMINISTRATION}</strong></legend>
+				
+					<table width="100%">
+						<tr>
+							<td class="global_content"><a href="{U_PANEL_ADMIN}" class="link"><img src="{I_ICON_ADMIN}" /></a>
+								</td>
+							<td>
+								<a href="{U_PANEL_ADMIN}" class="link">{L_PANEL_ADMIN}</a>
+								<p>{L_DESC_ADMIN}</p>
+							</td>
+						</tr>
+					</table>
+				</fieldset>		
+			
+			</td>
+		</tr>
+	<!-- ENDIF -->
+	 </table>
+</div>
+<!-- INCLUDE main_footer.html -->

@@ -1,0 +1,326 @@
+<div id="window_downplugin">
+	<p>{L_INSTALL_PLUGIN}</p>
+</div>
+
+<div id="window_howinstall">
+</div>
+
+<div id="window_delete">
+		<input type="hidden" id="plugin_name_del" />
+		<p>{L_CONFIRM_DELETE}</p>
+</div>
+
+
+<h2>{L_PLUGINS}</h2>
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_YOUR_PLUGINS}</a></li>
+		<li><a href="#tabs-2">{L_INSTALL_NEW_PLUGINS}</a></li>
+	</ul>
+	
+
+
+	<div id="tabs-1">
+			<p>{L_INSTALL_HELP}</p>
+			
+			<div id="list_install_plugin">
+			<table width="100%" class="border table" id="table-your_plugins">
+				<thead>
+					<tr>
+						<th>
+							{L_NAME}
+						</th>
+						<th>
+							{L_DESC}
+						</th>
+						<th>
+							{L_AUTHOR}
+						</th>
+						<th>
+							{L_VERSION}
+						</th>
+						<th>
+							{L_INTERACTION}
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				<!-- BEGIN plugins -->
+					<tr>
+						<td >
+							
+							{plugins.NAME}
+						</td>
+						<td>
+							{plugins.DESC}
+						</td>
+						<td>
+							{plugins.AUTHOR}
+						</td>
+						<td>
+							{plugins.VERSION}
+						</td>
+						<td width="50%">
+							<!-- IF plugins.AUTOLOAD -->
+								<!-- IF plugins.IS_ACTIV -->
+								<button class="activ_plugin" data-id="0" data-name="{plugins.FILENAME}">{L_UNACTIV}</button>
+								
+									<!-- ELSE -->
+								<button class="activ_plugin" data-id="1" data-name="{plugins.FILENAME}">{L_ACTIV}</button>
+								<!-- ENDIF -->
+							<!-- ELSE -->
+								<button data-name="{plugins.FILENAME}" id="howinstall">{L_HOW_DISPLAY}</button>
+							<!-- ENDIF -->
+
+							<button data-name="{plugins.FILENAME}" class="plugin">{L_UPDATE}</button>
+							
+							<button data-name="{plugins.FILENAME}" id="delete_plugin">{L_DELETE}</button>
+						</td>
+					</tr>
+				
+				<!-- END plugins -->
+				</tbody>
+			</table>
+			</div>
+			
+		</div> 
+		
+		<div id="tabs-2">
+			<div class="list_plugins">
+				<table width="100%" class="border table" id="table-plugins">
+					<thead>
+						<tr>
+							<th>
+								{L_NAME}
+							</th>
+							<th>
+								{L_DESC}
+							</th>
+							<th>
+								{L_AUTHOR}
+							</th>
+							<th>
+								{L_VERSION}
+							</th>
+							<th>
+								{L_INTERACTION}
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+					</tbody>
+				</table>
+			</div>
+		</div> 
+		
+
+
+	</div>
+
+<script> 
+$(function() {
+
+	$(".tabs-layout").tabs({selected: tab_selected});
+	$("button, .button").button();
+	
+	$('#table-plugins, #table-your_plugins').dataTable({
+		"bJQueryUI": true,
+		"sPaginationType": "full_numbers",
+		"oLanguage": table_lang
+	});
+	
+	$( "#window_howinstall" ).dialog({
+			resizable: true,
+			height: 300,
+			width: 600,
+			title: "{L_HOW_DISPLAY_TITLE}",
+			modal: true,
+			autoOpen: false,
+			buttons: {
+				"{L_CLOSE}": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+		
+		$( "#window_downplugin" ).dialog({
+			resizable: false,
+			height: 150,
+			width: 350,
+			title: "{L_INSTALL_TITLE}",
+			modal: true,
+			autoOpen: false,
+			closeOnEscape: false,
+			disabled: true
+		});
+		
+		
+		
+		$( "#window_delete" ).dialog({
+			resizable: false,
+			height: 150,
+			width: 350,
+			title: "{L_DELETE_TITLE}",
+			modal: true,
+			autoOpen: false,
+			buttons: {
+				"{L_OK}": function() {
+					$.ajax({
+					  url: '../ajax/adm.php',
+					  type: 'POST',
+					  data: {f: "deletePlugin", plugin_name: $('#plugin_name_del').attr('value')},
+					  success: function(data) {
+							//displayEtat(data, 'L\'extension a été supprimée avec succès', 'La suppression de l\'extension a échouée');
+							/*if (data == 1) {
+								var position = parseInt($('#plugin_position').attr('value')) + 1;
+								$('#list_install_plugin table tr:eq(' + position + ')').remove();
+							}*/
+							window.location = '?m=8';
+					
+						}
+					});
+					$( this ).dialog( "close" );
+					
+				},
+				"{L_CANCEL}": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+		
+		$("#delete_plugin").click(function() {
+			$('#plugin_name_del').attr('value', $(this).attr("data-name"));
+			$( "#window_delete" ).dialog('open');
+		});
+		
+	$("#howinstall").click(function () {
+		$("#window_howinstall").load('../ajax/adm.php', {f: 'pluginHowInstall', plugin_name: $(this).attr("data-name")});
+		$( "#window_howinstall").dialog("open");
+			
+	});
+	
+	//redefineButton();
+	
+	Ajax({
+	  url: 'http://phpcforum.com/plugin_files/index.php',
+	//  url: 'http://127.0.0.1/PHPC%20site/plugin_files/index.php',
+	  type: 'POST',
+	  dataType: 'json',
+	  error: function(XMLHttpRequest, textStatus, errorThrown) {
+		alert(textStatus);
+	  },
+	  timeout: 4000,
+	  success: function(data) {
+		for (var i=0 ; i < data.length ; i++) {
+			/*$('.list_plugins > table > tbody').append('<tr><td>' + data[i].name + '</td><td>' + data[i].desc + '</td><td>' + data[i].author + '</td><td>' + data[i].version + '</td><td><button class="install" data-id="' + data[i].file + '" id="' + i + '">Installer</button></td></tr>');	*/
+			
+			$('#table-plugins').dataTable().fnAddData([
+				data[i].name,
+				data[i].desc,
+				data[i].author,
+				data[i].version,
+				'<button class="install" data-id="' + data[i].file + '" id="' + i + '">{L_INSTALL}</button>'] 
+			);
+			
+			$("button").button();
+			
+			
+		}
+		
+		$(".install").click(function() {
+			var i = this.id;
+			$( "#window_downplugin" ).dialog("open");
+			$.ajax({
+			  url: '../ajax/adm.php',
+			  type: 'POST',
+			  data: {f: "installPlugin", plugin_name: $(this).attr('data-id')},
+			  success: function(data_install) {
+				/*var str = '<tr><td><a href="' + data[i].file + '" class="plugin" rel="#window">' + data[i].name + '</a></td><td>' + data[i].desc + '</td><td>' + data[i].author + '</td><td>' + data[i].version + '</td><td>';
+				
+				if (data[i].autoload == 1) {
+					str += '<button class="activ_plugin" data-id="1" data-name="' + data[i].file + '">Activer</button>';
+				}
+				else {
+					str += '<a href="' + data[i].file + '" class="howinstall button" rel="#window_howinstall">Comment afficher ?</a>';
+				}
+				
+				var position = $('#list_install_plugin > table > tr').length;
+				
+				str += ' <a href="' + data[i].file + '" class="plugin button" rel="#window">Administrer</a> <a href="' + data[i].file + '" class="plugin button" rel="#window">Mettre à jour</a> <a href="' + data[i].file + '" class="delete_plugin button" data-id="' + position + '" rel="#window_delete">Supprimer</a></td></tr>';
+				
+				$('#list_install_plugin > table').append(str);
+				
+				*/
+				
+				//$('.window_content > p:first').html('<p>Installation réussi</p><p>N\'oubliez pas d\'activer l\'extension</p>');
+				window.location = '?m=8';
+			 }
+			});
+		});
+	  }
+   });
+	
+
+});
+
+function redefineButton() {
+	
+	/*$(".plugin[rel]").overlay({ 
+		expose: { 
+			color: '#000',  
+			opacity: 0.8 
+		}, 
+		closeOnClick: true, 
+		api: true,
+		onBeforeLoad: function() {
+			$("#window_content").load('../ajax/adm.php', {f: 'plugins', name: this.getTrigger().attr("href")});
+		}
+	});*/
+	
+	
+	$(".activ_plugin").click(function() {
+			var activ = $(this).attr('data-id');
+			$.ajax({
+			  url: '../ajax/adm.php',
+			  type: 'POST',
+			  data: {f: "activPlugin", activ: activ, plugin_name: $(this).attr("data-name")},
+			  success: function(data) {
+				if (activ == 1) {
+					displayEtat(data, "{L_PLUGIN_ACTIV}", "{L_PLUGIN_NO_ACTIV}");
+					$(".activ_plugin").html('DésactivéDésactivé');
+					$(".activ_plugin").attr('data-id', 0);
+				}
+				else {
+					displayEtat(data, "{L_PLUGIN_UNACTIV}", "{L_PLUGIN_NO_UNACTIV}");
+					$(".activ_plugin").html('Activer');
+					$(".activ_plugin").attr('data-id', 1);
+				}
+				
+			
+			 }
+			});
+		});
+		
+		
+		
+		
+		
+	/*	$(".delete_plugin[rel]").overlay({ 
+				expose: { 
+					color: '#000',  
+					opacity: 0.8 
+				}, 
+				closeOnClick: true, 
+				api: true,
+				onBeforeLoad: function() {
+					$('#plugin_name_del').attr('value', this.getTrigger().attr("href"));
+					$('#plugin_position').attr('value', this.getTrigger().attr("data-id"));
+				}
+		});*/
+		
+		
+
+}
+</script> 

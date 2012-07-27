@@ -1,0 +1,195 @@
+
+<h2>{L_PERMISSION}</h2>
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#user">{L_USERS}</a></li>
+		<li><a href="#group">{L_GROUPS}</a></li>
+		<li><a href="#forum_user">{L_USERS_FOR_FORUM}</a></li>
+		<li><a href="#forum_group">{L_GROUPS_FOR_FORUM}</a></li>
+	</ul>
+	
+
+
+	<div id="user">
+		<p>
+			{L_ADD_MEMBER} : <input type="text" name="add_user" /><button name="submit_add_user" data-id="user">{L_ADD}</button>
+		</p>
+		<p>
+			<table width="100%">
+				<tr>
+					<td>
+				 <fieldset>
+					<legend>{L_MEMBER_ADDED}</legend>
+				<select name="left[]" multiple="multiple" size="10" style="width: 350px">
+					
+				</select>
+				</fieldset>
+					</td>
+					
+				</tr>
+				<tr>
+					<td align="center"><button class="editpermission" rel="#window_permission" data-id="user">{L_EDIT_PERMISSION}</button>
+					<button class="remove_user" data-id="tabs-1">{L_REMOVE_USER_SELECTED}</button></td>
+				</tr>
+			</table>
+		</p>	
+			
+
+	</div> 
+
+	<div id="group">
+		<p>
+			<table width="100%">
+				<tr>
+					<td>
+				 <fieldset>
+					<legend>{L_GROUPS}</legend>
+				<select name="left[]" multiple="multiple" size="10" style="width: 350px">
+					<!-- BEGIN group -->
+						<option value="{group.ID}">
+							{group.NAME}
+						</option>
+					<!-- END group -->
+				</select>
+				</fieldset>
+					</td>
+					
+				</tr>
+				<tr>
+					<td align="center"><button class="editpermission" rel="#window_permission" data-id="group">{L_EDIT_PERMISSION}</button></td>
+				</tr>
+			</table>
+		</p>	
+			
+	</div> 
+	
+	<div id="forum_user">
+		<p>
+			{L_ADD_MEMBER} : <input type="text" name="add_user" /><button name="submit_add_user"  data-id="forum_user">{L_ADD}</button>
+		</p>
+		<p>
+			<table width="100%">
+				<tr>
+					<td>
+				 <fieldset>
+					<legend>{L_MEMBER_ADDED}</legend>
+				<select name="left[]" multiple="multiple" size="10" style="width: 350px">
+					
+				</select>
+				</fieldset>
+					</td>
+					<td>
+					<fieldset>
+						<legend>{L_FORUMS}</legend>
+					<select name="right[]" multiple="multiple" size="10" style="width: 350px">
+						<!-- BEGIN listforum -->
+							<option value="{listforum.ID}">
+								{listforum.INDENT}{listforum.NAME}
+							</option>
+						<!-- END listforum -->
+					</select>
+					</fieldset>
+				</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2" ><button class="editpermission" rel="#window_permission" data-id="forum_user">{L_EDIT_PERMISSION}</button>
+					<button class="remove_user" data-id="forum_user">{L_REMOVE_USER_SELECTED}</button></td>
+				</tr>
+			</table>
+		</p>	
+			
+
+	</div> 
+	
+	<div id="forum_group">
+		<p>{L_MULTISELECT_HELP}</p>
+		<p>
+			<table width="100%">
+				<tr>
+					<td>
+				 <fieldset>
+					<legend>{L_GROUPS}</legend>
+				<select name="left[]" multiple="multiple" size="10" style="width: 350px">
+					<!-- BEGIN group -->
+						<option value="{group.ID}">
+							{group.NAME}
+						</option>
+					<!-- END group -->
+				</select>
+				</fieldset>
+					</td>
+					<td>
+				<fieldset>
+					<legend>{L_FORUMS}</legend>
+				<select name="right[]" multiple="multiple" size="10" style="width: 350px">
+					<!-- BEGIN listforum -->
+						<option value="{listforum.ID}">
+							{listforum.INDENT}{listforum.NAME}
+						</option>
+					<!-- END listforum -->
+				</select>
+				</fieldset>
+				</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><button class="editpermission" rel="#window_permission" data-id="forum_group">{L_EDIT_PERMISSION}</button></td>
+				</tr>
+			</table>
+		</p>	
+	</div> 
+		
+
+</div>
+
+<script> 
+$(function() {
+	$(".tabs-layout").tabs();
+	$("button, .button").button();
+	
+	$( "input[name='add_user']" ).autocomplete({
+		source: "../ajax/adm_users.php",
+		minLength: 2
+	});
+	
+	$(".editpermission").click(function () { 	
+		var left = [];
+		var right = [];
+		var trigger = $(this).attr("data-id");
+		$("#" + trigger + "  select[name='left[]'] option:selected").each(function(i){
+			left.push(this.value);
+		});
+		//alert("#" + trigger + " select[name='right[]'] option:selected");
+		$("#" + trigger + "  select[name='right[]'] option:selected").each(function(i){
+			right.push(this.value);
+		});
+		clickSlide({left: left, right: right}, "POST", "?page=permission_list&mode=" + trigger);
+	});
+	
+	$("button[name='submit_add_user']").click(function() {
+		var mode = $(this).attr('data-id');
+		var username = $("#" + mode + " input[name='add_user']").val();
+		$.ajax({
+		  url: '../ajax/adm.php',
+		  type: 'POST',
+		  dataType: 'json',
+		  data: {'f': 'userPermission', username: username},
+		  success: function(data) {
+				if (data.user_id != 0) {
+					$("#" + mode + " select:first").append('<option value="' + data.user_id + '" selected="selected">' + username + '</option>');
+				}
+		  }
+		});
+		
+	});
+	
+	$(".remove_user").click(function() {
+		var trigger = $(this).attr("data-id");
+		$("#" + trigger + "  select[name='left[]'] option:selected").each(function(i){
+				$(this).remove();
+		});
+	});
+	
+});
+</script> 
+ 

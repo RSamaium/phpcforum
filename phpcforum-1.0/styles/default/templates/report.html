@@ -1,0 +1,194 @@
+	<!-- INCLUDE main_header.html -->
+<div class="tooltip_report"></div>
+<div class="global">
+<!-- IF SUBMIT -->
+	<table class="globalbox" width="100%">
+		<!-- INCLUDE confirm.html -->
+	</table>
+<!-- ELSE -->
+<!-- IF ACCESS == "" -->
+	<form method="post">
+		<!-- IF MODE == "reportlist" -->
+
+<h1 class="title">{L_TITLE_REPORT}</h1>
+<p><a href="{U_MODE_REPORT}" class="button">{L_MODE_REPORT}</a></p>
+		<table class="globalbox" width="100%">
+			<tr>
+				<th class="header_title">
+					{L_POST_DETAILS}
+				</th>
+				<th class="header_title">
+					{L_REPORT_USER}
+				</th>
+				<th class="header_title">
+					{L_REASON}
+				</th>
+				<th class="header_title">
+					{L_CHECK}
+				</th>
+			</tr>
+			<!-- BEGIN report -->
+				<tr>
+					<td  class="global_content">
+					<a href="{report.U_POST_REPORT}" class="report link" title="{report.REPORT_TEXT}">{report.POST_SUBJECT}</a><br />
+					<span class="gensmall">{report.POST_TIME}</span>
+					</td>
+					<td>
+					{report.USERNAME}<br />
+					<span class="gensmall">{report.REPORT_TIME}</span>
+					</td>
+					<td>
+					{report.REASON_DESC}
+					</td>
+					<td width="10%">
+						<input type="checkbox" name="report_gestion[]" value="{report.REPORT_ID}">
+					</td>
+				</tr>
+			<!-- END report -->
+			</table>
+			<table width="100%">
+				<tr>
+					<td align="left">
+					<p>{PAGINATION}</p>
+					</td>
+					<td align="right">
+					<!-- IF GESTION_REPORT -->
+						<button type="submit" name="submit_delete_report" class="button">{L_DELETE_REPORT}</button>
+						<!-- IF !REPORT_CLOSED --><button type="submit" name="submit_close_report" class="button">{L_CLOSE_REPORT}</button><!-- ENDIF -->
+					<!-- ENDIF -->
+					</td>
+				</tr>
+			</table>		
+	<!-- ELSEIF MODE == "send" -->
+			<table class="globalbox" width="100%" border="0">
+			<tr>
+				<th class="header_title" colspan="2">
+					{L_REPORT_POST}
+				</th>
+			</tr>
+			<tr>
+				<td class="global_content">
+						{L_REASON}
+				</td>
+				<td>
+					<select name="report_reason">
+						<!-- BEGIN report_reason -->
+						<option value="{report_reason.ID}">{report_reason.DESC}</option>
+						<!-- END report_reason -->
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">
+						{L_AVERT_REPORT} :
+				</td>
+				<td>
+					<input type="radio" name="report_notify[]" value="1" checked="checked"> {L_YES} <input type="radio" name="report_notify[]" value="0"> {L_NO}
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content" valign="top">
+						{L_OTHER_INFO} :
+				</td>
+				<td>
+					<textarea name="report_text" cols="50" rows="10"></textarea>	
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2">
+					<button type="submit" name="submit_report" class="button">{L_SEND}</button>
+				</td>
+			</tr>	
+			</table>
+	<!-- ELSEIF MODE == "read" -->
+		<table class="globalbox" width="100%" border="0">
+			<tr>
+				<th class="header_title" colspan="2">
+					{L_READ_REPORT}
+				</th>
+			</tr>
+			<tr>
+				<td class="global_content" align="center" colspan="2">
+					<!-- IF REPORT_CLOSED -->
+						<p class="correct">Rapport a été traitée le {REPORT_CLOSE_TIME}</p>
+					<!-- ELSE -->
+						<p class="error">{L_REPORT_TREATY}</p>		
+					<!-- ENDIF -->
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content" width="30%">
+						<b>{L_TITLE_POST}</b>
+				</td>
+				<td>
+						{REPORT_POST_SUBJECT}
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">
+						<b>{L_POST_THE} </b>
+				</td>
+				<td>
+						{REPORT_POST_TIME}
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content" colspan="2">
+						<hr />
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">
+						<b>{L_REPORT_THE} </b>
+				</td>
+				<td>
+						{REPORT_TIME}
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content" width="30%">
+						<b>{L_BY_MEMBER} </b>
+				</td>
+				<td>
+						{REPORT_USERNAME}
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">
+						<b>{L_REASON} : </b>
+				</td>
+				<td>
+						{REASON_DESC}
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">
+						<b>{L_INFO_MORE} :</b>
+				</td>
+				<td class="global_content">
+						{REPORT_TEXT}
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2" class="global_content">
+					<a href="{U_VIEWPOST_REPORT}" class="button">{L_VIEW_POST}</a>
+					<!-- IF !REPORT_CLOSED --><button type="submit" name="submit_report_close" class="button">{L_CLOSE_THIS_REPORT}</button><!-- ENDIF -->
+					<button type="submit" name="submit_report_delete" class="button">{L_DELETE_THIS_REPORT}</button>
+				</td>
+			</tr>	
+			</table>
+	<!-- ENDIF -->
+	</form>
+<!-- ELSE -->
+	<table class="globalbox" width="100%">
+		<tr>
+			<th class="header_title">{L_INFO}</th>
+		</tr>
+		<tr>
+			<td class="global_content"><p>{ACCESS}</p></td>
+		</tr>
+	</table>
+<!-- ENDIF -->
+<!-- ENDIF -->
+</div>
+	<!-- INCLUDE main_footer.html -->

@@ -1,0 +1,39 @@
+<!-- INCLUDE main_header.html -->
+<div class="global">
+<div class="tooltip"></div>
+<!-- INCLUDE error.html -->
+<form method="post" class="form">
+	<h1 class="title">{L_FORGET_PASS}</h1>
+	<div id="result"></div>
+	
+	<table class="globalbox" width="100%">
+	<!-- IF SUBMIT -->
+		<!-- INCLUDE confirm.html -->
+	<!-- ELSE -->	
+		<tr>
+			<th colspan="2" class="header_title" >
+				{L_REMEMBER_PASS}
+			</th>
+			
+		</tr>
+		<tr>	
+			<td class="global_content" colspan="2">
+				{L_HELP}
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">
+					<label class="bullet" for="forget">{L_EMAIL}</label>:			
+			</td>
+			<td class="global_content">
+				<input type="text" id="forget" name="forget_email" value="{EMAIL}" title="{L_HELP_EMAIL}" />		
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="global_content"><button name="submit_profile" class="button">{L_SEND}</button></td>
+		</tr>
+	<!-- ENDIF -->
+	</table>	
+</form>
+<!-- INCLUDE main_footer.html -->

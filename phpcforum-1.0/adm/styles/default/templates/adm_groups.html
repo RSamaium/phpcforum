@@ -1,0 +1,179 @@
+<div id="confirm_group_window">
+	<p>{L_CONFIRM_DELETE}</p>
+</div>
+
+<h2>{L_GROUPS}</h2>
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_MANAGE_GROUPS}</a></li>
+	</ul>
+	
+	<div id="tabs-1">
+		
+			<table width="100%" id="table-groups" class="table">
+			<thead>
+				<tr>
+					<th>
+						{L_NAME}
+					</th>
+					<th>
+						{L_DESC}
+					</th>
+					<th>
+						{L_CHECK}
+					</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				<!-- BEGIN group -->
+				
+				<tr>
+					<td width="25%">
+						<span style="color: #{group.COLOR}">{group.NAME}</span>
+					</td>
+					<td>
+						{group.DESC}
+					</td>	
+					<td width="15%" align="center">
+						<input type="radio" name="group_id" value="{group.ID}" />
+						<input type="hidden" name="num" value="{group.NUM}" />
+					</td>
+				</tr>
+				<!-- END group -->
+				</tbody>
+			</table>
+		<br />
+		<button id="add_group">{L_NEW_GROUP}</button>
+		<a href="javascript://" class="button" target="_blank" id="admin_group">{L_MANAGE}</a>
+		<button id="edit_group">{L_EDIT}</button>
+		<button id="delete_group">{L_DELETE}</button>
+	</div>
+	
+</div>
+<script> 
+var group_id = 1;
+var num = 1;
+var oTable;
+
+$(function() {
+	
+	/*$.ajax({ 
+		   type: "POST", 
+		   url: "../ajax/search.php", 
+		   data: null, 
+		   success: function(msg){ 
+			alert(msg);
+			}
+	});*/
+
+	$(".tabs-layout").tabs();
+	$("button, .button").button();
+
+	
+	oTable = $('#table-groups').dataTable({
+		"bJQueryUI": true,
+		"sPaginationType": "full_numbers",
+		"oLanguage": table_lang
+	});
+	
+	
+	
+	
+	groupButtonsClear();
+		
+	/*$(".openwindow").overlay({ 
+		expose: { 
+			color: '#000',  
+			opacity: 0.8 
+		}, 
+		closeOnClick: true, 
+		api: true,
+		onBeforeLoad: function() {
+			var crud_id = this.getTrigger().attr("id");
+			$("#window_content").load("?page=" + $('#' + crud_id).attr('data-name'), {
+				'crud_where':  "group_id=" + group_id,
+				'mode':  $('#' + crud_id).attr('data-mode'),
+				'num':  num
+			})
+		}
+	});*/
+	
+	$("input[name='group_id']").click(clickRadio);
+	
+	$('#edit_group').click(function() {
+		var crud_id = $(this).attr("id");
+		clickSlide(
+			'page=group' + 
+			'&mode=edit' + 
+			'&group_id='  + group_id
+		);
+	/*	$("#right").load("?page=" + $('#' + crud_id).attr('data-name'), {
+			'crud_where':  "group_id=" + group_id,
+			'mode':  $('#' + crud_id).attr('data-mode'),
+			'num':  num
+		})
+	*/
+	});
+	
+	$('#add_group').click(function() {
+		clickSlide('page=group&mode=add');
+	});
+	
+	$( "#confirm_group_window" ).dialog({
+			resizable: false,
+			height:150,
+			width: 300,
+			title: 'Confirmation',
+			modal: true,
+			autoOpen: false,
+			buttons: {
+				"Ok": function() {
+					$.ajax({
+						url: '../ajax/adm.php',
+						type: 'POST',
+						data: {f: "groupDelete", group_id: group_id},
+						success: function(data) {
+							if (data) {
+								var aTrs = oTable.fnGetNodes();
+								oTable.fnDeleteRow(aTrs[num]);
+							}
+							displayEtat(data, "{L_GROUP_DELETE}", "{L_GROUP_NOT_DELETE}");
+							$("#confirm_group_window" ).dialog('close');
+						}
+					});
+				},
+				"Annuler": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+		
+		$("#delete_group").click(function() {
+			$("#confirm_group_window" ).dialog('open');
+		});
+		
+});
+
+function clickRadio() {
+		groupButtonsClear();
+		group_id = $(this).val();
+		num = $(this).next().val();
+		$('#admin_group').attr('href', '{U_GROUP}&g=' + group_id);
+		
+		if (group_id != 2 && group_id != 3) {
+			$('#admin_group').show();
+		}
+		$('#edit_group').show();
+		if (group_id != 1 && group_id != 2 && group_id != 3) {
+			$('#delete_group').show();
+		}
+	}
+
+function groupButtonsClear() {
+	$('#admin_group').hide();
+	$('#edit_group').hide();
+	$('#delete_group').hide();
+}
+</script> 

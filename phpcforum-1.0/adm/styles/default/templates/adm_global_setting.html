@@ -1,0 +1,172 @@
+<div id="lang-update">
+		<!-- IF ADD_LANG -->
+			<p>{L_NEW_LANG} : </p>
+			<ul>
+				<!-- BEGIN lang_add -->
+					<li>{lang_add.NAME}</li>
+				<!-- END lang_add -->
+			</ul>
+		<!-- ENDIF -->
+		<!-- IF REMOVE_LANG -->
+			<p>{L_UNINSTALL_LANG} : </p>
+			<ul>
+				<!-- BEGIN lang_remove -->
+					<li>{lang_remove.NAME}</li>
+				<!-- END lang_remove -->
+			</ul>
+		<!-- ENDIF -->
+</div>
+
+<h2>{L_MAIN}</h2>
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_TAB_SETTING}</a></li>
+		<li><a href="#tabs-2">{L_TAB_LANG}</a></li>
+	</ul>
+
+	
+	<div id="tabs-1">
+		
+		<form id="tab_global_setting">
+		
+		
+		<fieldset><legend>{L_SETTING_FORUM}</legend>
+				<table class="list_options">
+					<tr>
+						<td class="highlight"  width="60%"><label for="_sitename">{L_SITENAME}</label></td>
+						<td><input type="text" name="sitename" id="_sitename" size="15" value="{VAL_SITENAME}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="site_desc">{L_SITE_DESC}</label></td>
+						<td><textarea name="site_desc" id="site_desc" cols="45" rows="6">{VAL_SITE_DESC}</textarea></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="email_default">{L_EMAIL_DEFAULT}</label></td>
+						<td><input type="text" name="email_default" id="email_default" size="40" value="{VAL_EMAIL_DEFAULT}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="activ_auto_completion">{L_ACTIV_AUTO_COMPLETION}</label></td>
+						<td><label><input type="radio"  name="activ_auto_completion" value="1" <!-- IF VAL_ACTIV_AUTO_COMPLETION == 1 -->checked=checked"<!-- ENDIF -->> {L_YES}</label> <label><input type="radio" name="activ_auto_completion" value="0" <!-- IF VAL_ACTIV_AUTO_COMPLETION != 1 -->checked=checked"<!-- ENDIF -->> {L_NO}</label></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="display_quick_profile">{L_DISPLAY_QUICK_PROFILE}</label></td>
+						<td><label><input type="radio"  name="display_quick_profile" value="1" <!-- IF VAL_DISPLAY_QUICK_PROFILE == 1 -->checked=checked"<!-- ENDIF -->> {L_YES}</label> <label><input type="radio" name="display_quick_profile" value="0" <!-- IF VAL_DISPLAY_QUICK_PROFILE != 1 -->checked=checked"<!-- ENDIF -->> {L_NO}</label></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="forum_corbeille">{L_FORUM_CORBEILLE}</label></td>
+						<td><input type="text" name="forum_corbeille" id="forum_corbeille" size="10" value="{VAL_FORUM_CORBEILLE}"></td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="interval_days_purge_topic_read">{L_INTERVAL_DAYS_PURGE_TOPIC_READ}</label></td>
+						<td><input type="text" name="interval_days_purge_topic_read" id="interval_days_purge_topic_read" size="10" value="{VAL_INTERVAL_DAYS_PURGE_TOPIC_READ}"> {L_DAYS}</td>
+					</tr>
+				</table>
+		</fieldset>
+		
+	
+		<fieldset><legend>{L_SETTING_AVATAR}</legend>
+				<table class="list_options">
+					<tr>
+						<td class="highlight"  width="60%"><label for="max_height_avatar">{L_MAX_HEIGHT_AVATAR}</label></td>
+						<td><input type="text" name="max_height_avatar" id="max_height_avatar" size="10" value="{VAL_MAX_HEIGHT_AVATAR}"> {L_PIXEL}</td>
+					</tr>
+					<tr>
+						<td class="highlight"><label for="max_width_avatar">{L_MAX_WIDTH_AVATAR}</label></td>
+						<td><input type="text" name="max_width_avatar" id="max_width_avatar" size="10" value="{VAL_MAX_WIDTH_AVATAR}"> {L_PIXEL}</td>
+					</tr>
+				</table>
+		</fieldset>
+		<button name="submit_global" type="button">{L_SUBMIT_GlOBAL}</button>
+		</form>
+	
+	</div> 
+	
+	<div id="tabs-2">
+		<div class="etat"></div>
+
+
+		<table width="100%" class="table" id="table-lang" >
+			<thead>
+				<tr>
+					<th>{L_NAME}</th>
+					<th>{L_AUTHOR}</th>
+					<th>{L_VERSION}</th>
+					<th>{L_INSTALLED}</th>
+					<th>{L_LANG_DEFAULT}</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>{L_LANG_FR}</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td align="center"><input type="radio" name="lang_default" value="{LONGID_DEFAULT}" <!-- IF DEFAULT -->checked="checked"<!-- ENDIF -->/></td>
+			</tr>
+			<!-- BEGIN lang -->
+			<tr>
+				<td>{lang.NAME}</td>
+				<td>{lang.AUTHOR}</td>
+				<td>{lang.VERSION}</td>
+				<td>{lang.INSTALL_TIME}</td>
+				<td align="center"><input type="radio" name="lang_default" value="{lang.LONGID}" <!-- IF lang.IS_DEFAULT -->checked="checked"<!-- ENDIF -->  /></td>
+			</tr>
+			<!-- END lang -->
+			</tbody>
+		</table>
+<button name="submit_lang_default">{L_SUBMIT_LANG_DEFAULT}</button>
+		<br />
+		
+	</div> 
+</div>
+
+<script> 
+$(function() {
+	$(".tabs-layout").tabs();
+	$("button").button();
+	//initialize();
+	
+	$('#table-lang').dataTable({
+		"bJQueryUI": true,
+		"sPaginationType": "full_numbers",
+		"oLanguage": table_lang
+	});
+	
+	$('button[name="submit_global"]').click(function() {
+		var str_data = $('#tab_global_setting').serialize();
+		$.post('index.php?page=global_setting', 'submit=submit_global&' + str_data, function(data) {
+			$('#sitename').text($('input[name="sitename"]').val());
+			displayEtat(data.success, "{L_SETTING_CHANGED}", "{L_SETTING_NOT_CHANGED}");
+		}, "json");
+	});
+	
+	
+	<!-- IF UPDATE_LANG -->
+	$("#lang-update").dialog({
+			modal: true,
+			width: 400,
+			height: 200,
+			title: "{L_TITLE_INSTALL_LANG}",
+			buttons: {
+				Fermer: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+	<!-- ENDIF -->
+	
+	$("button[name='submit_lang_default']").click(function() {
+		var lang = $("input[name='lang_default']:checked").val();
+		$.ajax({
+			url: '../ajax/adm.php',
+			type: 'POST',
+			data: {f: "langDefault", lang: lang},
+			success: function(data) {
+				displayEtat(data, "{L_LANG_CHANGED}", "{L_LANG_NOT_CHANGED}");
+			}
+		});
+	});
+
+});
+</script> 

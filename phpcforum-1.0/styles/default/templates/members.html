@@ -1,0 +1,239 @@
+<!-- INCLUDE main_header.html -->
+	<div class="tooltip"></div>
+<div class="global">
+		<!-- IF MODE == "memberlist" -->
+		
+		<table class="globalbox form" width="100%" align="center">
+			<tr>
+				<th class="header_title">
+					{L_SEARCH_MEMBER}
+				</th>
+			</tr>
+			<tr>
+				<td class="global_content">
+					<form method="GET">
+					{L_LABEL_SEARCH_MEMBER} : <input type="text" name="m" value="{USERNAME_SEARCH}" <!-- IF AUTO_COMPLETION -->id="auto_users" <!-- ENDIF -->/>
+					<button class="button">{L_SEARCH}</button>
+					</form>
+				</td>
+			</tr>
+		</table>
+		
+		<div class="tooltip"></div>
+		<table class="globalbox" width="100%" align="center">
+			<tr>
+				<th class="header_title">
+					{L_MEMBER_FORUM}
+				</th>
+			</tr>
+			<tr>
+				<td class="global_content">
+		<!-- BEGIN member -->	
+			<div class="memberlist" >
+				<table width="100%" align="center">
+					<tr>
+						<td rowspan="2">
+							<img src="{member.PROFILE_USER_AVATAR}" alt="" style="width: 100px; height: 100px" />
+						</td>
+						<td class="memberlist_title">
+							<a href="{member.U_VIEWPROFILE}" style="color: #{member.PROFILE_USER_COLOR}"  class="viewtooltip link">{member.PROFILE_USERNAME}</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>{L_LAST_VISIT}</strong> : {member.PROFILE_USER_LASTVISIT}<br />
+							<strong>{L_NB_MESSAGE}</strong> : {member.PROFILE_USER_NB_MESSAGE}<br />
+							<strong>{L_REGDATE}</strong> : {member.PROFILE_USER_REGDATE}
+						</td>
+					</tr>
+				</table>
+				
+				
+			
+			</div>
+		<!-- END member -->
+				</td>
+			<tr>
+				<td class="global_content">
+					<p>{PAGINATION}</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<br clear="all" />
+	
+			
+	
+			
+	<!-- ELSEIF MODE == "viewprofile" -->
+			<table class="globalbox" width="100%" border="0">
+			<tr>
+				<th class="header_title" colspan="2">
+					{L_PROFILE_OF} {PROFILE_USERNAME}
+				</th>
+			</tr>
+			<tr>
+				<td class="global_content" align="center"><!-- IF PROFILE_USER_AVATAR != "" --><img src="{PROFILE_USER_AVATAR}"><!-- ENDIF --></td>
+				<td valign="top" class="global_content">			
+					<fieldset><legend>{L_INFO}</legend>
+						<p>{L_REGDATE} {PROFILE_USER_REGDATE}</p>
+						<p>{L_LASTVISIT} {PROFILE_USER_LASTVISIT}</p>
+						<p>{L_AVERT} : {PROFILE_USER_AVERT}</p>
+						<p>{L_NB_POST} : {PROFILE_USER_NB_MESSAGE}</p>
+					</fieldset>							
+				</td>
+				</tr>
+				<tr>
+				<td valign="top" class="global_content">			
+					<fieldset><legend>{L_PERSONNAL_INFO}</legend>
+						<p>{L_FROM} : {PROFILE_USER_FROM}</p>
+						<p>{L_JOB} : {PROFILE_USER_JOB}</p>
+						<p>{L_HOBBIES} : {PROFILE_USER_HOBBIES}</p>
+						<p>{L_BIRTHDAY} : {PROFILE_USER_BIRTHDAY}</p>
+						<p>{L_SEX} : {PROFILE_USER_SEXE}</p>
+						<p>{L_WEBSITE} : {PROFILE_USER_WEBSITE}</p>
+					</fieldset>							
+				</td>
+				<td valign="top" class="global_content">			
+					<fieldset><legend>{L_CONTACT}</legend>
+						<p>{L_MSN} : {PROFILE_USER_MSN}</p>
+						<p>{L_YAHOO} : {PROFILE_USER_YAHOO}</p>
+						<p>{L_SKYPE} : {PROFILE_USER_SKYPE}</p>
+						<p>{L_FACEBOOK} : <a href="{PROFILE_USER_FACEBOOK}" target="_blank">{PROFILE_USER_FACEBOOK}</a></p>
+						<p>{L_TWITTER} : <a href="{PROFILE_USER_TWITTER}" target="_blank">{PROFILE_USER_TWITTER}</a></p>
+						<br />
+						<p align="center"><a href="{PROFILE_USER_PM}" class="button">{L_CONTACT_PM}</a></p>
+					</fieldset>							
+				</td>
+				</tr>
+				<tr>
+					<td valign="top" class="global_content" colspan="2">			
+						<fieldset><legend>{L_SIGN}</legend>
+							<p>{PROFILE_USER_SIG}</p>
+						</fieldset>							
+					</td>
+				</tr>
+				<!-- IF PROFILE_USER_READ_COMMENT -->
+				<tr>
+					<td valign="top" class="global_content" colspan="2">			
+						<fieldset><legend>{L_COMMENT_USER}</legend>
+							<p>{PROFILE_USER_COMMENT}</p>
+						</fieldset>							
+					</td>
+				</tr>
+				<!-- ENDIF -->
+			</table>
+	<!-- ELSEIF MODE == "groups" -->
+		<h1 style="color: #{GROUP_COLOR}">{GROUP_NAME} [{GROUP_STATUS}]</h1>
+		<!-- IF GROUP_DESC != "" --><p class="classic">{GROUP_DESC}</p><!-- ENDIF -->
+		<!-- INCLUDE error.html -->
+		<form method="post">
+		<table class="globalbox" width="100%">
+			<tr>
+				<th class="header_title">
+					{L_USERNAME}
+				</th>
+				<th class="header_title">
+					{L_LASTVISIT}
+				</th>
+				<th class="header_title">
+					{L_NB_POST}
+				</th>
+				<th class="header_title">
+					{L_JOIN_GROUP}
+				</th>
+				<!-- IF CAN_ADD_USER_GROUPE -->
+				<th class="header_title">
+					{L_CHECK}
+				</th>
+				<!-- ENDIF -->
+				</tr>
+				<!-- BEGIN group -->	
+					<tr>
+						<td class="global_content">
+							<a href="{group.U_VIEWPROFILE}" style="color: #{group.PROFILE_USER_COLOR}" class="link">{group.PROFILE_USERNAME}</a>  <!-- IF group.GROUP_MANAGER --><img src="{U_ICON_STAR}" alt="{L_MANAGER}" /><!-- ENDIF -->
+						</td>
+						<td>
+							{group.PROFILE_USER_LASTVISIT}
+						</td>
+						<td>
+							{group.PROFILE_USER_NB_MESSAGE}
+						</td>
+						<td>
+							{group.USER_DATE_JOINED}
+						</td>
+						<!-- IF CAN_ADD_USER_GROUPE -->
+						<td>
+							<!-- IF !group.GROUP_MANAGER --><input type="checkbox" name="user_delete_group[]" value="{group.PROFILE_USER_ID}" /><!-- ENDIF -->
+						</td>
+						<!-- ENDIF -->
+					</tr>
+				<!-- END group -->
+			</table>
+			
+			
+				<p align="right">
+					<!-- IF CAN_ADD_USER_GROUPE --><input type="text" name="user_group" /><button type="submit" name="submit_user_group" class="button">{L_ADD_THE_MEMBER}</button><!-- ENDIF -->
+					<!-- IF JOIN_GROUP --><button type="submit" name="submit_join_group" class="button">{L_JOIN_THIS_GROUP}</button><!-- ENDIF -->
+					
+					<!-- IF USER_GROUP_DELETE -->
+					<!-- IF CAN_ADD_USER_GROUPE --><button type="submit" name="submit_user_delete_group" class="button">{L_REMOVE_MEMBER}</button><!-- ENDIF -->
+					<!-- ENDIF -->
+				</p>
+				<!-- IF GROUP_ATTENT -->	
+				<h1>{L_MEMBER_ATTENT}</h1>
+				<table class="globalbox" width="100%">
+				<tr>
+				<th class="header_title">
+					{L_USERNAME}
+				</th>
+				<th class="header_title">
+					{L_LASTVISIT}
+				</th>
+				<th class="header_title">
+					{L_NB_POST}
+				</th>
+				<th class="header_title">
+					{L_MEMBER_ATTENT_TIME}
+				</th>
+				<!-- IF CAN_ADD_USER_GROUPE -->
+				<th class="header_title">
+					{L_CHECK}
+				</th>
+				<!-- ENDIF -->
+				</tr>
+				<!-- BEGIN group_attent -->	
+					<tr>
+						<td class="global_content">
+							<a href="{group_attent.U_VIEWPROFILE}" class="link">{group_attent.PROFILE_USERNAME}</a> 
+						</td>
+						<td>
+							{group_attent.PROFILE_USER_LASTVISIT}
+						</td>
+						<td>
+							{group_attent.PROFILE_USER_NB_MESSAGE}
+						</td>
+						<td>
+							{group_attent.USER_DATE_JOINED}
+						</td>
+						<!-- IF CAN_ADD_USER_GROUPE -->
+						<td>
+							<input type="checkbox" name="user_attent_gestion_group[]" value="{group_attent.PROFILE_USER_ID}" />
+						</td>
+						<!-- ENDIF -->
+					</tr>
+				<!-- END group_attent -->
+			</table>
+			<!-- IF CAN_ADD_USER_GROUPE -->							
+				<p align="right"><button type="submit" name="submit_user_attent_group" class="button">{L_ADD_MEMBER}</button>
+				<!-- IF USER_GROUP_DELETE -->
+					<button type="submit" name="submit_user_delete_group" class="button">{L_REMOVE_MEMBER}</button>
+				<!-- ENDIF -->
+				</p>
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+			</form>
+			
+	<!-- ENDIF -->
+</div>
+	<!-- INCLUDE main_footer.html -->

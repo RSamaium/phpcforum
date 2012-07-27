@@ -1,0 +1,156 @@
+<h2>{L_MANAGE_PERMISSION}</h2>
+	<div class="state hidden"></div>
+	<button type="button" id="previous">< {L_PREVIOUS}</button>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_MANAGE_PERMISSION}</a></li>
+	</ul>
+	<div id="tabs-1">
+	<div class="permission_list">
+	<input type="hidden" value="{MODE}" name="mode" />
+	
+	<table  class="table" id="table-permissions">
+		<thead>
+		<tr>
+			<th>
+				
+			</th>
+			<th>
+				 {L_INTERACTION}
+			</th>
+	<!-- BEGIN name_permis -->
+			<th width="10%">
+				{name_permis.NAME} 
+			</th>
+	<!-- END name_permis -->
+		</tr>
+		</thead>
+		<tbody>
+	<!-- BEGIN permis -->
+		<tr>
+			<td>
+				<span<!-- IF permis.COLOR != "" --> style="color: #{permis.COLOR}"<!-- ENDIF -->>{permis.NAME}</span><!-- IF FORUMS --><span> / {permis.FORUM_NAME}</span><!-- ENDIF -->
+				<input type="hidden" value="{permis.NUM}" name="num" />
+				<input type="hidden" value="{permis.ID}" name="left_id" />
+				<input type="hidden" value="{permis.FORUM_ID}" name="right_id" />
+			</td>
+			<td>
+				<a href="javascript://" class="gensmall all_check">{L_ALL_CHECK}</a><br />
+				<a href="javascript://" class="gensmall all_uncheck">{L_ALL_UNCHECK}</a><br /><br />
+				<!-- IF FORUMS -->
+				<select class="role">
+					<option>-- {L_ROLE} --</option>
+					<option name="modo" class="gensmall" >{L_MODO}</option>
+					<option name="member" class="gensmall" >{L_MEMBER}</option>
+					<option name="member_without_poll" class="gensmall" >{L_MEMBER_WITHOUT_POLL}</option>
+					<option name="anonymous" class="gensmall" >{L_VISITOR}</option>
+				</select>
+				<!-- ENDIF -->
+			</td>
+			<!-- BEGIN permis.type -->
+			<td>
+				<input type="checkbox" name="left{permis.NUM}[]" value="{permis.type.TYPE}" <!-- IF permis.type.CHECKED -->checked="checked"<!-- ENDIF --> />
+			</td>
+			<!-- END permis.type -->
+		</tr>
+		
+	<!-- END permis -->
+		</tbody>
+	</table>
+	
+</div>
+<p><button id="submit_permission">{L_VALID}</button></p>
+</div>
+
+
+
+<script>
+
+
+$(function() {
+$(".tabs-layout").tabs();
+$("button, .button").button();
+
+$("#previous").click(function() {
+	clickSlide('page=permission');
+});
+
+$('#table-permissions').dataTable({
+		"sScrollX": "100%",
+		"bJQueryUI": true,
+		"sPaginationType": "full_numbers",
+		"oLanguage": table_lang
+	});
+	
+	$('.all_check, .all_uncheck').click(function() {
+		var num = ident($(this).parent('td').next('td').children('input').attr('name'));
+		var check = true;
+		if ($(this).hasClass('all_uncheck')) {
+			check = false;
+		}
+		$(".permission_list :input[name='left" + num + "[]']").attr('checked', check);
+	});
+	
+	$('.role').change(function() {
+		var role_name = $(this).children('option:selected').attr('name');
+		var num = ident($(this).parent('td').next('td').children('input').attr('name'));
+		switch(role_name) {
+			case 'modo':
+				assignRole(num, ['forum_view', 'topic_new', 'topic_read', 'topic_reply', 'topic_icon', 'msg_delete', 'msg_edit', 'modo_msg_report', 'modo_topic_lock', 'modo_msg_edit', 'modo_msg_delete', 'poll_create', 'poll_vote', 'poll_edit', 'modo_poll_edit', 'modo_msg_move', 'modo_topic_merge', 'modo_topic_split', 'modo_topic_delete', 'modo_topic_move', 'modo_topic_sticky', 'modo_topic_annonce', 'modo_topic_global', 'modo_topic_copy', 'modo_move_corbeile', 'modo_msg_information', 'modo_post_lock']);
+			break;
+			case 'member':
+				assignRole(num, ['forum_view', 'topic_new', 'topic_read', 'topic_reply', 'topic_icon', 'msg_edit', 'poll_create', 'poll_vote', 'poll_edit']);
+			break;
+			case 'member_without_poll':
+				assignRole(num, ['forum_view', 'topic_new', 'topic_read', 'topic_reply', 'topic_icon', 'msg_edit']);
+			break;
+			case 'anonymous':
+				assignRole(num, ['forum_view', 'topic_read']);
+			break;
+		}
+	});
+	
+	function assignRole(num, array) {
+		$(".permission_list :input[name='left" + num + "[]']").each(function(){
+			if ($.inArray($(this).attr('value'), array) != -1) {
+				$(this).attr('checked', true);
+			}
+			else {
+				$(this).attr('checked', false);
+			}
+		});
+	}
+	
+
+$("#submit_permission").click(function() {
+		var input_hidden = $(".permission_list :input[name='left_id']");
+		var input;
+		var items = [];
+		var success = 0;
+		for (var i=0 ; i < input_hidden.length ; i++) {	
+			var j = $(input_hidden[i]).prev().val();
+			$(".permission_list :input[name='left" + j + "[]']:checked").each(function(){
+				items.push($(this).val());
+			});
+			var right_id = $(input_hidden[i]).next().val();
+			$.ajax({
+				  url: '../ajax/adm.php',
+				  type: 'POST',
+				  data: {f: "changePermission", permission: items, mode: $(".permission_list :input[name='mode']").val(), left_id: input_hidden[i].value, right_id: right_id},
+				  success: function(data) {
+						success++;
+						if (success == input_hidden.length) {
+							clickSlide('page=permission');
+						}
+						
+				  }
+			});
+			items = [];
+			
+		}
+		
+		
+	});
+});
+
+</script>

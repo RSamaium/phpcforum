@@ -1,0 +1,64 @@
+<!-- INCLUDE main_header.html -->
+
+<div class="tooltip"></div>
+
+<div class="global">
+
+<h1 class="title">{L_POST_DETAILS}</h1>
+
+<!-- IF PERMISSION == "" -->
+	<table class="globalbox" width="100%">
+		<tr>
+			<th class="header_title">{L_TITLE_INFO_IP} </th>
+		</tr>
+		<tr>
+			<td class="global_content">
+				- {L_POST_ID}
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">
+				- {L_WHO_HAS_POSTED} 
+			</td>
+		</tr>
+		<tr>
+			<td class="global_content">
+				- {L_NB_MSG_THIS_IP} 
+			</td>
+		</tr>
+	</table>
+	<h1 class="title">{L_TITLE_OTHER_IP}</h1>
+	<table class="globalbox" width="100%">
+		<tr>
+			<th class="header_title">{L_USERNAME}</th>
+			<th class="header_title">{L_POST_SUBJECT}</th>
+			<th class="header_title">{L_POST_TIME}</th>
+		</tr>
+		<!-- BEGIN other_poster -->
+		<tr>
+			<td class="global_content">
+				<a href="{other_poster.U_VIEWPROFILE}" class="link">{other_poster.PROFILE_USERNAME}</a>
+			</td>
+			<td class="global_content">
+				<a href="{other_poster.U_POST}" class="link">{other_poster.POST_SUBJECT}</a>
+			</td>
+			<td class="global_content">
+				{other_poster.POST_TIME} 
+			</td>
+		</tr>
+		<!-- END other_poster -->
+	</table>
+<!-- ELSE -->
+	<table class="globalbox" width="100%">
+		<tr>
+			<th class="header_title">{L_TITLE_ERROR}</th>
+		</tr>
+		<tr>
+			<td class="global_content" align="center">
+				<p>{PERMISSION}</p>
+			</td>
+		</tr>
+	</table>
+<!-- ENDIF -->
+</div>
+<!-- INCLUDE main_footer.html -->

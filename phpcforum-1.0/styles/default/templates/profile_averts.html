@@ -1,0 +1,210 @@
+<!-- INCLUDE main_header.html -->
+
+
+<div class="global">
+<!-- INCLUDE error.html -->
+
+<script><!-- INCLUDE profile_averts.js --></script>
+
+<div id="confirm_window" class="hidden">
+	<div data-id="delete">
+		<p>{L_AVERT_DELETE}</p>
+	</div>
+	<div data-id="syn">
+		<p>{L_AVERT_SYN}</p>
+		<p class="gensmall">{L_AVERT_SYN_HELP}</p>
+	</div>
+	<div data-id="deban">
+		<p>{L_AVERT_DEBAN}</p>
+	</div>
+	<div data-id="ban">
+		<p>{L_AVERT_BAN}</p>
+		 <span class="label">{L_REASON}</span> <br /><textarea name="ban_reason" cols="30" rows="10"></textarea><br />
+		 <span class="label">{L_EXPIRE}</span> <span class="gensmall">({L_EMPTY_FOR_ILLI})</span> <br /><input type="text" name="ban_expire" size="2"/> {L_DAYS}
+	</div>
+	<div data-id="avert">
+	  <p>{L_AVERT_AVERT}</p>
+	  <span class="label">{L_REASON}</span> <br /><textarea name="avert_reason" cols="30" rows="10"></textarea><br />
+	  <span class="label">{L_EXPIRE}</span> <span class="gensmall">({L_EMPTY_FOR_ILLI})</span> <br /><input type="text" name="avert_expire" size="2"/> {L_DAYS}
+	</div>
+</div>
+
+<form method="post">
+	<h1 class="title">{L_MANAGE_AVERT}</h1>
+	<table class="globalbox" width="100%">
+	<!-- IF PERMISSION == "" -->
+		<!-- IF SUBMIT -->
+			<!-- INCLUDE confirm.html -->
+		<!-- ELSE -->	
+			<!-- IF MODE == "search_user" -->
+			<tr>
+				<th class="header_title">{L_SEARCH_MEMBER}</th>
+			</tr>
+			<tr>
+				<td class="global_content">
+				{L_FIND_MEMBER} : <input type="text" name="search_user" id="auto_users" class="autocomplete" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="global_content">
+					<button type="submit" name="submit_profile" class="button">{L_SEND}</button>
+				</td>
+			</tr>
+			</table>
+			<h1 class="title">{L_LAST_AVERT}</h1>
+			<table class="globalbox" width="100%">
+			<tr>
+				<th class="header_title">{L_USER}</th>
+				<th class="header_title">{L_TIME}</th>
+				<th class="header_title">{L_REASON}</th>
+				<th class="header_title">{L_EXPIRE}</th>
+				<th class="header_title" width="30%">{L_GET_NB_AVERT}</th>
+				<th class="header_title"></th>
+			</tr>
+			<!-- BEGIN last_averts -->
+			<tr>
+				<td class="global_content"><span style="color: #{last_averts.USER_COLOR}">{last_averts.USER_AVERT}<!-- IF last_averts.IS_BAN --><sup style="color: #ff0000">BANNI !</sup><!-- ENDIF --></span></td>
+				<td>{last_averts.AVERT_DATE}</td>
+				<td><!-- IF last_averts.AVERT_REASON == "" -->{L_NULL}<!-- ELSE -->{last_averts.AVERT_REASON}<!-- ENDIF --></td>
+				<td><!-- IF last_averts.NO_EXPIRE -->{L_INDEFINITE}
+					<!-- ELSE -->
+						<!-- IF last_averts.AVERT_EXPIRED -->
+						<span style="color: #ff0000">{L_EXPIRE_SINCE}</span> 
+						<!-- ENDIF -->
+					{last_averts.AVERT_EXPIRE}
+				<!-- ENDIF --></td>
+				<td align="center">{last_averts.USER_NB_AVERT}</td>
+				<td align="center"><a href="{last_averts.U_EDIT_AVERT}" class="button">{L_VIEW}</a></td>
+			</tr>
+			<!-- END last_averts -->
+		</table>
+			<!-- ELSEIF MODE == "user_avert" -->
+			<tr>
+				<th class="header_title" colspan="2">{L_AVERT_OF} {PROFILE_USERNAME}</th>
+			</tr>
+			<tr>
+				<td class="global_content" valign="top" align="center">	
+				<!-- IF PROFILE_USER_AVATAR != "" -->			
+					<fieldset><legend><span style="color: #{PROFILE_USER_COLOR}">{PROFILE_USERNAME}</span></legend>
+						<img src="{PROFILE_USER_AVATAR}" />
+					</fieldset>
+				<!-- ENDIF -->
+				</td>
+				<td class="global_content" valign="top">
+					<fieldset><legend>{L_GLOBAL_SETTING}</legend>
+					<table>
+						<tr>
+							<td><span class="label" width="40%">{L_REGDATE} :</span></td><td>{PROFILE_USER_REGDATE}</td>
+						</tr>
+						<tr>
+							<td><span class="label">{L_LASTVISIT} :</span></td><td>{PROFILE_USER_LASTVISIT}</td>
+						</tr>
+						<tr>
+							<td><span class="label">{L_NB_POST} :</span></td><td> {PROFILE_USER_NB_MESSAGE}</td>
+						</tr>
+						<tr>
+							<td><span class="label">{L_NB_AVERT} :</span></td><td> {PROFILE_USER_AVERT}</td>
+						</tr>
+						<!-- IF USER_BAN -->
+						<tr>
+							<td><span class="label">{L_STATUS} :</span></td><td> <strong style="color: #ff0000">{L_BAN}</strong></td>
+						</tr>
+						<!-- ENDIF -->	
+						<!-- IF PROFILE_USER_BAN > 0 -->
+						<tr>
+							<td><span class="label">{L_BAN} :</span></td><td>{PROFILE_USER_BAN} {L_TIMES}</td>
+						</tr>
+						<!-- ENDIF -->							
+						
+					</table>
+					</fieldset>
+				</td>	
+				</tr>
+				<!-- IF USER_BAN -->
+				<tr>
+				<td></td>
+				<td class="global_content" valign="top">
+					<fieldset style="border-color: #ff0000"><legend style="color: #ff0000">{L_INFO_OF_BAN}</legend>
+					<table width="50%">
+						<tr>
+							<td width="40%"><span class="label">{L_BAN_BY} : </span></td><td><span style="color: #{BAN_REPORT_COLOR}">{BAN_REPORT_USERNAME}</span></td>
+						</tr>
+						<tr>
+							<td><span class="label">{L_TIME} : </span></td><td>{BAN_DATE}</td>
+						</tr>
+						<tr>
+							<td><span class="label">{L_REASON} : </span></td><td><!-- IF BAN_REASON == "" -->{L_NULL}<!-- ELSE -->{BAN_REASON}<!-- ENDIF --></td>
+						</tr>
+						<tr>
+							<td><span class="label">{L_EXPIRE_THE} : </span></td><td><!-- IF NO_EXPIRE -->{L_INDEFINITE}<!-- ELSE -->{BAN_EXPIRE}<!-- ENDIF --></td>
+						</tr>	
+					</table>
+					</fieldset>
+				</td>	
+				
+			</tr>
+				<!-- ENDIF -->	
+			<tr>
+				<td class="global_content"  colspan="2" align="center">
+					<a href="{U_VIEW_COMMENT_USER}" class="button">{L_VIEW_COMMENT}</a>
+					<button type="button" class="confirm_avert button" rel="#window_confirm" data-id="avert" >{L_GIVE_AVERT}</button>
+					<!-- IF PROFILE_USER_AVERT > 0 --><button type="button" class="confirm_avert"  data-id="delete" rel="#window_confirm">{L_REMOVE_AVERT}</button><!-- ENDIF -->
+					<!-- IF CAN_USER_BAN -->
+					<button type="button" class="confirm_avert button" rel="#window_confirm" data-id=<!-- IF USER_BAN -->"deban">{L_TO_DEBAN}<!-- ELSE -->"ban">{L_TO_BAN}<!-- ENDIF --></button>
+					<!-- ENDIF -->
+					<button type="button" class="confirm_avert button" data-id="syn" rel="#window_confirm">{L_SYNCHRO}</button>
+					<a href="{U_AVERT_RETURN}" class="button">{L_RETURN}</a>
+					<div id="window_confirm">
+						<div class="content_global">
+							<h1>{L_WIN_CONFIRM}</h1>
+							<input type="hidden" name="mode"/>
+							<input type="hidden" name="user_id" value="{USER_ID}" />
+						</div>
+						<div id="content_window_confirm"></div>
+						<p align="center"><button type="submit" name="submit_avert" class="button">{L_OK}</button> <button type="button" class="close button">{L_CANCEL}</button></p>
+					</div>
+				</td>
+			</tr>
+		</table>	
+				<!-- IF PROFILE_USER_AVERT > 0 -->
+		<table class="globalbox" width="100%">
+			<tr>
+				<th class="header_title">{L_GIVE_BY}</th>
+				<th class="header_title">{L_TIME}</th>
+				<th class="header_title">{L_REASON}</th>
+				<th class="header_title">{L_EXPIRE_THE}</th>
+				<th class="header_title">{L_CHECK}</th>
+			</tr>
+			<!-- BEGIN avert -->
+			<tr>
+				<td class="global_content"><span style="color: #{avert.AVERT_REPORT_COLOR}">{avert.AVERT_REPORT_USERNAME}</span></td>
+				<td>{avert.AVERT_DATE}</td>
+				<td><!-- IF avert.AVERT_REASON == "" -->{L_NULL}<!-- ELSE -->{avert.AVERT_REASON}<!-- ENDIF --></td>
+				<td><!-- IF avert.NO_EXPIRE -->{L_INDEFINITE}<!-- ELSE -->
+					<!-- IF avert.AVERT_EXPIRED -->
+					<span style="color:#ff0000">{L_EXPIRE_SINCE}</span>
+					<!-- ENDIF -->
+				{avert.AVERT_EXPIRE}
+				<!-- ENDIF --></td>
+				<td><input type="checkbox" name="avert_id[]" value="{avert.AVERT_ID}" /></td>
+			</tr>
+			<!-- END avert -->
+		</table>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+	<!-- ELSE -->
+		<tr>
+			<th class="header_title">{L_ACCESS_AVERT}</th>
+		</tr>
+		<tr>
+			<td class="global_content" align="center">
+				<p>{PERMISSION}</p>
+			</td>
+		</tr>
+	<!-- ENDIF -->
+	
+		
+</form>
+</div>
+<!-- INCLUDE main_footer.html -->

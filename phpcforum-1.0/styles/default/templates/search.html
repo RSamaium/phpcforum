@@ -1,0 +1,91 @@
+
+	<!-- INCLUDE main_header.html -->
+	<div class="tooltip"></div>
+	<div class="global">
+	<form method="GET" class="form">
+	<table class="globalbox" width="100%">
+	<tr>
+				<th class="header_title" colspan="2">{L_SEARCH}</th>
+			</tr>
+	<tr>
+		<td valign="top" class="global_content">
+			 <fieldset>
+				<legend><strong>{L_SEARCH}</strong></legend>
+					<table class="globalbox" width="100%">
+						<tr>
+							<td>{L_BY_KEYWORDS}</td><td><input type="text" name="s" id="auto_search"  value="{KEYWORDS}" title="{L_HELP_BY_KEYWORDS}"></td>
+						</tr>
+						<tr>
+							<td>{L_BY_AUTHOR}</td><td><input type="text" name="u"  value="{AUTHOR}" title="{L_HELP_BY_AUTHOR}" <!-- IF AUTO_COMPLETION -->id="auto_users" <!-- ENDIF -->/></td>
+						</tr>
+					</table>
+			  </fieldset>
+		</td>
+		<td valign="top" class="global_content">
+			  <fieldset>
+				<legend><strong>{L_SEARCH_IN} :</strong></legend>
+				<label><input type="radio" name="r" value="all" <!-- IF OPTION_MODE == "all" -->checked="checked"<!-- ENDIF -->>{L_SUBJECT_AND_POST}</label><br />
+				<label><input type="radio" name="r" value="text" <!-- IF OPTION_MODE == "text" -->checked="checked"<!-- ENDIF -->>{L_POST_ONLY}</label><br />
+				<label><input type="radio" name="r" value="title" <!-- IF OPTION_MODE == "title" -->checked="checked"<!-- ENDIF -->>{L_SUBJECT_ONLY} </label> <br />
+				<label><input type="radio" name="r" value="first" <!-- IF OPTION_MODE == "first" -->checked="checked"<!-- ENDIF -->>{L_FIRST_POST_ONLY}</label> 
+			</fieldset>
+		</td>
+	</tr>
+			<tr>
+				<td align="center" class="global_content" value="{KEYWORDS}" colspan="2">
+					<button class="button">{L_SEND}</button>
+				</td>
+			</tr>
+		</table>
+		<!-- IF SUBMIT -->
+	<div id="results">
+	
+	<h1 class="title">{NB_RESULT}</h1>
+	
+		<!-- BEGIN post -->
+		<table class="postbox" width="100%">
+					<!-- IF post.HEADER_TITLE -->
+					<th class="header_title">{L_AUTHOR}
+					</th>
+					<th class="header_title" colspan="3">
+						{L_POST}
+					</th>
+					<!-- ENDIF -->
+					<tr>
+						<td class="redirect_search" colspan="3">
+							<a href="{post.U_TOPIC}" class="link">{L_VIEW_TOPIC}</a> | <a href="{post.U_FORUM}" class="link">{L_VIEW_FORUM_TO_TOPIC}</a>
+						<td>
+					</tr>
+					<tr>
+					
+						<td class="post_profile">
+							<a name="p{post.POST_ID}"></a>
+							<p align="center"><a href="{post.U_VIEWPROFILE}" style="color: #{post.PROFILE_USER_COLOR}; font-weight: bold;" class="link">{post.PROFILE_USERNAME}</a></p>
+						</td>
+						<td>
+							<span class="gensmall">{post.SUBJECT}</span>  
+						</td>
+						<td align="right" class="post_profile">
+							<span class="gensmall">posté le {post.POST_TIME}</span>
+						</td>
+						</tr>
+						<tr>
+						<td class="post_profile">
+
+							<p>
+								-{L_NB_POSTS} : {post.PROFILE_USER_NB_MESSAGE} </p>
+						</td>
+						<td valign="top" colspan="2" border="1">
+							<div  class="post_text" >{post.TEXT}</div>
+						</td>
+					</tr>
+				</table>	
+			<!-- END post -->
+			<div class="globalbox global_content">
+				{PAGINATION}
+			</div>
+	</div>
+	<!-- ENDIF -->
+	</form>
+	</div>
+	<!-- INCLUDE main_footer.html -->

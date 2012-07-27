@@ -1,0 +1,209 @@
+<div id="design_tmp">
+	<p>{L_CONFIRM_SUBMIT}</p>
+</div>
+
+<div id="init_design_tmp">
+	<p>{L_CONFIRM_INIT}</p>
+</div>
+
+
+<h2>{L_DESIGN}</h2>
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_TAB_IMG}</a></li>
+		<li><a href="#tabs-2">{L_TAB_EDITOR}</a></li>
+	</ul>
+	<div id="tabs-1">
+		<br />
+		<button name="submit_img">{L_BTN_SAVE}</button>
+		<form id="form_img">
+		<table width="100%">
+		<!-- BEGIN image -->
+			<tr class="line_img">
+				<td>
+					<img src="{image.U_ABS_FILENAME}" alt="" />
+				</td>
+				<td valign="top">
+					<input type="hidden" value="{image.ID}" name="image_id" />
+					<p>{L_ID_IMG} : {image.NAME}</p>
+					<input type="text" value="{image.U_FILENAME}" size="50" name="filename" />
+				</td>
+				<td>
+					<fieldset><legend>{L_OTHER_SETTING}</legend>
+					<table width="100%">
+					<tr>
+						<td>
+							{L_LANG}
+						</td>
+						<td>
+							<select name="image_lang">
+									<option value="fr_FR">{L_DEFAULT_FR}</option>
+								<!-- BEGIN image.lang -->
+									<option value="{image.lang.LONGID}" <!-- IF image.lang.EQUAL_LANG -->selected="selected"<!-- ENDIF -->>{image.lang.NAME}</option>
+								<!-- END image.lang -->
+							</select>
+							
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{L_HEIGHT}
+						</td>
+						<td>
+							<input type="text" value="{image.HEIGHT}" size="1" name="image_height" />{L_PX}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{L_WIDTH}
+						</td>
+						<td>
+							<input type="text" value="{image.WIDTH}" size="1" name="image_width" />{L_PX}
+						</td>
+					</tr>
+					
+					</table>
+					</fieldset>
+				</td>
+			</tr>
+		<!-- END image -->
+		</table>
+		</form>
+	</div> 
+	
+
+	<div id="tabs-2">
+		<p>{L_EDITOR_HELP}</p>
+		<fieldset><legend>{L_INTERACTION}</legend>
+			<a href="{U_CHANGE_DESIGN}" target="_blank" class="button">{L_BTN_EDITOR}</a>
+			<button name="submit_tmp_design">{L_BTN_SUBMIT}</button>
+			<button name="init_tmp_design">{L_BTN_INIT}</button>
+		</fieldset>
+	</div> 
+		
+
+</div>
+
+<script> 
+$(function() {
+	$(".tabs-layout").tabs();
+	$("button, .button").button();
+	
+	/*$(".confirm").overlay({ 
+			expose: { 
+				color: '#000',  
+				opacity: 0.8 
+			}, 
+			closeOnClick: true, 
+			api: true,
+			onBeforeLoad: function() {
+				var mode = this.getTrigger().attr("id");
+				var str = "";
+				switch(mode) {
+					case 'submit_tmp_design':
+						str = "Etes vous sûr d'appliquer le design temporaire sur le forum ?";
+					break;
+					case 'ini_tmp_design':
+						str = "Etes vous sûr de vouloir réinitialiser le design temporaire ?";
+					break;
+				}
+				$("input[name='mode_global']").val(mode);
+				$("#confirm_global_content p").html(str);
+			}
+	});*/
+	
+	$( "#design_tmp" ).dialog({
+			resizable: false,
+			height:150,
+			width: 300,
+			title: '{L_CONFIRM}',
+			modal: true,
+			autoOpen: false,
+			buttons: {
+				"Ok": function() {
+					changeTmpDesign('submit_tmp_design');
+					$( this ).dialog("close");
+				},
+				"Annuler": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+	
+	$( "#init_design_tmp" ).dialog({
+			resizable: false,
+			height:150,
+			width: 300,
+			title: '{L_CONFIRM}',
+			modal: true,
+			autoOpen: false,
+			buttons: {
+				"Ok": function() {
+					changeTmpDesign('init_tmp_design');
+					$( this ).dialog("close");
+				},
+				"Annuler": function() {
+					$( this ).dialog("close");
+				}
+			}
+	});
+	
+	$("button[name='submit_tmp_design']").click(function() {
+		$( "#design_tmp" ).dialog('open');
+	});
+	
+	$("button[name='init_tmp_design']").click(function() {
+		$( "#init_design_tmp" ).dialog('open');
+	});
+	
+	$("button[name='submit_global_action']").click(function() {
+		var mode = $("input[name='mode_global']").val();
+		var api = $(".confirm").data("overlay");
+		api.close();
+		
+	 });
+	 
+	 $("button[name='submit_img']").click(function() {
+		var array = [];
+		$(".line_img").each(function() {
+			var filename = $(this).find("input[name='filename']").val();
+			var image_id = $(this).find("input[name='image_id']").val();
+			var image_lang = $(this).find("select[name='image_lang'] option:selected").val();
+			var image_height = $(this).find("input[name='image_height']").val();
+			var image_width = $(this).find("input[name='image_width']").val();
+			array.push({image_id: image_id, image_filename: filename, image_lang: image_lang, image_height: image_height, image_width:image_width});
+		});
+		$.ajax({
+			url: '../ajax/adm.php',
+			type: 'POST',
+			data: {f: "changeImageSet", images: array},
+			success: function(data) {
+				displayEtat(data, "{L_IMG_CHANGED}", "{L_IMG_NOT_CHANGED}");	
+			}
+		});
+	
+	 });
+
+});
+
+function changeTmpDesign(mode) {
+	$.ajax({
+		url: '../ajax/adm.php',
+		type: 'POST',
+		data: {f: "changeDesign", mode: mode},
+		success: function(data) {
+			switch (mode) {
+				case 'submit_tmp_design': 
+					displayEtat(data, "{L_SUBMIT_DESIGN}", "{L_NOT_SUBMIT_DESIGN}");
+				break;
+				case 'init_tmp_design': 
+					displayEtat(data, "{L_INIT_DESIGN}", "{L_NOT_INIT_DESIGN}");
+				break;
+			}
+			
+		}
+	});
+}
+</script> 
+ 

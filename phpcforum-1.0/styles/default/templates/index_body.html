@@ -1,0 +1,46 @@
+<!-- INCLUDE main_header.html -->
+
+<!-- PLUGIN[news] display_news -->
+
+<!-- INCLUDE forumlist.html -->		
+	<div class="global">
+	<table class="globalbox_l2" width="100%">
+		<tr>
+			<th colspan="2" class="header_title">{L_WHO_IS_ONLINE}</th>
+		</tr>
+		<tr>
+			<td  class="global_content">
+				{L_STATS_TOTAL_USERS} : {L_STATS_MEMBERS} ,{L_STATS_INVISIBLES}, {L_STATS_ANONYMOUS}<br />
+				{L_MAX_SIMUL_USERS}
+			</td>
+			<td  class="global_content gensmall" valign="top" rowspan="2">
+				<div class="global_content">
+					<p>{L_TOTAL_MSG}<br />
+					{L_TOTAL_TOPIC}<br />
+					{L_TOTAL_MEMBER}<br />
+					{L_LAST_MEMBER}</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td  class="global_content">
+			
+				{L_REGISTRER_USERS} : 
+				<!-- BEGIN useronline -->
+					<!-- IF useronline.VIEW_ONLINE -->
+						<a href="{useronline.U_USER_PROFIL}" user_id="{useronline.USER_ID}" style="color: #{useronline.USER_COLOR}" class="link">{useronline.USERNAME}</a>{useronline.SEPARATOR}
+					<!-- ENDIF --> 
+				<!-- END useronline -->
+				<br /><br />
+				<span class="gensmall"><i>{L_LEGEND} : </i>
+				<!-- BEGIN grouplist -->
+						<a href="{grouplist.U_VIEW_GROUP}" style="color: #{grouplist.GROUP_COLOR}" class="link">{grouplist.GROUP_NAME}</a>{grouplist.SEPARATOR}
+				<!-- END grouplist -->
+				</span>
+				
+				
+			</td>
+		</tr>
+	</table>
+	</div>
+<!-- INCLUDE main_footer.html -->

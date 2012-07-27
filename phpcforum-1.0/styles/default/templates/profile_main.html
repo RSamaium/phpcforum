@@ -1,0 +1,231 @@
+<!-- INCLUDE main_header.html -->
+
+<div class="etat"></div>
+<div class="tooltip"></div>
+
+<script type='text/javascript'>
+	<!-- INCLUDE profile_main.js -->
+</script>
+
+<div class="global">
+<!-- INCLUDE error.html -->
+<h1 class="title">{L_YOUR_PROFILE}</h1>
+
+<form method="post"  class="form" <!-- IF MODE == "avatar" -->enctype="multipart/form-data"<!-- ENDIF -->>
+<!-- IF PERMISSION == "" -->
+	<!-- IF SUBMIT -->
+		<table class="globalbox" width="100%">
+			<!-- INCLUDE confirm.html -->
+	<!-- ELSE -->	
+
+	<!-- IF MODE == "profile_info" -->
+		<table class="globalbox" width="100%">
+			<tr>
+				<th colspan="2" class="header_title">{L_TITLE_INFO}</th>
+			</tr>
+			</tr>
+				<td class="global_content">{L_USERNAME}</td>
+				<td><input type="text" name="username" <!-- IF !CAN_CHANGE_USERNAME -->disabled="disabled"<!-- ENDIF --> value="{PROFILE_USERNAME}" /></td>
+			</tr>
+			</tr>
+				<td class="global_content">{L_PASS}</td>
+				<td><input type="password" name="user_password" title="{L_HELP_PASS}" /></td>
+			</tr>
+			</tr>
+				<td class="global_content">{L_CONFIRM_PASS}</td>
+				<td><input type="password" name="confirm_user_password" /></td>
+			</tr>
+			</tr>
+				<td class="global_content">{L_EMAIL}</td>
+				<td><input type="text" name="user_email" <!-- IF !CAN_CHANGE_EMAIL -->disabled="disabled"<!-- ENDIF --> value="{PROFILE_EMAIL}" /></td>
+			</tr>
+			<tr>
+			<td colspan="2">
+				<p align="center"><button type="submit" name="submit_profile" class="button">{L_SEND}</button></p>
+			</td>
+		</tr>
+		</table>
+	<!-- ENDIF -->
+		<table class="globalbox" width="100%">
+	<!-- IF MODE == "avatar" -->
+				<tr>
+					<th colspan="2" class="header_title">{L_EDIT_AVATAR}</th>
+				</tr>
+			<td align="center" class="global_content" colspan="2">
+		<!-- IF EXIST_AVATAR --><img src="{CURRENT_AVATAR}" alt="{L_AVATAR_ALT}" /><!-- ENDIF -->
+			</td>
+		</tr><tr>
+			<td class="global_content" width="35%">
+				{L_CHOISE_IMG} :
+				
+			</td>
+			<td class="global_content">
+				 <input type="file" name="user_avatar" />
+			</td>
+		</tr>
+	<!-- ELSEIF MODE == "profile_info" -->
+			<tr>
+				<th colspan="2" class="header_title">{L_EDIT_PROFILE_INFO}</th>
+			</tr>
+				<td class="global_content">{L_MSN} :</td>
+				<td><input type="text" name="user_msn" value="{USER_MSN}" /></td>
+			</tr>
+			</tr>
+				<td class="global_content">{L_YAHOO} :</td>
+				<td><input type="text" name="user_yahoo" value="{USER_YAHOO}" /></td>
+			</tr>
+			</tr>
+				<td class="global_content">{L_SKYPE} :</td>
+				<td><input type="text" name="user_skype" value="{USER_SKYPE}" /></td>
+			</tr>
+			</tr>
+				<td class="global_content">{L_FACEBOOK} :</td>
+				<td><input type="text" name="user_facebook" value="{USER_FACEBOOK}" /></td>
+			</tr>
+			</tr>
+				<td class="global_content">{L_TWITTER} :</td>
+				<td><input type="text" name="user_twitter" value="{USER_TWITTER}" /></td>
+			</tr>
+			</tr>
+				<td class="global_content">{L_WEBSITE} :</td>
+				<td><input type="text" name="user_website" value="{USER_WEBSITE}" /></td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_FROM} :</td>
+				<td><input type="text" name="user_from" value="{USER_FROM}" /></td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_HOBBIES} :</td>
+				<td><input type="text" name="user_hobbies" value="{USER_HOBBIES}" /></td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_EMPLOYMENT} :</td>
+				<td><input type="text" name="user_job" value="{USER_JOB}" /></td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_SEX} :</td>
+				<td>
+				<input type="radio" name="user_sexe[]" value="m" <!-- IF USER_SEXE == "m" -->checked="checked"<!-- ENDIF --> /> {L_MALE}   
+				<input type="radio" name="user_sexe[]" value="f" <!-- IF USER_SEXE == "f" -->checked="checked"<!-- ENDIF --> /> {L_WOMEN}   
+				<input type="radio" name="user_sexe[]" value="i" <!-- IF USER_SEXE == "i" -->checked="checked"<!-- ENDIF --> />{NOT_SPECIFY}</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_BIRTHDAY} :</td>
+				<td><input type="text" name="user_birthday" class="date" value="{USER_BIRTHDAY}" /></td>
+			</tr>
+	<!-- ELSEIF MODE == "profile_sig" -->
+		<tr>
+				<th class="header_title" class="header_title">{L_EDIT_SIG}</th>
+			</tr>
+			<tr>
+				<td class="global_content"><textarea class="ckeditor" cols="30" id="editor1" name="user_sig" rows="5" align="center">{USER_SIG}</textarea></td>
+			</tr>
+	<!-- ELSEIF MODE == "profile_personal" -->
+		<tr>
+				<th class="header_title" colspan="2">{L_EDIT_GLOBAL_SETTING}</th>
+			</tr>
+				<td class="global_content">{L_USER_ALLOW_CONTACT_PM} :</td>
+				<td>
+					<input type="radio" name="user_allow_contact_pm[]" value="1" <!-- IF USER_ALLOW_CONTACT_PM -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+					<input type="radio" name="user_allow_contact_pm[]" value="0" <!-- IF !USER_ALLOW_CONTACT_PM -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_USER_MASK_STATUT} :</td>
+				<td>
+					<input type="radio" name="user_mask_statut[]" value="1" <!-- IF USER_MASK_STATUT -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+					<input type="radio" name="user_mask_statut[]" value="0" <!-- IF !USER_MASK_STATUT -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_NEW_PM_AVERT} :</td>
+				<td>
+					<input type="radio" name="new_pm_avert[]" value="1" <!-- IF NEW_PM_AVERT -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+					<input type="radio" name="new_pm_avert[]" value="0" <!-- IF !NEW_PM_AVERT -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_NEW_PM_POPUP} :</td>
+				<td>
+					<input type="radio" name="new_pm_popup[]" value="1" <!-- IF NEW_PM_POPUP -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+					<input type="radio" name="new_pm_popup[]" value="0" <!-- IF !NEW_PM_POPUP -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+	<!-- ELSEIF MODE == "profile_post" -->
+		<tr>
+				<th class="header_title" colspan="2">{L_EDIT_POST_SETTING}</th>
+			</tr>
+			<tr>
+				<td class="global_content">{L_USER_SIG} :</td>
+				<td>
+				<input type="radio" name="user_sig[]" value="1" <!-- IF USER_SIG -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="user_sig[]" value="0" <!-- IF !USER_SIG -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_USER_REPLY_AVERT} :</td>
+				<td>
+				<input type="radio" name="user_reply_avert[]" value="1" <!-- IF USER_REPLY_AVERT -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="user_reply_avert[]" value="0" <!-- IF !USER_REPLY_AVERT -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+	<!-- ELSEIF MODE == "profile_view" -->
+		<tr>
+				<th class="header_title" colspan="2">{L_EDIT_DISPLAY_SETTING}</th>
+			</tr>
+				<tr>
+				<td class="global_content">{L_DISPLAY_SIG} :</td>
+				<td>
+				<input type="radio" name="display_sig[]" value="1" <!-- IF DISPLAY_SIG -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="display_sig[]" value="0" <!-- IF !DISPLAY_SIG -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_DISPLAY_FLASH} :</td>
+				<td>
+				<input type="radio" name="display_flash[]" value="1" <!-- IF DISPLAY_FLASH -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="display_flash[]" value="0" <!-- IF !DISPLAY_FLASH -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_DISPLAY_IMG_POST} :</td>
+				<td>
+				<input type="radio" name="display_img_post[]" value="1" <!-- IF DISPLAY_IMG_POST -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="display_img_post[]" value="0" <!-- IF !DISPLAY_IMG_POST -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_DISPLAY_SMILIES_IMG} :</td>
+				<td>
+				<input type="radio" name="display_smilies_img[]" value="1" <!-- IF DISPLAY_SMILIES_IMG -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="display_smilies_img[]" value="0" <!-- IF !DISPLAY_SMILIES_IMG -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+			<tr>
+				<td class="global_content">{L_DISPLAY_AVATAR} :</td>
+				<td>
+				<input type="radio" name="display_avatar[]" value="1" <!-- IF DISPLAY_AVATAR -->checked="checked"<!-- ENDIF --> /> {L_YES}    
+				<input type="radio" name="display_avatar[]" value="0" <!-- IF !DISPLAY_AVATAR -->checked="checked"<!-- ENDIF --> /> {L_NO} 
+				</td>
+			</tr>
+	<!-- ENDIF -->
+		<tr>
+			<td colspan="{COLSPAN}">
+				<p align="center"><button type="<!-- IF AJAX -->button<!-- ELSE -->submit<!-- ENDIF -->" name="submit_profile" id="submit_profile" class="button">{L_SEND}</button></p>
+			</td>
+		</tr>
+	<!-- ENDIF -->
+	</table>
+<!-- ELSE -->
+	<table class="globalbox" width="100%">
+		<tr>
+			<th class="header_title">{L_ACCESS_PROFILE}</th>
+		</tr>
+		<tr>
+			<td class="global_content" align="center">
+				<p>{PERMISSION}</p>
+			</td>
+		</tr>
+	<!-- ENDIF -->
+</form>
+<!-- INCLUDE main_footer.html -->

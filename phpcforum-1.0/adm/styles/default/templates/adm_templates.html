@@ -1,0 +1,97 @@
+<h2>{L_TEMPLATES}</h2>
+<div class="state hidden"></div>
+<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_TEMPLATES}</a></li>
+	</ul>
+
+	
+	<div id="tabs-1">
+	
+		<fieldset><legend>{L_INTERACTION}</legend>
+			<a href="{U_TEST_TPL}" target="_blank" class="button">{L_TEST}</a>
+			<button id="submit_templates">{L_SUBMIT_TPL}</button>
+		
+		</fieldset>
+		
+		<fieldset><legend>{L_MANAGE_TPL}</legend>
+		<table>
+			<tr>
+				<td valign="top">
+					<ul id="templates-btn">
+						<!-- BEGIN template -->
+						<li>
+							<button data-id="{template.ID}" class="tpl">{template.TITLE}</button>
+						</li>
+						<!-- END template -->
+					</ul>
+				</td>
+				<td valign="top">
+					<textarea id="textarea_tpl" name="content">
+						
+					</textarea>	
+				</td>
+			</tr>
+		</table>
+		</fieldset>
+
+		
+	</div> 
+	
+	
+
+
+
+
+</div>
+<script> 
+
+editAreaLoader.init({
+	id : "textarea_tpl",	
+	syntax: "html",	
+	start_highlight: true,
+	is_multi_files: true,
+	toolbar: "save, |, search, go_to_line, |, undo, redo, |, select_font, |, fullscreen, change_smooth_selection, highlight, word_wrap, reset_highlight, |, help",
+	language: "fr",
+	word_wrap: true,
+	save_callback: "saveTemplate",
+	allow_toggle: false,
+	allow_resize: false,
+	min_height: 600,
+	min_width: 600
+});
+	
+
+$(function() {
+	$(".tabs-layout").tabs();
+	$("button, .button").button();
+	
+	
+	$('.tpl').click(function() {
+		var tpl_id = $(this).attr('data-id');
+		$.post("../ajax/adm.php", { 'f': 'selectTemplates' ,tpl_id: tpl_id}, function(data) {
+			var new_file= {id: tpl_id, text: data.template_content, syntax: 'html', title: data.template_filename};
+			editAreaLoader.openFile('textarea_tpl', new_file);
+		}, "json");
+	});
+	
+	$('#submit_templates').click(function() {
+		$.post("../ajax/adm.php", {f: 'changeTemplate'}, function(data) {
+			displayEtat(data, "{L_TPL_SUBMIT}", "{L_TPL_NOT_SUBMIT}");
+		});
+	});
+	
+	
+
+});
+
+function saveTemplate(id, text) {
+	var data = editAreaLoader.getCurrentFile(id);
+	$.post("../ajax/adm.php", { f: 'updateTemplate' ,tpl_id: data.id, content: text}, function(data) {
+		displayEtat(data, "{L_TPL_MODIFIED}", "{L_TPL_NOT_MODIFIED}");
+	});
+}
+
+
+
+</script>

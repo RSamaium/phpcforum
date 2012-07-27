@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>{TITLE_RSS}</title>
+        <link>{LINK_RSS}</link>
+        <description>{DESC_RSS}</description>
+		<!-- BEGIN post -->
+		<item>
+			<title>{post.SUBJECT}</title>
+			<link>{post.THIS_LINK_RSS}</link>
+			<description><![CDATA[{post.TEXT_RSS}]]></description>
+			<pubDate>{post.POST_TIME_RSS}</pubDate>
+		</item>
+		<!-- END post -->
+    </channel>
+</rss>

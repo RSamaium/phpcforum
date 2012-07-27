@@ -1,0 +1,331 @@
+<div id="confirm_delete">
+		<p>{L_CONFIRM_DELETE}</p>
+		<p>{L_CONFIRM_MOVE_POSTS}</p>
+		<div id="forumlist"></div>
+</div>
+
+
+<h2>{L_FORUM}</h2>
+	<div class="state hidden"></div>
+	<div class="tabs-layout">
+	<ul>
+		<li><a href="#tabs-1">{L_TAB_FORUM}</a></li>
+	</ul>
+	
+
+
+	<div id="tabs-1">
+		<p>{L_HELP_FORUM}</p>
+		<br />
+		<form>
+			<fieldset><legend>{L_LEGEND_INTERACTION}</legend>
+				<button type="button" class="hidden" data-name="setting_forums" id="add_forum" data-mode="add">{L_BTN_CREATE}</button>
+				<button type="button" class="hidden" data-name="setting_forums" id="edit_forum" data-mode="edit">{L_BTN_EDIT}</button>
+				<button type="button" class="hidden" id="remove_forum">{L_BTN_REMOVE}</button>
+			</fieldset>
+			<fieldset><legend>{L_LEGEND_OTHER}</legend>
+				<button type="button" class="hidden" id="editpermission">{L_BTN_EDIT_PERMISSION}</button>
+				<button type="button" id="validmove">{L_BTN_SUBMIT_MOVE}</button>
+			</fieldset>
+			<fieldset><legend>{L_ARBO}</legend>
+				<div id="forum_tree"> 
+					<ul>
+						<li id="root">
+						<a href="javascript://" style="color: red">{L_ROOT}</a>
+						{LIST_FORUMS}
+						</li>
+					</ul>
+				</div> 
+			</fieldset>
+		
+		</form>
+	</div> 
+	
+
+
+</div>
+
+
+
+
+
+
+<script> 
+
+
+$(function () {
+	$(".tabs-layout").tabs();
+	$("button, .button").button();
+	
+	$("#validmove").click(function() {
+		registerOrderForum(true);
+	});
+	
+	$("#editpermission").click(function() {
+		var selected = $.jstree._reference("#forum_tree").get_selected();
+		var array = [selected.attr("data-id")];
+		$("#page_permission").trigger('load_permission');
+		clickSlide({left: [], right: array}, "POST", "?page=permission_list&mode=all_forum_group");
+	});
+	
+	
+	/*$("#submit_permission").click(function() {
+		var input_hidden = $(".permission_list :input[name='group_id']");
+		var input;
+		var items = [];
+		var success = 1;
+		for (var i=0 ; i < input_hidden.length ; i++) {	
+			$(".permission_list :input[name='group" + input_hidden[i].value + "[]']:checked").each(function(){
+				items.push($(this).val());
+			});
+			$.ajax({
+				  url: '../ajax/adm.php',
+				  type: 'POST',
+				  data: {f: "changePermission", permission: items, group_id: input_hidden[i].value, forum_id: $(".permission_list :input[name='forum_id']").val()},
+				  success: function(data) {
+						success = data;
+				  }
+			});
+			items = [];
+		}
+		var api = $("#editpermission[rel]").data("overlay");
+		api.close();
+		displayEtat(success, "Changement des permissions réussi", "Le changement des permissions a échoué");
+		
+	});
+	
+	/*$("#editpermission[rel]").overlay({ 
+		expose: { 
+			color: '#000',  
+			opacity: 0.8 
+		}, 
+		closeOnClick: true, 
+		api: true,
+		onBeforeLoad: function() {
+			var selected = $.jstree._reference("#forum_tree").get_selected();
+			var array = [selected.attr("data-id")];
+			$("#window_content").load("?page=permission_list&mode=all_forum_group",  {right: array});
+		}
+	});*/
+	
+
+	
+	$("#edit_forum").click(function () {
+		var crud_id = $(this).attr("id");
+		var id_forum = $.jstree._reference("#forum_tree").get_selected().attr("data-id");
+		clickSlide(
+			'page=' + $('#' + crud_id).attr('data-name') + 
+			'&mode=' +  $('#' + crud_id).attr('data-mode') + 
+			'&forum_id='  + id_forum
+		);
+		
+		/*	$("#window").overlay({ 
+				expose: { 
+					color: '#000',  
+					opacity: 0.8 
+				}, 
+				closeOnClick: true, 
+				api: true,
+				onClose: function() {
+					
+				}
+			}).load();	*/
+    });
+	
+	$("#add_forum").click(function () {
+			 $.ajax({
+			  url: '../ajax/adm.php',
+			  type: 'POST',
+			  data: {f: "insertForumDefault"},
+			  success: function(data) {
+					var regexp = new RegExp("([0-9]+)", "g");
+					var match = regexp.exec(data);
+					$("#forum_tree").jstree("create", null, "first", {attr: {"data-id": match[1]}, data: "Nouveau forum" }, function() {
+						$.ajax({
+							  url: '../ajax/adm.php',
+							  type: 'POST',
+							  data: {f: "insertPermission", id: match[1]},
+							  success: function(success) {
+								registerOrderForum(false);
+								clickSlide(
+									'page=setting_forums' + 
+									'&mode=add' + 
+									'&forum_id=' + match[1]
+								);
+							  }
+						});
+					});
+				}	
+			});
+	});
+	
+	/*$(".openwindow").overlay({ 
+		expose: { 
+			color: '#000',  
+			opacity: 0.8 
+		}, 
+		closeOnClick: true, 
+		api: true,
+		onBeforeLoad: function() {
+			var crud_id = this.getTrigger().attr("id");
+			var id_forum = $.jstree._reference("#forum_tree").get_selected().attr("data-id");
+			$("#window_content").load("?page=" + $('#' + crud_id).attr('data-name'), {
+				'crud_where':  'forum_id=' + id_forum,
+				'mode':  $('#' + crud_id).attr('data-mode'),
+				'num': id_forum
+			});
+		}
+	});
+	*/
+	
+	$( "#confirm_delete" ).dialog({
+			resizable: false,
+			height: 300,
+			width: 300,
+			title: 'Confirmation',
+			modal: true,
+			autoOpen: false,
+			buttons: {
+				"Ok": function() {
+					var id_forum = $.jstree._reference("#forum_tree").get_selected().attr("data-id");
+					var new_forum_id = $("select[name='forumlist'] option:selected").val();
+					$.ajax({
+					  url: '../ajax/adm.php',
+					  type: 'POST',
+					  data: {f: "deleteforum", forum_id: id_forum, new_forum_id: new_forum_id},
+					  success: function(data) {
+						$.jstree._reference("#forum_tree").remove("li[data-id='" + id_forum + "']");
+						registerOrderForum(false);
+						displayEtat(data, "{L_FORUM_DELETE}", "{L_FORUM_NOT_DELETE}");
+					  }
+					});
+					$( this ).dialog( "close" );
+				},
+				"Annuler": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+	});
+	
+	
+	$("#remove_forum").click(function() { 
+		$( "#confirm_delete" ).dialog('open');
+		var forum_id= $.jstree._reference("#forum_tree").get_selected().attr("data-id");
+		$("#forumlist").load('?page=forumlist_jump', {forum_selected: forum_id});
+		
+	});
+	
+	
+	
+	
+    $("#forum_tree").jstree({
+		"core" : { "initially_open" : [ "root" ], 
+			"animation": 0,
+			"initially_select": ["root"],
+			
+		},
+        "plugins" : [ "themeroller", "html_data", "dnd", "crrm", "ui", ],
+		"ui" : {
+            "select_limit" : 1,
+			"select_multiple_modifier" : ""
+        },
+		"themeroller": {
+			"item_icon": "ui-icon-circle-triangle-e"
+		},
+		"crrm" : { 
+			"move" : {
+				"check_move" : function (m) { 
+					/*var p = this._get_parent(m.o);
+					if(!p) return false;
+					p = p == -1 ? this.get_container() : p;
+					if(p === m.np) return true;
+					if(p[0] && m.np[0] && p[0] === m.np[0]) return true;
+					return false;*/
+					return true;
+				}
+			}
+		}
+		
+    });
+	
+	
+
+	
+	$.jstree._reference("#forum_tree").open_all();
+	
+	
+	/*$("#submit_deleteforum").click(function() {
+		var id_forum = $.jstree._reference("#forum_tree").get_selected().attr("data-id");
+		var new_forum_id = $("select[name='forumlist'] option:selected").val();
+		$.ajax({
+		  url: '../ajax/adm.php',
+		  type: 'POST',
+		  data: {f: "deleteforum", forum_id: id_forum, new_forum_id: new_forum_id},
+		  success: function(data) {
+			$.jstree._reference("#forum_tree").remove("li[data-id='" + id_forum + "']");
+			registerOrderForum(false);
+			displayEtat(data, "Suppresion du forum réussi", "La suppression du forum a échoué");
+		  }
+		});
+	});*/
+	
+	hideButtons();
+	$("#forum_tree li a").click(function() {
+		var add_btn = $("#add_forum");
+		var edit_btn = $("#edit_forum");
+		var remove_btn = $("#remove_forum");
+		var edit_perm_btn = $("#editpermission");
+		
+		add_btn.html('<span class="ui-button-text">Créer un nouveau forum</span>');
+		hideButtons();
+		
+		var is_root = $(this).parent('li').attr('id') == 'root';
+		if (is_root) {
+			add_btn.html('<span class="ui-button-text">Créer une catégorie</span>');
+			add_btn.show();
+		}
+		else {
+			add_btn.show();
+			edit_btn.show();
+			edit_perm_btn.show();
+			if ($(this).next().html() == null) {
+				remove_btn.show();
+			}
+		}
+		
+	});
+	
+	function hideButtons() {
+		$("#add_forum").hide();
+		$("#edit_forum").hide();
+		$("#remove_forum").hide();
+		$("#editpermission").hide();
+	}
+	
+	
+	/*$("#crud_form_add").validate({
+		errorClass: "form_error",
+		validClass: "form_valid",
+		success: function(label) {
+			label.html("&nbsp;").addClass("form_valid");
+		},
+		rules: {
+			forum_name: {
+				required: true
+			}
+		},
+		messages: {
+			forum_name: {
+				required: "Veuillez rentrer le nom du forum"
+			}
+		}
+	});*/
+	
+	
+
+	
+});
+
+
+</script> 
+ 

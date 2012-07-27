@@ -1,0 +1,3421 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-09 19:45+0100\n"
+"PO-Revision-Date: 2011-01-09 19:45+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _t;_nt:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=n>1\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../desallowforum.php:22
+msgid "Interdit d'accès au forum"
+msgstr ""
+
+#: ../desallowforum.php:23
+msgid "Désolé mais vous êtes actuellement banni du forum"
+msgstr ""
+
+#: ../desallowforum.php:26
+msgid "Accès interdit"
+msgstr ""
+
+#: ../index.php:32
+msgid "Légende"
+msgstr ""
+
+#: ../memberlist.php:33
+#: ../memberlist.php:233
+#: ../viewtopic.php:259
+msgid "Inscrit le"
+msgstr ""
+
+#: ../memberlist.php:34
+msgid "Dernière visite le"
+msgstr ""
+
+#: ../memberlist.php:35
+msgid "Informations générales"
+msgstr ""
+
+#: ../memberlist.php:36
+msgid "Avertissement"
+msgstr ""
+
+#: ../memberlist.php:37
+#: ../memberlist.php:192
+msgid "Nombre de messages"
+msgstr ""
+
+#: ../memberlist.php:38
+msgid "Informations personnelles"
+msgstr ""
+
+#: ../memberlist.php:39
+msgid "Localisation"
+msgstr ""
+
+#: ../memberlist.php:40
+msgid "Emploi"
+msgstr ""
+
+#: ../memberlist.php:41
+msgid "Loisirs"
+msgstr ""
+
+#: ../memberlist.php:42
+msgid "Age"
+msgstr ""
+
+#: ../memberlist.php:43
+msgid "Sexe"
+msgstr ""
+
+#: ../memberlist.php:44
+msgid "Site Internet"
+msgstr ""
+
+#: ../memberlist.php:45
+msgid "Adresses de contact"
+msgstr ""
+
+#: ../memberlist.php:46
+msgid "MSN"
+msgstr ""
+
+#: ../memberlist.php:47
+msgid "Yahoo!"
+msgstr ""
+
+#: ../memberlist.php:48
+msgid "Skype"
+msgstr ""
+
+#: ../memberlist.php:49
+msgid "Facebook"
+msgstr ""
+
+#: ../memberlist.php:50
+msgid "Twitter"
+msgstr ""
+
+#: ../memberlist.php:51
+msgid "Contacter par message privé"
+msgstr ""
+
+#: ../memberlist.php:52
+msgid "Signature"
+msgstr ""
+
+#: ../memberlist.php:53
+msgid "Commentaire sur ce membre"
+msgstr ""
+
+#: ../memberlist.php:54
+msgid "Profil de"
+msgstr ""
+
+#: ../memberlist.php:100
+msgid "Ce membre est déjà dans ce groupe"
+msgstr ""
+
+#: ../memberlist.php:104
+#, php-format
+msgid "Le membre <b>%s</b> n'existe pas"
+msgstr ""
+
+#: ../memberlist.php:108
+msgid "Aucun membre assigné"
+msgstr ""
+
+#: ../memberlist.php:125
+msgid "Vous êtes déjà dans ce groupe"
+msgstr ""
+
+#: ../memberlist.php:190
+msgid "Nom d'utilisateur"
+msgstr ""
+
+#: ../memberlist.php:191
+msgid "Dernière visite"
+msgstr ""
+
+#: ../memberlist.php:193
+msgid "Rejoint le groupe"
+msgstr ""
+
+#: ../memberlist.php:194
+#: ../report.php:223
+msgid "Cocher"
+msgstr ""
+
+#: ../memberlist.php:195
+msgid "Manager du groupe"
+msgstr ""
+
+#: ../memberlist.php:196
+msgid "Ajouter ce membre"
+msgstr ""
+
+#: ../memberlist.php:197
+msgid "Joindre le groupe"
+msgstr ""
+
+#: ../memberlist.php:198
+msgid "Enlever les membres cochés du groupe"
+msgstr ""
+
+#: ../memberlist.php:199
+msgid "Membre en attente d'intégrer le groupe"
+msgstr ""
+
+#: ../memberlist.php:200
+msgid "A souhaité de rejoindre le groupe le"
+msgstr ""
+
+#: ../memberlist.php:201
+msgid "Ajouter les membres cochés au groupe"
+msgstr ""
+
+#: ../memberlist.php:231
+msgid "Rechercher un membre"
+msgstr ""
+
+#: ../memberlist.php:232
+msgid "Nom du membre"
+msgstr ""
+
+#: ../memberlist.php:235
+#, php-format
+msgid "Un membre sur le forum"
+msgid_plural "Membres du forum (%s au total)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../memberlist.php:252
+msgid "Membres"
+msgstr ""
+
+#: ../posting.php:57
+msgid "Le texte vide"
+msgstr ""
+
+#: ../posting.php:59
+msgid "Le texte doit avoir minimum "
+msgstr ""
+
+#: ../posting.php:61
+msgid "Veuillez indiquer le sujet"
+msgstr ""
+
+#: ../posting.php:63
+msgid "Le titre du sondage vide"
+msgstr ""
+
+#: ../posting.php:66
+msgid "Veuillez mettre au minimum 2 options"
+msgstr ""
+
+#: ../posting.php:69
+msgid "Le champ \"Nombre de vote pouvant être coché\" n'est pas correct"
+msgstr ""
+
+#: ../posting.php:72
+msgid "La durée du sondage n'est pas correct"
+msgstr ""
+
+#: ../posting.php:102
+#: ../posting.php:150
+msgid "Le message a été envoyée avec succès"
+msgstr ""
+
+#: ../posting.php:102
+#: ../posting.php:150
+msgid "L'envoi du message a échoué"
+msgstr ""
+
+#: ../posting.php:105
+msgid "Ce sujet existe déjà. Vous ne pouvez pas le dupliquer !"
+msgstr ""
+
+#: ../posting.php:109
+msgid "Vous n'avez pas la permission de créer un nouveau sujet"
+msgstr ""
+
+#: ../posting.php:123
+msgid "Le sujet est verrouillé. Vous n'avez pas la permission de poster"
+msgstr ""
+
+#: ../posting.php:143
+#, php-format
+msgid "%s - Réponse à votre sujet"
+msgstr ""
+
+#: ../posting.php:154
+msgid "Ce message existe déjà. Vous ne pouvez pas le dupliquer !"
+msgstr ""
+
+#: ../posting.php:159
+msgid "Le forum n'existe pas"
+msgstr ""
+
+#: ../posting.php:163
+msgid "Le sujet n'existe pas"
+msgstr ""
+
+#: ../posting.php:167
+msgid "Vous n'avez pas la permission de répondre au sujet"
+msgstr ""
+
+#: ../posting.php:229
+msgid "Le message a bien été édité"
+msgstr ""
+
+#: ../posting.php:229
+msgid "L'édition du message a échoué"
+msgstr ""
+
+#: ../posting.php:236
+msgid "Le message n'existe pas"
+msgstr ""
+
+#: ../posting.php:241
+msgid "Vous n'avez pas la permission d'éditer ce sujet"
+msgstr ""
+
+#: ../posting.php:245
+msgid "Ce mode n'existe pas"
+msgstr ""
+
+#: ../posting.php:251
+#: ../profile.php:186
+#: ../report.php:78
+#: ../viewtopic.php:378
+msgid "Ce forum n'existe pas"
+msgstr ""
+
+#: ../posting.php:273
+#: ../profile.php:153
+#: ../report.php:215
+#: ../viewtopic.php:385
+msgid "Information"
+msgstr ""
+
+#: ../posting.php:274
+#: ../posting.php:295
+msgid "Poster un message"
+msgstr ""
+
+#: ../posting.php:275
+msgid "Sujet"
+msgstr ""
+
+#: ../posting.php:276
+#: ../report.php:208
+#: ../viewtopic.php:258
+msgid "Raison"
+msgstr ""
+
+#: ../posting.php:277
+msgid "Création d'un sondage"
+msgstr ""
+
+#: ../posting.php:278
+msgid "Question du sondage"
+msgstr ""
+
+#: ../posting.php:279
+msgid "Options du sondage"
+msgstr ""
+
+#: ../posting.php:280
+msgid "Veuillez placer chaque option sur une nouvelle ligne. Vous pouvez rentrer 10 options au maximum"
+msgstr ""
+
+#: ../posting.php:281
+msgid "Attention, en modifiant les options, vous réinitialisez les votes à 0"
+msgstr ""
+
+#: ../posting.php:282
+msgid "Nombre d'options pouvant être coché"
+msgstr ""
+
+#: ../posting.php:283
+msgid "Durée du sondage"
+msgstr ""
+
+#: ../posting.php:284
+msgid "Laissez 0 pour une durée indéfinie"
+msgstr ""
+
+#: ../posting.php:285
+msgid "jours"
+msgstr ""
+
+#: ../posting.php:286
+msgid "L'utilisateur peut changer son vote"
+msgstr ""
+
+#: ../profile.php:67
+msgid "Vous n'avez pas le droit de lire les messages privés"
+msgstr ""
+
+#: ../profile.php:79
+#: ../profile.php:110
+msgid "Vous n'avez pas le droit d'envoyer de message privé"
+msgstr ""
+
+#: ../profile.php:92
+msgid "Vous n'avez pas le droit d'éditer ce message privé"
+msgstr ""
+
+#: ../profile.php:131
+msgid "Supprimer les messages privés cochés"
+msgstr ""
+
+#: ../profile.php:132
+msgid "Confirmation"
+msgstr ""
+
+#: ../profile.php:133
+msgid "Etes vous sûr de supprimer les messages privés suivant"
+msgstr ""
+
+#: ../profile.php:134
+msgid "Veuillez cocher un ou plusieurs messages privés"
+msgstr ""
+
+#: ../profile.php:135
+msgid "Voir les messages envoyés"
+msgstr ""
+
+#: ../profile.php:137
+msgid "Voir les messages reçus"
+msgstr ""
+
+#: ../profile.php:178
+msgid "Vous n'avez pas la permission d'accéder au information du message"
+msgstr ""
+
+#: ../profile.php:182
+#: ../report.php:75
+msgid "Ce message n'existe pas"
+msgstr ""
+
+#: ../profile.php:190
+msgid "Information sur le message"
+msgstr ""
+
+#: ../profile.php:191
+msgid "Accès au information du message"
+msgstr ""
+
+#: ../profile.php:192
+msgid "Autres utilisateurs ayant postés avec cette IP"
+msgstr ""
+
+#: ../profile.php:193
+msgid "Information sur l'IP de ce message"
+msgstr ""
+
+#: ../profile.php:219
+msgid "Vous n'avez pas la permission de lire les commentaires sur les utilisateurs"
+msgstr ""
+
+#: ../profile.php:247
+msgid "Vous n'avez pas la permission de voir les avertissements données"
+msgstr ""
+
+#: ../profile.php:263
+msgid "Votre profil"
+msgstr ""
+
+#: ../profile.php:264
+msgid "Profil"
+msgstr ""
+
+#: ../profile.php:265
+msgid "Préférence du forum"
+msgstr ""
+
+#: ../profile.php:266
+msgid "Outils de modération"
+msgstr ""
+
+#: ../profile.php:267
+msgid "Administration"
+msgstr ""
+
+#: ../profile.php:269
+msgid "Les avatars sont généralement de petites images uniques qu'un utilisateur peut associer à sa personnalité."
+msgstr ""
+
+#: ../profile.php:270
+msgid "La signature est un petit texte qui sera ajouté à tous les messages que vous rédigez."
+msgstr ""
+
+#: ../profile.php:271
+msgid "Renseigner vos informations (e-mail, votre compte Facebook, changer votre mot de passe ...)"
+msgstr ""
+
+#: ../profile.php:272
+msgid "Différents réglages concernant votre profil (masquer votre statut, avertir lors d'un nouveau message privé...)"
+msgstr ""
+
+#: ../profile.php:273
+msgid "Paramétrez les options de publication d'un message"
+msgstr ""
+
+#: ../profile.php:274
+msgid "Décidez de l'affichage ou non de certain élément du forum."
+msgstr ""
+
+#: ../profile.php:275
+msgid "Liste des rapports envoyés par les membres."
+msgstr ""
+
+#: ../profile.php:276
+msgid "Mettre un commentaire sur un membre vous permettra de rappelez de l'attitude du membre à vous et votre équipe de modération"
+msgstr ""
+
+#: ../profile.php:277
+msgid "Donnez des avertissements aux membres ou bannisez dans des cas plus grave !"
+msgstr ""
+
+#: ../profile.php:278
+msgid "Accédez au panneau d'administration et configurez le forum. Changez son design, installez des extensions, ajoutez des forums..."
+msgstr ""
+
+#: ../profile.php:302
+msgid "Vous n'avez pas la permission de changer votre avatar"
+msgstr ""
+
+#: ../profile.php:328
+msgid "Vous n'avez pas la permission de changer votre signature"
+msgstr ""
+
+#: ../profile.php:363
+msgid "Accès au profil"
+msgstr ""
+
+#: ../profile.php:376
+msgid "Vous êtes déjà connecté"
+msgstr ""
+
+#: ../profile.php:377
+msgid "Connexion"
+msgstr ""
+
+#: ../report.php:56
+msgid "Le rapport a bien été envoyé"
+msgstr ""
+
+#: ../report.php:56
+msgid "L'envoie du rapport a échoué"
+msgstr ""
+
+#: ../report.php:96
+#: ../report.php:140
+msgid "Le rapport a bien été fermé"
+msgstr ""
+
+#: ../report.php:97
+#: ../report.php:141
+msgid "La fermeture du rapport a échoué"
+msgstr ""
+
+#: ../report.php:102
+#: ../report.php:145
+msgid "Le rapport a bien été supprimé"
+msgstr ""
+
+#: ../report.php:103
+#: ../report.php:146
+msgid "La suppression du rapport a échoué"
+msgstr ""
+
+#: ../report.php:119
+msgid "Ce rapport n'existe pas"
+msgstr ""
+
+#: ../report.php:122
+msgid "Vous n'avez pas la permission de lire ce rapport"
+msgstr ""
+
+#: ../report.php:169
+#, php-format
+msgid "Posté le %s"
+msgstr ""
+
+#: ../report.php:173
+#, php-format
+msgid "Envoyé le %s"
+msgstr ""
+
+#: ../report.php:174
+msgid "Aucune autres informations"
+msgstr ""
+
+#: ../report.php:182
+msgid "Vous n'avez pas la permission de voir les rapports envoyés"
+msgstr ""
+
+#: ../report.php:189
+msgid "Liste des rapports "
+msgstr ""
+
+#: ../report.php:189
+msgid "traités"
+msgstr ""
+
+#: ../report.php:192
+msgid "Voir les rapports en cours"
+msgstr ""
+
+#: ../report.php:192
+msgid "Voir les rapports traités"
+msgstr ""
+
+#: ../report.php:204
+msgid "Supprimer les rapports cochés"
+msgstr ""
+
+#: ../report.php:205
+msgid "Fermer les rapports cochés"
+msgstr ""
+
+#: ../report.php:206
+msgid "M'informer si le rapport a été traité"
+msgstr ""
+
+#: ../report.php:207
+msgid "Ajouter d'autres informations"
+msgstr ""
+
+#: ../report.php:209
+msgid "Rapporter ce message"
+msgstr ""
+
+#: ../report.php:210
+msgid "Lire le rapport"
+msgstr ""
+
+#: ../report.php:211
+msgid "Informations supplémentaires"
+msgstr ""
+
+#: ../report.php:212
+msgid "Voir le message"
+msgstr ""
+
+#: ../report.php:213
+msgid "Fermer ce rapport"
+msgstr ""
+
+#: ../report.php:214
+msgid "Supprimer ce rapport"
+msgstr ""
+
+#: ../report.php:216
+msgid "Posté le"
+msgstr ""
+
+#: ../report.php:217
+msgid "Par le membre"
+msgstr ""
+
+#: ../report.php:218
+msgid "Rapporté le"
+msgstr ""
+
+#: ../report.php:219
+msgid "Titre du message"
+msgstr ""
+
+#: ../report.php:220
+msgid "Rapport non traité"
+msgstr ""
+
+#: ../report.php:221
+msgid "Détails du messages"
+msgstr ""
+
+#: ../report.php:222
+msgid "Rapporteur"
+msgstr ""
+
+#: ../report.php:227
+msgid "Rapports"
+msgstr ""
+
+#: ../search.php:57
+#: ../adm/index.php:158
+msgid "Rechercher"
+msgstr ""
+
+#: ../search.php:58
+msgid "Résultats"
+msgstr ""
+
+#: ../search.php:59
+msgid "Par mots clés"
+msgstr ""
+
+#: ../search.php:60
+msgid "Insérez + devant un mot qui doit être trouvé et - devant un mot qui ne doit pas être trouvé. Insérez une liste de mots séparés entre des barres verticales discontinues | si seul un des mots doit être trouvé. Utilisez * comme joker pour des recherches partielles."
+msgstr ""
+
+#: ../search.php:61
+msgid "Par auteur"
+msgstr ""
+
+#: ../search.php:62
+msgid "Utilisez * comme joker pour des recherches partielles."
+msgstr ""
+
+#: ../search.php:63
+msgid "Rechercher dans"
+msgstr ""
+
+#: ../search.php:64
+msgid "Titres des sujets et texte des messages"
+msgstr ""
+
+#: ../search.php:65
+msgid "Texte des messages uniquement"
+msgstr ""
+
+#: ../search.php:66
+msgid "Titres des sujets uniquement"
+msgstr ""
+
+#: ../search.php:67
+msgid "Premier message des sujets uniquement"
+msgstr ""
+
+#: ../search.php:68
+msgid "Voir le sujet"
+msgstr ""
+
+#: ../search.php:69
+msgid "Voir le forum de ce sujet"
+msgstr ""
+
+#: ../search.php:70
+#: ../viewtopic.php:260
+#: ../adm/index.php:167
+msgid "Messages"
+msgstr ""
+
+#: ../search.php:74
+#, php-format
+msgid "%d résultat"
+msgid_plural "%d résultats"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../viewtopic.php:125
+#, php-format
+msgid "posté le %s"
+msgstr ""
+
+#: ../viewtopic.php:141
+#, php-format
+msgid "Dernière édition par %s le %s, édité %d fois au total."
+msgstr ""
+
+#: ../viewtopic.php:176
+msgid "Le vote a été envoyée avec succès"
+msgstr ""
+
+#: ../viewtopic.php:176
+msgid "L'envoi du vote a échoué"
+msgstr ""
+
+#: ../viewtopic.php:180
+#, php-format
+msgid "Vous ne pouvez pas choisir plus de %d options"
+msgstr ""
+
+#: ../viewtopic.php:183
+msgid "Aucune option cochée"
+msgstr ""
+
+#: ../viewtopic.php:186
+msgid "Vous n'avez pas la permission de voter"
+msgstr ""
+
+#: ../viewtopic.php:201
+#, php-format
+msgid "%d votes"
+msgstr ""
+
+#: ../viewtopic.php:213
+msgid "Fusionner les messages cochés"
+msgstr ""
+
+#: ../viewtopic.php:214
+msgid "Diviser les messages cochés"
+msgstr ""
+
+#: ../viewtopic.php:215
+msgid "Supprimer les messages cochés"
+msgstr ""
+
+#: ../viewtopic.php:216
+msgid "Verrouiller le sujet"
+msgstr ""
+
+#: ../viewtopic.php:217
+msgid "Supprimer le sujet"
+msgstr ""
+
+#: ../viewtopic.php:218
+msgid "Déplacer le sujet"
+msgstr ""
+
+#: ../viewtopic.php:219
+msgid "Mettre le sujet en post-it"
+msgstr ""
+
+#: ../viewtopic.php:220
+msgid "Mettre le sujet en annonce"
+msgstr ""
+
+#: ../viewtopic.php:221
+msgid "Mettre le sujet en global"
+msgstr ""
+
+#: ../viewtopic.php:224
+msgid "Déplacer le sujet vers la corbeille"
+msgstr ""
+
+#: ../viewtopic.php:244
+msgid "Verrouillé"
+msgstr ""
+
+#: ../viewtopic.php:245
+msgid "Répondre"
+msgstr ""
+
+#: ../viewtopic.php:248
+#, php-format
+msgid "Vous pouvez selectionner %d options"
+msgstr ""
+
+#: ../viewtopic.php:249
+#, php-format
+msgid "%d votes au total"
+msgstr ""
+
+#: ../viewtopic.php:253
+msgid "Editer"
+msgstr ""
+
+#: ../viewtopic.php:254
+msgid "Supprimer"
+msgstr ""
+
+#: ../viewtopic.php:255
+msgid "Alerter"
+msgstr ""
+
+#: ../viewtopic.php:256
+msgid "Informations"
+msgstr ""
+
+#: ../viewtopic.php:257
+msgid "Message privé"
+msgstr ""
+
+#: ../viewtopic.php:261
+msgid "Voir les résultats"
+msgstr ""
+
+#: ../viewtopic.php:262
+msgid "Vous avez choisi cette option"
+msgstr ""
+
+#: ../viewtopic.php:263
+msgid "Etes vous sûr de vouloir supprimer ce message ?"
+msgstr ""
+
+#: ../viewtopic.php:267
+msgid "Flux RSS pour ce sujet."
+msgstr ""
+
+#: ../viewtopic.php:273
+msgid "Partager"
+msgstr ""
+
+#: ../viewtopic.php:339
+msgid "Verrouiller les sujets"
+msgstr ""
+
+#: ../viewtopic.php:340
+msgid "Supprimer les sujets"
+msgstr ""
+
+#: ../viewtopic.php:341
+msgid "Déplacer les sujets"
+msgstr ""
+
+#: ../viewtopic.php:342
+msgid "Mettre les sujet en post-it"
+msgstr ""
+
+#: ../viewtopic.php:343
+msgid "Mettre les sujet en annonce"
+msgstr ""
+
+#: ../viewtopic.php:344
+msgid "Mettre les sujet en global"
+msgstr ""
+
+#: ../viewtopic.php:347
+msgid "Déplacer les sujets vers la corbeille"
+msgstr ""
+
+#: ../viewtopic.php:353
+msgid "Sondage"
+msgstr ""
+
+#: ../viewtopic.php:365
+msgid "Nouveau sujet"
+msgstr ""
+
+#: ../viewtopic.php:367
+msgid "Annonces et post-it"
+msgstr ""
+
+#: ../viewtopic.php:372
+msgid "Vous n'avez pas la permission de voir ce forum"
+msgstr ""
+
+#: ../adm/index.php:153
+#, php-format
+msgid "Afficher %s données par page"
+msgstr ""
+
+#: ../adm/index.php:154
+msgid "Aucune donnée"
+msgstr ""
+
+#: ../adm/index.php:155
+#, php-format
+msgid "Affichage %s à %s sur %s données au total"
+msgstr ""
+
+#: ../adm/index.php:156
+msgid "Aucune donnée à afficher"
+msgstr ""
+
+#: ../adm/index.php:157
+#, php-format
+msgid "(filtered from  %s total records)"
+msgstr ""
+
+#: ../adm/index.php:159
+msgid "Premier"
+msgstr ""
+
+#: ../adm/index.php:160
+msgid "Dernier"
+msgstr ""
+
+#: ../adm/index.php:161
+msgid "Suivant"
+msgstr ""
+
+#: ../adm/index.php:162
+msgid "Précédent"
+msgstr ""
+
+#: ../adm/index.php:163
+msgid "Chargement ..."
+msgstr ""
+
+#: ../adm/index.php:164
+msgid "Tableau de bord"
+msgstr ""
+
+#: ../adm/index.php:165
+msgid "Général"
+msgstr ""
+
+#: ../adm/index.php:166
+msgid "Forums"
+msgstr ""
+
+#: ../adm/index.php:168
+msgid "Utilisateurs"
+msgstr ""
+
+#: ../adm/index.php:169
+msgid "Groupes"
+msgstr ""
+
+#: ../adm/index.php:170
+msgid "Permissions"
+msgstr ""
+
+#: ../adm/index.php:171
+msgid "Design"
+msgstr ""
+
+#: ../adm/index.php:172
+msgid "Templates"
+msgstr ""
+
+#: ../adm/index.php:173
+msgid "Extensions"
+msgstr ""
+
+#: ../adm/index.php:174
+msgid "Vos extensions"
+msgstr ""
+
+#: ../adm/index.php:175
+msgid "Thème actuel"
+msgstr ""
+
+#: ../adm/index.php:176
+msgid "Clé API"
+msgstr ""
+
+#: ../adm/index.php:177
+msgid "défaut"
+msgstr ""
+
+#: ../ajax/adm.php:50
+msgid "Nouveau forum"
+msgstr ""
+
+#: ../includes/functions.php:81
+#: ../includes/adm/adm_functions.php:250
+#: ../includes/adm/adm_functions.php:1141
+msgid "Activer"
+msgstr ""
+
+#: ../includes/functions.php:82
+#: ../includes/adm/adm_functions.php:167
+#: ../includes/adm/adm_functions.php:176
+msgid "Editeur graphique"
+msgstr ""
+
+#: ../includes/functions.php:83
+msgid "Conteneurs"
+msgstr ""
+
+#: ../includes/functions.php:84
+msgid "Activer la spécificité  du conteneur"
+msgstr ""
+
+#: ../includes/functions.php:85
+msgid "Fond"
+msgstr ""
+
+#: ../includes/functions.php:86
+msgid "Couleur"
+msgstr ""
+
+#: ../includes/functions.php:87
+#: ../includes/functions_profile.php:1069
+msgid "Aucune"
+msgstr ""
+
+#: ../includes/functions.php:88
+msgid "URL de l'image"
+msgstr ""
+
+#: ../includes/functions.php:89
+msgid "Se répète sur X"
+msgstr ""
+
+#: ../includes/functions.php:90
+msgid "Se répète sur Y"
+msgstr ""
+
+#: ../includes/functions.php:91
+msgid "Ne se répète pas"
+msgstr ""
+
+#: ../includes/functions.php:92
+msgid "Texte"
+msgstr ""
+
+#: ../includes/functions.php:93
+msgid "Taille"
+msgstr ""
+
+#: ../includes/functions.php:94
+#, php-format
+msgid "%dpx"
+msgstr ""
+
+#: ../includes/functions.php:95
+msgid "Opacité"
+msgstr ""
+
+#: ../includes/functions.php:96
+msgid "Hauteur du conteneur"
+msgstr ""
+
+#: ../includes/functions.php:97
+msgid "Largeur du conteneur"
+msgstr ""
+
+#: ../includes/functions.php:98
+msgid "Bordure"
+msgstr ""
+
+#: ../includes/functions.php:99
+msgid "Conteneur global"
+msgstr ""
+
+#: ../includes/functions.php:100
+msgid "Conteneur spécifique"
+msgstr ""
+
+#: ../includes/functions.php:186
+#, php-format
+msgid "(%s) Nouveaux messages"
+msgstr ""
+
+#: ../includes/functions.php:186
+#, php-format
+msgid "(%s) Nouveau message"
+msgstr ""
+
+#: ../includes/functions.php:190
+msgid "Déconnexion"
+msgstr ""
+
+#: ../includes/functions.php:191
+#: ../includes/adm/adm_functions.php:1499
+msgid "Index"
+msgstr ""
+
+#: ../includes/functions.php:192
+msgid "S'inscrire"
+msgstr ""
+
+#: ../includes/functions.php:209
+msgid "Votre l'avatar"
+msgstr ""
+
+#: ../includes/functions.php:211
+#: ../includes/functions_profile.php:688
+msgid "Editer les informations du profil"
+msgstr ""
+
+#: ../includes/functions.php:221
+msgid "Votre signature"
+msgstr ""
+
+#: ../includes/functions.php:222
+msgid "Éditer les réglages globaux"
+msgstr ""
+
+#: ../includes/functions.php:223
+msgid "Éditer la publication par défaut"
+msgstr ""
+
+#: ../includes/functions.php:224
+msgid "Éditer les options d’affichage"
+msgstr ""
+
+#: ../includes/functions.php:226
+msgid "Commentaires sur un utilisateur"
+msgstr ""
+
+#: ../includes/functions.php:227
+#: ../includes/adm/adm_functions.php:75
+msgid "Avertissements"
+msgstr ""
+
+#: ../includes/functions.php:229
+msgid "Accès au panneau d'admnistration"
+msgstr ""
+
+#: ../includes/functions.php:258
+msgid "Mot de passe oublié ?"
+msgstr ""
+
+#: ../includes/functions.php:259
+msgid "Connexion permanente"
+msgstr ""
+
+#: ../includes/functions.php:260
+msgid "Connexion invisible"
+msgstr ""
+
+#: ../includes/functions.php:262
+#: ../includes/functions_profile.php:312
+#: ../includes/functions_profile.php:694
+#: ../includes/adm/adm_functions.php:54
+#: ../includes/adm/adm_functions.php:257
+msgid "Mot de passe"
+msgstr ""
+
+#: ../includes/functions.php:263
+#: ../includes/adm/adm_functions.php:55
+#: ../includes/adm/adm_functions.php:1506
+msgid "Se connecter"
+msgstr ""
+
+#: ../includes/functions.php:265
+#: ../includes/functions_profile.php:349
+msgid "Activation de votre compte"
+msgstr ""
+
+#: ../includes/functions.php:266
+msgid "Votre compte est désormais activé !"
+msgstr ""
+
+#: ../includes/functions.php:267
+#: ../includes/adm/adm_functions.php:1152
+msgid "Fermer"
+msgstr ""
+
+#: ../includes/functions.php:268
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: ../includes/functions.php:269
+#: ../includes/functions_display.php:504
+msgid "Voir le rapport"
+msgstr ""
+
+#: ../includes/functions.php:270
+msgid "Nouveaux rapports"
+msgstr ""
+
+#: ../includes/functions.php:383
+#, php-format
+msgid "Nouveau MP - %s"
+msgstr ""
+
+#: ../includes/functions.php:461
+msgid "Janvier"
+msgstr ""
+
+#: ../includes/functions.php:461
+msgid "Février"
+msgstr ""
+
+#: ../includes/functions.php:461
+msgid "Mars"
+msgstr ""
+
+#: ../includes/functions.php:461
+msgid "Avril"
+msgstr ""
+
+#: ../includes/functions.php:462
+msgid "Mai"
+msgstr ""
+
+#: ../includes/functions.php:462
+msgid "Juin"
+msgstr ""
+
+#: ../includes/functions.php:462
+msgid "Juillet"
+msgstr ""
+
+#: ../includes/functions.php:462
+msgid "Août"
+msgstr ""
+
+#: ../includes/functions.php:462
+msgid "Septembre"
+msgstr ""
+
+#: ../includes/functions.php:463
+msgid "Octobre"
+msgstr ""
+
+#: ../includes/functions.php:463
+msgid "Novembre"
+msgstr ""
+
+#: ../includes/functions.php:463
+msgid "Décembre"
+msgstr ""
+
+#: ../includes/functions.php:670
+msgid "Veuillez un nom d'utilisateur"
+msgstr ""
+
+#: ../includes/functions.php:674
+#: ../includes/adm/adm_functions.php:293
+msgid "Veuillez rentrer un mot de passe"
+msgstr ""
+
+#: ../includes/functions.php:710
+#: ../includes/adm/adm_functions.php:38
+msgid "Identifiant ou mot de passe incorrect"
+msgstr ""
+
+#: ../includes/functions.php:717
+msgid "Votre nom d'utilisateur rentré lors de l'inscription"
+msgstr ""
+
+#: ../includes/functions.php:718
+msgid "Votre mot de passe rentré lors de l'inscription"
+msgstr ""
+
+#: ../includes/functions.php:719
+msgid "La connexion est automatique dès l'arrivée sur le forum. Ceci n'est pas recommandé pour les ordinateurs partagés."
+msgstr ""
+
+#: ../includes/functions.php:720
+msgid "Vous ne serez pas ajouter à la liste des utilisateurs actifs."
+msgstr ""
+
+#: ../includes/functions.php:721
+msgid "Connectez vous !"
+msgstr ""
+
+#: ../includes/functions.php:722
+msgid "Options"
+msgstr ""
+
+#: ../includes/functions.php:958
+msgid "La modification du sujet a bien été effectuée"
+msgstr ""
+
+#: ../includes/functions.php:958
+msgid "La modification du sujet a échouée"
+msgstr ""
+
+#: ../includes/functions.php:975
+msgid "Déverrouiller le sujet"
+msgstr ""
+
+#: ../includes/functions.php:997
+msgid "Modération sur ce sujet"
+msgstr ""
+
+#: ../includes/functions.php:998
+msgid "Numéro du sujet"
+msgstr ""
+
+#: ../includes/functions.php:1000
+msgid "Etes vous sûr de vouloir déverrouiller ce sujet ?"
+msgstr ""
+
+#: ../includes/functions.php:1000
+msgid "Etes vous sûr verrouiller ce sujet ?"
+msgstr ""
+
+#: ../includes/functions.php:1001
+msgid "Etes vous sûr de supprimer ce(s) message(s) ?"
+msgstr ""
+
+#: ../includes/functions.php:1002
+msgid "Où voulez vous déplacer ce sujet ?"
+msgstr ""
+
+#: ../includes/functions.php:1003
+msgid "Etes vous sûr de vouloir diviser le sujet ?"
+msgstr ""
+
+#: ../includes/functions.php:1004
+msgid "Etes vous sûr de mettre ce sujet en post-it ?"
+msgstr ""
+
+#: ../includes/functions.php:1005
+msgid "Etes vous sûr de mettre ce sujet en  annonce ?"
+msgstr ""
+
+#: ../includes/functions.php:1006
+msgid "Etes vous sûr de mettre ce sujet en normal ?"
+msgstr ""
+
+#: ../includes/functions.php:1007
+msgid "Etes vous sûr supprimer ce sujet ?"
+msgstr ""
+
+#: ../includes/functions.php:1008
+msgid "Etes vous sûr de fusionner les messages cochés avec un autre sujet ?"
+msgstr ""
+
+#: ../includes/functions.php:1009
+msgid "Etes vous sûr de déplacer ce sujet vers la corbeille ?"
+msgstr ""
+
+#: ../includes/functions.php:1037
+msgid "Aucune nouveau message"
+msgstr ""
+
+#: ../includes/functions.php:1037
+msgid "Nouveau message"
+msgstr ""
+
+#: ../includes/functions.php:1037
+msgid "Sujet verrouillé"
+msgstr ""
+
+#: ../includes/functions.php:1048
+#, php-format
+msgid "Publié le %s"
+msgstr ""
+
+#: ../includes/functions.php:1049
+#, php-format
+msgid "%d vue"
+msgid_plural "%d vues"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions.php:1050
+#, php-format
+msgid "%d réponse"
+msgid_plural "%d réponses"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:65
+#: ../includes/functions_display.php:468
+msgid "Aucun nouveau message"
+msgstr ""
+
+#: ../includes/functions_display.php:65
+msgid "Nouveau(x) message(s)"
+msgstr ""
+
+#: ../includes/functions_display.php:68
+#, php-format
+msgid "%s sujet"
+msgid_plural "%s sujets"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:70
+#, php-format
+msgid "%s message"
+msgid_plural "%s messages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:287
+#, php-format
+msgid "Au total, il y a %s utilisateur en ligne"
+msgid_plural "Au total, il y a %s utilisateurs en ligne"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:288
+#, php-format
+msgid "%d inscrit"
+msgid_plural "%d inscrits"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:289
+#, php-format
+msgid "%d invisible"
+msgid_plural "%d invisibles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:290
+#, php-format
+msgid "%d invité"
+msgid_plural "%d invités"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:291
+msgid "Utilisateur inscrit"
+msgid_plural "Utilisateurs inscrits"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:292
+#, php-format
+msgid "%s message au total"
+msgid_plural "%s messages au total"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:293
+#, php-format
+msgid "%s sujet au total"
+msgid_plural "%s sujets au total"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:294
+#, php-format
+msgid "%s membre au total"
+msgid_plural "%s membres au total"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_display.php:295
+#, php-format
+msgid "Notre membre le plus récent est %s"
+msgstr ""
+
+#: ../includes/functions_display.php:296
+#, php-format
+msgid "Le nombre maximum d'utilisateurs en ligne simultanément a été de %s le %s"
+msgstr ""
+
+#: ../includes/functions_display.php:297
+msgid "Qui est en ligne ?"
+msgstr ""
+
+#: ../includes/functions_display.php:334
+msgid "Revenir"
+msgstr ""
+
+#: ../includes/functions_display.php:461
+#: ../includes/functions_profile.php:185
+msgid "Nombre de message"
+msgstr ""
+
+#: ../includes/functions_display.php:467
+msgid "Nouveaux messages"
+msgstr ""
+
+#: ../includes/functions_display.php:469
+msgid "Verrouillé - Impossible de répondre"
+msgstr ""
+
+#: ../includes/functions_display.php:476
+#: ../includes/adm/adm_functions.php:659
+#: ../includes/adm/adm_functions.php:1137
+msgid "Auteur"
+msgstr ""
+
+#: ../includes/functions_display.php:478
+#: ../includes/functions_profile.php:545
+msgid "Destinataire"
+msgstr ""
+
+#: ../includes/functions_display.php:479
+msgid "Message"
+msgstr ""
+
+#: ../includes/functions_display.php:480
+msgid "Dernier message"
+msgstr ""
+
+#: ../includes/functions_display.php:481
+msgid "Statistique"
+msgstr ""
+
+#: ../includes/functions_display.php:482
+msgid "Envoyé le"
+msgstr ""
+
+#: ../includes/functions_display.php:489
+#: ../includes/adm/adm_functions.php:77
+#: ../includes/adm/adm_functions.php:260
+#: ../includes/adm/adm_functions.php:1015
+msgid "Valider"
+msgstr ""
+
+#: ../includes/functions_display.php:490
+msgid "Voir"
+msgstr ""
+
+#: ../includes/functions_display.php:491
+#: ../includes/functions_profile.php:547
+msgid "Envoyer"
+msgstr ""
+
+#: ../includes/functions_display.php:492
+msgid "Voter"
+msgstr ""
+
+#: ../includes/functions_display.php:493
+#: ../includes/adm/adm_functions.php:1150
+msgid "Ok"
+msgstr ""
+
+#: ../includes/functions_display.php:494
+#: ../includes/adm/adm_functions.php:282
+#: ../includes/adm/adm_functions.php:654
+#: ../includes/adm/adm_functions.php:720
+msgid "Non"
+msgstr ""
+
+#: ../includes/functions_display.php:495
+#: ../includes/adm/adm_functions.php:281
+#: ../includes/adm/adm_functions.php:653
+#: ../includes/adm/adm_functions.php:719
+msgid "Oui"
+msgstr ""
+
+#: ../includes/functions_display.php:496
+#: ../includes/adm/adm_functions.php:232
+msgid "Retour"
+msgstr ""
+
+#: ../includes/functions_display.php:497
+#: ../includes/adm/adm_functions.php:1151
+msgid "Annuler"
+msgstr ""
+
+#: ../includes/functions_display.php:503
+msgid "Nouveaux rapports envoyés"
+msgstr ""
+
+#: ../includes/functions_posts.php:235
+msgid "Les messages ont bien été supprimés"
+msgstr ""
+
+#: ../includes/functions_posts.php:235
+msgid "La suppression des messages a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:48
+msgid "La modification de l'avatar a bien été effectuée"
+msgstr ""
+
+#: ../includes/functions_profile.php:48
+msgid "La modification de l'avatar a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:52
+msgid "Chargement du fichier échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:56
+msgid "Extension du fichier non valide"
+msgstr ""
+
+#: ../includes/functions_profile.php:60
+#, php-format
+msgid "Les dimensions de l'image sont supérieurs à %dpx*%dpx"
+msgstr ""
+
+#: ../includes/functions_profile.php:64
+msgid "Aucun fichier selectionné"
+msgstr ""
+
+#: ../includes/functions_profile.php:70
+msgid "Editer l'avatar"
+msgstr ""
+
+#: ../includes/functions_profile.php:71
+msgid "Avatar de l'utilisateur"
+msgstr ""
+
+#: ../includes/functions_profile.php:72
+msgid "Indiquez le chemin vers une image de la façon suivante : 'http://unsite.com/monimage.png'"
+msgstr ""
+
+#: ../includes/functions_profile.php:73
+#, php-format
+msgid "Importer une image (Extension : GIF, PNG ou JPEG - Dimension maximum: %dpx*%dpx)"
+msgstr ""
+
+#: ../includes/functions_profile.php:128
+msgid "Vos messages privés"
+msgstr ""
+
+#: ../includes/functions_profile.php:129
+#, php-format
+msgid "%d au total"
+msgid_plural "%d au total"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_profile.php:130
+#, php-format
+msgid "%d lu"
+msgid_plural "%d lus"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_profile.php:131
+#, php-format
+msgid "%d non lu"
+msgid_plural "%d non lus"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_profile.php:138
+#, php-format
+msgid "Votre %d message privé envoyé"
+msgid_plural "Vos %d messages privés envoyés"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/functions_profile.php:145
+msgid "Nouveau message privé"
+msgstr ""
+
+#: ../includes/functions_profile.php:146
+msgid "Filtrer"
+msgstr ""
+
+#: ../includes/functions_profile.php:147
+msgid "Trier par"
+msgstr ""
+
+#: ../includes/functions_profile.php:148
+msgid "Filtrer et trier"
+msgstr ""
+
+#: ../includes/functions_profile.php:149
+msgid "Tout"
+msgstr ""
+
+#: ../includes/functions_profile.php:150
+msgid "Messages lues"
+msgstr ""
+
+#: ../includes/functions_profile.php:151
+msgid "Messages non lues"
+msgstr ""
+
+#: ../includes/functions_profile.php:152
+#: ../includes/functions_profile.php:1065
+msgid "Date"
+msgstr ""
+
+#: ../includes/functions_profile.php:153
+msgid "Nom du sujet"
+msgstr ""
+
+#: ../includes/functions_profile.php:155
+msgid "Inverser"
+msgstr ""
+
+#: ../includes/functions_profile.php:183
+msgid "Lire le message privé"
+msgstr ""
+
+#: ../includes/functions_profile.php:210
+#, php-format
+msgid "%s messages privés supprimés"
+msgstr ""
+
+#: ../includes/functions_profile.php:210
+msgid "La suppresion des messages privés a échouée"
+msgstr ""
+
+#: ../includes/functions_profile.php:224
+#: ../includes/functions_profile.php:587
+#: ../includes/functions_profile.php:924
+#: ../includes/functions_profile.php:1030
+#: ../includes/adm/adm_functions.php:290
+msgid "Veuillez rentrer un nom d'utilisateur"
+msgstr ""
+
+#: ../includes/functions_profile.php:232
+#: ../includes/functions_profile.php:236
+#: ../includes/functions_profile.php:596
+#: ../includes/functions_profile.php:813
+#: ../includes/adm/adm_functions.php:296
+msgid "Veuillez rentrer une adresse e-mail"
+msgstr ""
+
+#: ../includes/functions_profile.php:241
+msgid "Un mot de passe est requis"
+msgstr ""
+
+#: ../includes/functions_profile.php:246
+msgid "Un mot de passe de confirmation est requis"
+msgstr ""
+
+#: ../includes/functions_profile.php:255
+#: ../includes/functions_profile.php:611
+msgid "Le type est invalide"
+msgstr ""
+
+#: ../includes/functions_profile.php:256
+#: ../includes/functions_profile.php:612
+#: ../includes/adm/adm_functions.php:292
+msgid "Ce nom d'utilisateur existe déjà. Veuillez en réessayer un autre"
+msgstr ""
+
+#: ../includes/functions_profile.php:257
+#: ../includes/functions_profile.php:613
+msgid "Veuillez ne pas mettre les caractères ' et \" dans le nom d'utilisateur"
+msgstr ""
+
+#: ../includes/functions_profile.php:258
+#: ../includes/adm/adm_functions.php:291
+#, php-format
+msgid "Votre nom d'utilisateur doit contenir minimum %d caractères"
+msgstr ""
+
+#: ../includes/functions_profile.php:261
+#: ../includes/functions_profile.php:264
+#: ../includes/adm/adm_functions.php:297
+msgid "Veuillez rentrer une adresse e-mail valide"
+msgstr ""
+
+#: ../includes/functions_profile.php:265
+msgid "L'adresse e-mail n'est pas équivalente à la précédente"
+msgstr ""
+
+#: ../includes/functions_profile.php:268
+#, php-format
+msgid "Votre mot de passe doit contenir %d caractères minimum"
+msgstr ""
+
+#: ../includes/functions_profile.php:271
+#: ../includes/adm/adm_functions.php:295
+msgid "Le mot de passe n'est pas équivalent au précédent"
+msgstr ""
+
+#: ../includes/functions_profile.php:274
+msgid "Vous êtes considérez comme un robot, votre enregistrement est impossible à effectuer"
+msgstr ""
+
+#: ../includes/functions_profile.php:302
+msgid ""
+"L'inscription prend seulement quelques secondes et vous offres de \n"
+"\t\t\tnombreux avantages. Par exemple, l'administrateur du forum peut accorder des permissions supplémentaires \n"
+"\t\t\taux utilisateurs inscrits. Avant de vous inscrire, assurez-vous d'avoir pris connaissance de nos \n"
+"\t\t\tconditions d'utilisation et de notre politique de vie privée. Veuillez également vous assurer \n"
+"\t\t\td'avoir consulté toutes les règles du forum."
+msgstr ""
+
+#: ../includes/functions_profile.php:307
+#: ../includes/adm/adm_functions.php:1510
+msgid "Inscription"
+msgstr ""
+
+#: ../includes/functions_profile.php:309
+msgid "Votre pseudonyme qui sera visible sur le forum par les autres membres."
+msgstr ""
+
+#: ../includes/functions_profile.php:310
+#: ../includes/functions_profile.php:833
+msgid "Adresse e-mail"
+msgstr ""
+
+#: ../includes/functions_profile.php:311
+msgid "Confimer l'adresse e-mail"
+msgstr ""
+
+#: ../includes/functions_profile.php:313
+msgid "Mettez un mot de passe solide (caractères majuscules, minuscules, spéciaux et chiffres)"
+msgstr ""
+
+#: ../includes/functions_profile.php:314
+msgid "Confirmer le mot de passe"
+msgstr ""
+
+#: ../includes/functions_profile.php:315
+msgid "S'enregister et accepter les règles du forum"
+msgstr ""
+
+#: ../includes/functions_profile.php:316
+msgid "A ne pas remplir"
+msgstr ""
+
+#: ../includes/functions_profile.php:351
+msgid "Un email de confirmation vous a été envoyé"
+msgstr ""
+
+#: ../includes/functions_profile.php:351
+#: ../includes/functions_profile.php:354
+msgid "L'enregistrement a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:354
+msgid "Vous vous êtes bien enregistré sur le forum"
+msgstr ""
+
+#: ../includes/functions_profile.php:392
+msgid "Le texte est vide"
+msgstr ""
+
+#: ../includes/functions_profile.php:394
+#, php-format
+msgid "Le texte doit avoir minimum %d lettres"
+msgstr ""
+
+#: ../includes/functions_profile.php:398
+msgid "Veuillez indiquer un ou des destinataire(s)"
+msgstr ""
+
+#: ../includes/functions_profile.php:400
+#, php-format
+msgid "Veuillez mettre %d destinaires au maximum"
+msgstr ""
+
+#: ../includes/functions_profile.php:410
+#, php-format
+msgid "Le destinataire %s refuse les messages privés"
+msgstr ""
+
+#: ../includes/functions_profile.php:428
+msgid "Le ou les destinataires sont incorrects"
+msgstr ""
+
+#: ../includes/functions_profile.php:446
+#, php-format
+msgid "%s - Nouveau message privé"
+msgstr ""
+
+#: ../includes/functions_profile.php:450
+msgid "Le message privé a bien été envoyé"
+msgstr ""
+
+#: ../includes/functions_profile.php:450
+msgid "L'envoie du message privé a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:544
+msgid "Ecrire un message privé"
+msgstr ""
+
+#: ../includes/functions_profile.php:568
+#, php-format
+msgid "Envoyé : %s"
+msgstr ""
+
+#: ../includes/functions_profile.php:570
+msgid "Message non lu"
+msgstr ""
+
+#: ../includes/functions_profile.php:570
+msgid "Message lu"
+msgstr ""
+
+#: ../includes/functions_profile.php:614
+msgid "Il faut minimum 3 caractères"
+msgstr ""
+
+#: ../includes/functions_profile.php:615
+msgid "Il faut maximum 20 caractères"
+msgstr ""
+
+#: ../includes/functions_profile.php:618
+#: ../includes/functions_profile.php:819
+msgid "L'adresse email est invalide"
+msgstr ""
+
+#: ../includes/functions_profile.php:621
+msgid "Le mot de passe est trop court"
+msgstr ""
+
+#: ../includes/functions_profile.php:624
+msgid "Le mot de passe de confirmation n'est pas équivalent au précédent"
+msgstr ""
+
+#: ../includes/functions_profile.php:637
+msgid "Vous n'avez pas la permission de changer votre pseudonyme"
+msgstr ""
+
+#: ../includes/functions_profile.php:640
+msgid "Vous n'avez pas la permission de changer votre adresse e-mail"
+msgstr ""
+
+#: ../includes/functions_profile.php:664
+msgid "La modification du profil a bien été effectuée"
+msgstr ""
+
+#: ../includes/functions_profile.php:664
+msgid "La modification profil a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:675
+msgid "Site Web"
+msgstr ""
+
+#: ../includes/functions_profile.php:677
+msgid "Location"
+msgstr ""
+
+#: ../includes/functions_profile.php:678
+msgid "Adresse MSN"
+msgstr ""
+
+#: ../includes/functions_profile.php:679
+msgid "Adresse Yahoo!"
+msgstr ""
+
+#: ../includes/functions_profile.php:680
+#: ../includes/functions_profile.php:683
+msgid "Adresse Skype"
+msgstr ""
+
+#: ../includes/functions_profile.php:681
+msgid "Votre page Facebook"
+msgstr ""
+
+#: ../includes/functions_profile.php:682
+msgid "Votre page Twitter"
+msgstr ""
+
+#: ../includes/functions_profile.php:687
+msgid "Date de naissance"
+msgstr ""
+
+#: ../includes/functions_profile.php:689
+msgid "Masculin"
+msgstr ""
+
+#: ../includes/functions_profile.php:690
+msgid "Féminin"
+msgstr ""
+
+#: ../includes/functions_profile.php:691
+msgid "Ne pas spécifier"
+msgstr ""
+
+#: ../includes/functions_profile.php:692
+#: ../includes/adm/adm_functions.php:256
+msgid "Pseudonyme"
+msgstr ""
+
+#: ../includes/functions_profile.php:695
+msgid "Laissez le champ vide pour ne pas changer le mot de passe"
+msgstr ""
+
+#: ../includes/functions_profile.php:696
+msgid "Adresse Email"
+msgstr ""
+
+#: ../includes/functions_profile.php:697
+msgid "Confirmer mot de passe"
+msgstr ""
+
+#: ../includes/functions_profile.php:729
+#, php-format
+msgid "Le texte ne doit pas dépasser %d lettres"
+msgstr ""
+
+#: ../includes/functions_profile.php:734
+msgid "La modification de la signature a bien été effectuée"
+msgstr ""
+
+#: ../includes/functions_profile.php:734
+msgid "La modification de la signature a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:743
+msgid "Editer la signature"
+msgstr ""
+
+#: ../includes/functions_profile.php:769
+msgid "La modification des options a bien été effectuée"
+msgstr ""
+
+#: ../includes/functions_profile.php:769
+msgid "La modification des options a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:778
+#: ../includes/adm/adm_functions.php:262
+msgid "Editer les réglages globaux"
+msgstr ""
+
+#: ../includes/functions_profile.php:779
+#: ../includes/adm/adm_functions.php:263
+msgid "Editer la publication par défaut"
+msgstr ""
+
+#: ../includes/functions_profile.php:780
+#: ../includes/adm/adm_functions.php:264
+msgid "Editer les options d'affichage"
+msgstr ""
+
+#: ../includes/functions_profile.php:782
+#: ../includes/adm/adm_functions.php:266
+msgid "Autoriser les utilisateurs à vous envoyer des messages privés"
+msgstr ""
+
+#: ../includes/functions_profile.php:783
+#: ../includes/adm/adm_functions.php:267
+msgid "Masquer mon statut en ligne"
+msgstr ""
+
+#: ../includes/functions_profile.php:784
+#: ../includes/adm/adm_functions.php:268
+msgid "M'avertir lors de nouveaux messages privés"
+msgstr ""
+
+#: ../includes/functions_profile.php:785
+#: ../includes/adm/adm_functions.php:269
+msgid "Afficher une pop-up lors d'un nouveau message privé"
+msgstr ""
+
+#: ../includes/functions_profile.php:786
+#: ../includes/adm/adm_functions.php:270
+msgid "Insérer ma signature par défaut"
+msgstr ""
+
+#: ../includes/functions_profile.php:787
+#: ../includes/adm/adm_functions.php:271
+msgid "M'avertir lors des réponses par défaut"
+msgstr ""
+
+#: ../includes/functions_profile.php:788
+#: ../includes/adm/adm_functions.php:272
+msgid "Afficher les animations Flash"
+msgstr ""
+
+#: ../includes/functions_profile.php:789
+#: ../includes/adm/adm_functions.php:273
+msgid "Afficher les signatures"
+msgstr ""
+
+#: ../includes/functions_profile.php:790
+#: ../includes/adm/adm_functions.php:274
+msgid "Afficher les images dans les messages"
+msgstr ""
+
+#: ../includes/functions_profile.php:791
+#: ../includes/adm/adm_functions.php:275
+msgid "Afficher les émoticônes comme des images"
+msgstr ""
+
+#: ../includes/functions_profile.php:792
+#: ../includes/adm/adm_functions.php:276
+msgid "Afficher les avatars"
+msgstr ""
+
+#: ../includes/functions_profile.php:820
+msgid "Cette adresse email est inconnue"
+msgstr ""
+
+#: ../includes/functions_profile.php:829
+msgid "Oublie du mot de passe"
+msgstr ""
+
+#: ../includes/functions_profile.php:830
+msgid "Rappeler mon mot de passe"
+msgstr ""
+
+#: ../includes/functions_profile.php:831
+msgid "Si vous avez oublié votre mot de passe, rentrez le champ ci-dessous. Un email vous sera alors envoyé à l'adresse e-mail indiqué avec un nouveau mot de passe"
+msgstr ""
+
+#: ../includes/functions_profile.php:832
+msgid "Adresse e-mail associée à votre compte. Si vous ne l’avez pas modifiée via votre panneau d’utilisateur, il s’agit de l’adresse que vous avez fournie lors de votre inscription."
+msgstr ""
+
+#: ../includes/functions_profile.php:845
+#, php-format
+msgid "%s - Nouveau mot de passe"
+msgstr ""
+
+#: ../includes/functions_profile.php:850
+msgid "L'email a bien été envoyé avec le nouveau mot de passe"
+msgstr ""
+
+#: ../includes/functions_profile.php:850
+msgid "L'envoie de l'email a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:901
+msgid "Le commentaire a été enregistré avec succès"
+msgstr ""
+
+#: ../includes/functions_profile.php:901
+msgid "L'enregistrement du commentaire a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:910
+#: ../includes/functions_profile.php:1004
+#: ../includes/adm/adm_functions.php:287
+msgid "Cet utilisateur n'existe pas"
+msgstr ""
+
+#: ../includes/functions_profile.php:929
+msgid "Chercher le commentaire d'un membre"
+msgstr ""
+
+#: ../includes/functions_profile.php:930
+#: ../includes/functions_profile.php:1062
+msgid "Trouver un membre"
+msgstr ""
+
+#: ../includes/functions_profile.php:931
+msgid "Commentaire sur"
+msgstr ""
+
+#: ../includes/functions_profile.php:932
+#: ../includes/functions_profile.php:1073
+msgid "Informations globales"
+msgstr ""
+
+#: ../includes/functions_profile.php:936
+#: ../includes/adm/adm_functions.php:241
+msgid "Commentaire"
+msgstr ""
+
+#: ../includes/functions_profile.php:937
+msgid "Editer le commentaire"
+msgstr ""
+
+#: ../includes/functions_profile.php:938
+msgid "Accès aux commentaires"
+msgstr ""
+
+#: ../includes/functions_profile.php:964
+msgid "Les avertissements ont bien été supprimés"
+msgstr ""
+
+#: ../includes/functions_profile.php:964
+msgid "La suppression des avertissements ont échoués"
+msgstr ""
+
+#: ../includes/functions_profile.php:968
+msgid "La synchronisation a été faite avec succès"
+msgstr ""
+
+#: ../includes/functions_profile.php:968
+msgid "La synchronisation a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:976
+msgid "L'avertissement a bien été donné"
+msgstr ""
+
+#: ../includes/functions_profile.php:976
+msgid "L'envoi de l'avertissement a échoué"
+msgstr ""
+
+#: ../includes/functions_profile.php:987
+msgid "Cet utilisateur a été banni avec succès"
+msgstr ""
+
+#: ../includes/functions_profile.php:987
+msgid "L'utilisateur n'a pas été banni."
+msgstr ""
+
+#: ../includes/functions_profile.php:991
+msgid "Cet utilisateur a été débanni avec succès"
+msgstr ""
+
+#: ../includes/functions_profile.php:991
+msgid "L'utilisateur n'a pas été débanni."
+msgstr ""
+
+#: ../includes/functions_profile.php:1060
+#: ../includes/adm/adm_functions.php:1502
+msgid "Gestion des avertissements"
+msgstr ""
+
+#: ../includes/functions_profile.php:1061
+msgid "Chercher un membre"
+msgstr ""
+
+#: ../includes/functions_profile.php:1063
+#, php-format
+msgid "Les %d derniers avertissements"
+msgstr ""
+
+#: ../includes/functions_profile.php:1064
+#: ../includes/adm/adm_functions.php:79
+msgid "Utilisateur"
+msgstr ""
+
+#: ../includes/functions_profile.php:1067
+msgid "Expire"
+msgstr ""
+
+#: ../includes/functions_profile.php:1068
+#: ../includes/adm/adm_functions.php:90
+msgid "Nombre d'avertissement possédé"
+msgstr ""
+
+#: ../includes/functions_profile.php:1070
+#: ../includes/adm/adm_functions.php:358
+#: ../includes/adm/adm_functions.php:375
+msgid "Indéfinie"
+msgstr ""
+
+#: ../includes/functions_profile.php:1071
+msgid "Expiré depuis le"
+msgstr ""
+
+#: ../includes/functions_profile.php:1072
+msgid "Avertissements de"
+msgstr ""
+
+#: ../includes/functions_profile.php:1077
+msgid "Nombre d'avertissement"
+msgstr ""
+
+#: ../includes/functions_profile.php:1078
+msgid "Statut"
+msgstr ""
+
+#: ../includes/functions_profile.php:1079
+msgid "Banni"
+msgstr ""
+
+#: ../includes/functions_profile.php:1080
+msgid "fois"
+msgstr ""
+
+#: ../includes/functions_profile.php:1081
+msgid "Banni par"
+msgstr ""
+
+#: ../includes/functions_profile.php:1082
+#: ../includes/adm/adm_functions.php:87
+msgid "Expire le"
+msgstr ""
+
+#: ../includes/functions_profile.php:1083
+msgid "Voir les notes de cet utilisateur"
+msgstr ""
+
+#: ../includes/functions_profile.php:1084
+msgid "Donner un avertissement"
+msgstr ""
+
+#: ../includes/functions_profile.php:1085
+msgid "Enlever les avertissements cochés"
+msgstr ""
+
+#: ../includes/functions_profile.php:1086
+msgid "Bannir"
+msgstr ""
+
+#: ../includes/functions_profile.php:1087
+msgid "Débannir"
+msgstr ""
+
+#: ../includes/functions_profile.php:1088
+msgid "Resynchroniser le nombre d'avertissement"
+msgstr ""
+
+#: ../includes/functions_profile.php:1089
+msgid "Donné par"
+msgstr ""
+
+#: ../includes/functions_profile.php:1091
+msgid "Accès aux avertissements"
+msgstr ""
+
+#: ../includes/functions_profile.php:1092
+msgid "Information sur exclusion du membre"
+msgstr ""
+
+#: ../includes/functions_profile.php:1103
+#: ../includes/adm/adm_functions.php:390
+msgid "Le compte est nouvellement inscrit"
+msgstr ""
+
+#: ../includes/functions_profile.php:1106
+#: ../includes/adm/adm_functions.php:393
+msgid "Le compte a été désactivé par un administrateur"
+msgstr ""
+
+#: ../includes/functions_profile.php:1125
+msgid "Non spécifié"
+msgstr ""
+
+#: ../includes/functions_profile.php:1125
+msgid "Homme"
+msgstr ""
+
+#: ../includes/functions_profile.php:1125
+msgid "Femme"
+msgstr ""
+
+#: ../includes/functions_profile.php:1285
+#, php-format
+msgid "le %s"
+msgstr ""
+
+#: ../includes/functions_profile.php:1289
+#, php-format
+msgid "Envoyé par %s"
+msgstr ""
+
+#: ../includes/functions_profile.php:1292
+msgid "Ce message a été rapporté"
+msgstr ""
+
+#: ../includes/functions_profile.php:1293
+msgid "Ce message a été rapporté et traité"
+msgstr ""
+
+#: ../includes/functions_profile.php:1316
+#, php-format
+msgid "%s a posté ce message le %s avec l'addresse IP \"%s\""
+msgstr ""
+
+#: ../includes/functions_profile.php:1317
+#, php-format
+msgid "Identifiant du message : %d"
+msgstr ""
+
+#: ../includes/functions_profile.php:1318
+#, php-format
+msgid "%s a posté %d  sur %d message(s) à partir de cette adresse IP"
+msgstr ""
+
+#: ../includes/functions_profile.php:1320
+msgid "Sujet du message"
+msgstr ""
+
+#: ../includes/functions_profile.php:1321
+msgid "Date du message"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:41
+msgid "Veuillez remplir les champs ci-dessous pour accéder au panneau d'administration"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:50
+msgid "Connexion à l'administration du forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:51
+msgid "Veuillez utilisez un identifiant et un mot de passe valide pour accéder à l'administration."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:53
+#: ../includes/adm/adm_functions.php:168
+msgid "Identifiant"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:70
+msgid "Etes vous sûr de vouloir supprimer ces comptes inactifs ?"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:72
+msgid "Gérer utilisateur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:73
+msgid "Inactifs"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:74
+msgid "Bannis"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:76
+msgid "Vous pouvez modifier ici les informations de vos utilisateurs ainsi que certaines options qui leur sont spécifiques."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:78
+msgid "Ceci est la liste des utilisateurs qui se sont inscrits mais dont le compte est actuellement inactif. Si vous le souhaitez, vous pouvez activer, supprimer ces utilisateurs."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:80
+msgid "Date d'enregistrement"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:84
+msgid "Activer les comptes cochés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:85
+msgid "Supprimer les comptes cochés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:86
+msgid "Banni le"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:88
+#: ../includes/adm/adm_functions.php:175
+#: ../includes/adm/adm_functions.php:249
+#: ../includes/adm/adm_functions.php:1007
+#: ../includes/adm/adm_functions.php:1139
+#: ../includes/adm/adm_functions.php:1531
+msgid "Interaction"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:89
+#: ../includes/adm/adm_functions.php:205
+msgid "Administrer"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:91
+msgid "Averti le"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:92
+msgid "Les comptes des utilisateurs inactifs ont bien été supprimés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:93
+msgid "La suppression des comptes des utilisateurs inactifs a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:94
+msgid "Les comptes des utilisateurs inactifs ont bien été activés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:95
+msgid "L'activation des comptes des utilisateurs inactifs a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:164
+#: ../includes/adm/adm_functions.php:655
+msgid "px"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:165
+#: ../includes/adm/adm_functions.php:656
+#: ../includes/adm/adm_functions.php:1444
+msgid "Enregistrer"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:166
+msgid "Images du forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:169
+msgid "Autres réglages"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:170
+msgid "Langue"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:171
+msgid "Défaut / Français"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:172
+msgid "Hauteur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:173
+msgid "Largeur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:174
+msgid "L'éditeur graphique vous permet de personnaliser le design du forum sans passer par le CSS. En modifiant le graphisque via ce système, vous créez seulement un design temporaire où vous pouvez revenir dessus à n'importe quel moment sans que cela est une incidence sur le design du forum actuel. Ensuite, cliquez sur le bouton \"Appliquer le design temporaire sur le forum\" pour officialiser le design effectué sur le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:177
+msgid "Appliquer le design temporaire sur le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:178
+msgid "Réinitialiser tout le design temporaire"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:179
+msgid "Les images ont bien été changés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:180
+msgid "Le changement des images a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:181
+msgid "Le design temporaire a bien été appliqué sur le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:182
+msgid "L'application du design temporaire sur le forum a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:183
+msgid "La réinitialisation du design temporaire a été effectuée avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:184
+msgid "La réinitialisation du design temporaire a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:185
+msgid "Etes vous sûr de vouloir réinitialiser le design temporaire ?"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:186
+msgid "Etes vous sûr d'appliquer le design temporaire sur le forum ?"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:198
+msgid "Etes vous sûr de vouloir supprimer ce groupe ?"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:200
+msgid "Gérer Groupes"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:201
+#: ../includes/adm/adm_functions.php:278
+msgid "Nom du groupe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:202
+#: ../includes/adm/adm_functions.php:1136
+msgid "Description"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:204
+msgid "Créer un nouveau groupe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:208
+msgid "Le groupe a été supprimé avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:209
+msgid "La suppression du groupe a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:231
+msgid "Gestion de l'utilisateur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:233
+msgid "Où voulez vous déplacer les messages de cet utilisateur ?"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:234
+msgid "Etes vous sûr de supprimer tous les messages des utilisateurs ? Attention l'action est irreversible"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:235
+msgid "Etes vous sûr de supprimer ce compte ? Attention l'action est irreversible"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:237
+msgid "Préférence"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:238
+msgid "Avatar"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:240
+msgid "Groupe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:242
+msgid "Le compte est actuellement désactivé"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:248
+msgid "IP"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:251
+#: ../includes/adm/adm_functions.php:1140
+msgid "Désactiver"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:252
+msgid "Editer ses permissions"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:253
+msgid "Supprimer le compte"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:254
+msgid "Identifiants"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:255
+msgid "Laissez les champs \"Mot de passe\" vide pour garder le mot de passe actuel"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:258
+msgid "Confirmation du mot de passe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:259
+msgid "Adresse email"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:279
+msgid "Par défaut"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:280
+msgid "Responsable"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:283
+msgid "Groupe par défaut"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:284
+msgid "Supprimer du groupe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:285
+#: ../includes/adm/adm_functions.php:286
+msgid "Ajouter le membre dans un groupe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:288
+msgid "Le profil de l'utilisateur a été édité avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:289
+msgid "L'édition du profil de l'utilisateur a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:294
+#, php-format
+msgid "Le mot de passe doit contenir %d caractères minimum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:401
+msgid "Jamais"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:455
+msgid "Etes vous sûr de supprimer ce forum ?"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:456
+msgid "Veuillez déplacer les messages dans un autre forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:457
+msgid "Gestion des forums"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:458
+msgid "- Chaque forum peut contenir un nombre illimité de sous-forums. Pour changer les forums de position, cliquez sur un forum et déplacer le en maintenant votre clic. Lorsque vous êtes satisfait des positions des forums, cliquez sur le bouton \"Valider le déplacement\" pour appliquer les nouvelles positions sur le forum. <br />- Un forum créé à partir de la racine deviendra une catégorie. <br /> - Pour supprimer un forum ayant des sous forums, veuillez d'abord supprimer ses sous-forums. C'est une mesure de sécurité."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:459
+msgid "Créer un nouveau forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:460
+msgid "Créer une catégorie"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:461
+msgid "Editer le forum selectionné"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:462
+msgid "Supprimer le forum selectionné"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:463
+msgid "Création, Edition, Suppression"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:464
+msgid "Permission, Déplacement"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:465
+msgid "Editer les permissions du forum pour les groupes"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:466
+msgid "Valider le déplacement"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:467
+msgid "Arborescence des forums"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:468
+msgid "Racine"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:469
+msgid "Suppresion du forum réussi"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:470
+msgid "La suppression du forum a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:580
+msgid "Utilisateurs pour un/des forums"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:581
+msgid "Groupes pour un/des forums"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:582
+msgid "Ajouter un membre"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:583
+msgid "Ajouter"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:584
+msgid "Membres ajoutés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:585
+msgid "Modifier les permissions"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:586
+msgid "Enlever les utilisateurs sélectionnés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:588
+msgid "Choisissez un ou plusieurs groupes (maintenez la touche CTRL) ainsi que les forums pour détermininer les permissions des groupes aux forums sélectionnés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:635
+msgid "Les nouvelles langues suivantes ont été installées"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:636
+msgid "Les langues suivantes ont été désinstallées"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:638
+msgid "Réglage"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:639
+msgid "Langues installées"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:640
+msgid "Vous pouvez effectuer ici les réglages de base de votre forum, lui attribuer un nom et une description, régler son fuseau horaire ou encore définir sa langue par défaut."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:641
+msgid "Réglage du forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:642
+msgid "Nom du forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:643
+msgid "Description du forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:644
+msgid "Adresse email utilisée pour envoyer les emails automatiques"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:645
+msgid "Activer l'auto-completion"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:646
+msgid "Afficher le profil/connexion rapide"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:647
+msgid "Identifiant du forum qui sert de corbeille"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:648
+msgid "Intervalle de jours où les sujets non lus sont marqués comme lus"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:649
+msgid "jour(s)"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:650
+msgid "Réglages des avatars"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:651
+msgid "Hauteur maximale d'un avatar"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:652
+msgid "Largeur maximale d'un avatar"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:658
+#: ../includes/adm/adm_functions.php:1135
+msgid "Nom"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:660
+#: ../includes/adm/adm_functions.php:1138
+msgid "Version"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:661
+msgid "Installé le"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:662
+msgid "Langue par défaut"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:663
+msgid "Français"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:664
+msgid "Appliquer la langue par défaut"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:665
+msgid "Les réglages ont été modifiés avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:666
+msgid "La modification des réglages a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:667
+msgid "Installation/Désinstallation Langues"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:668
+msgid "L'assignation de la langue par défaut a réussi"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:669
+msgid "L'assignation de la langue par défaut a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:709
+msgid "Messages du forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:710
+msgid "Messages privés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:711
+msgid "Messages des emails envoyés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:712
+msgid "Vous pouvez effectuer ici tous les réglages par défaut concernant la publication."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:713
+msgid "Vous pouvez effectuer ici tous les réglages par défaut de la messagerie privée."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:715
+msgid "La configuration des messages a réussi"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:716
+msgid "La configuration des messages a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:718
+msgid "Afficher l'étiquette '[Sondage]' avant le nom du sujet si ce dernier est un sondage"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:721
+msgid "Nombre de sujets par page"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:722
+msgid "Liste des sujets"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:723
+msgid "Réglage des messages"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:724
+msgid "Nombre de messages par page"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:725
+msgid "Nombre minimum de caractères requis"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:726
+msgid "Nombre maximum d'option dans les sondages"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:727
+msgid "Nombre de caractères maximum dans le titre d'un message"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:728
+msgid "Enregistrer les changements"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:729
+msgid "Réglage du message privé"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:730
+msgid "Nombre maximum de destinaires"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:732
+msgid "Email de validation"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:733
+msgid "Email en cas d'oublie de mot de passe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:734
+msgid "Email avertissant un nouveau message privé"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:735
+msgid "Email avertissant une nouvelle réponse à son sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:736
+#, php-format
+msgid "Les éléments suivants seront remplacés lors de l'envoi de l'email : %s : Nom du site %s : Le lien d'activation du compte"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:737
+#, php-format
+msgid "Les éléments suivants seront remplacés lors de l'envoi de l'email : %s : Nom du site %s : Le nouveau mot de passe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:738
+#, php-format
+msgid "Les éléments suivants seront remplacés lors de l'envoi de l'email : %s : Nom du site %s : L'auteur du message privé %s : Le lien direct vers le message privé"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:739
+#, php-format
+msgid "Les éléments suivants seront remplacés lors de l'envoi de l'email : %s : Nom du site %s : Le sujet du message %s : Le lien direct vers le sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:740
+msgid "Aide"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1005
+msgid "Gestion des permissions"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1008
+msgid "Tout cocher"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1009
+msgid "Tout décocher"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1010
+msgid "Modérateur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1011
+msgid "Rôle"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1012
+msgid "Membre [Sans sondage]"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1013
+msgid "Membre"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1014
+msgid "Visiteur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1035
+msgid "Editer sa signature"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1036
+msgid "Editer son adresse email"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1037
+msgid "Editer son pseudonyme"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1038
+msgid "Changer de mot de passe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1041
+msgid "Changer son avatar"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1043
+msgid "Masquer son statut"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1048
+msgid "Lire ses messages privés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1049
+msgid "Envoyer des messages privés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1052
+msgid "Bannir un utilisateur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1053
+msgid "Avertir un utilisateur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1054
+msgid "Lire les commentaires sur les membres"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1055
+msgid "Ajouter/Supprimer des membres d'un groupe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1056
+msgid "Lire les rapports envoyés"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1060
+msgid "Editer le design"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1072
+msgid "Voir le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1073
+msgid "Créer un nouveau sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1074
+msgid "Lire un sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1075
+msgid "Répondre à un sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1077
+msgid "Supprimer ses messages"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1078
+msgid "Editer ses messages"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1079
+msgid "Créer un sondage"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1080
+msgid "Voter un à sondage"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1081
+msgid "Editer son sondage"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1084
+msgid "Envoyer un rapport"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1086
+msgid "Editer un message"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1087
+msgid "Supprimer un message"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1088
+msgid "Editer les sondages"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1089
+msgid "Fusionner le sujets"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1090
+msgid "Diviser le sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1091
+msgid "Supprimer un sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1092
+msgid "Déplacer un sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1095
+msgid "Mettre le sujet en normal"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1098
+msgid "Déplacer le sujet à la corbeille"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1099
+msgid "Voir les informations sur le message"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1100
+msgid "Poster sur un sujet malgré le verrouillage"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1130
+msgid "Plugin en cours de téléchargement d'installation. Veuillez patienter."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1131
+msgid "Etes vous sûr de supprimer cet extension ?"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1133
+msgid "Installer de nouvelles extensions"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1134
+msgid "La liste des entensions installées. Pour activer une extension, vous avez deux démarches différentes : <br />- Vous cliquez sur \"Activer\"<br />- Vous suivez les instructions après le clic sur le bouton \"Comment afficher ?\". Le code collé dans le template activera automatiquement l'extension<br />Pour désactiver, procéder l'inverse de ci-dessus."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1142
+msgid "Désactivé"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1143
+msgid "Comment afficher ?"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1144
+msgid "Mettre à jour"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1146
+#: ../includes/adm/adm_functions.php:1147
+msgid "Instruction pour afficher l'extension sur le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1148
+msgid "Installation d'une nouvelle extension"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1149
+msgid "Suppression de l'extension"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1153
+msgid "Installer"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1154
+msgid "L'extension a été activé avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1155
+msgid "L'activation de l'extension a échouée"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1156
+msgid "L'extension a été désactivé avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1157
+msgid "La désactivation de l'extension a échouée"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1437
+msgid "Important : Le dossier \"install\" est toujours présent sur votre forum. Veuillez le supprimer !"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1438
+msgid "La mise à jour de phpC Forum est en train de s'effectuer. Veuillez patienter."
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1439
+msgid "Ne quittez pas cette page avant le rechargement automatique du panneau d'administration !"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1440
+msgid "Supprimer le dossier \"install\""
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1442
+msgid "Actualité de phpC Forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1443
+msgid "Notes partagés entre administrateur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1445
+msgid "Mise à jour de phpC Forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1446
+msgid "Le dossier \"install\" a été supprimé avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1447
+msgid "la suppression du dossier \"install\" a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1448
+msgid "Les notes ont été changées avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1449
+msgid "La modification des notes a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1450
+msgid "Rédigé par"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1492
+msgid "Liste des forums"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1493
+msgid "Voir liste des sujets ou un sujet"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1494
+msgid "Entête"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1495
+msgid "Bas de page"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1496
+msgid "Erreur"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1497
+msgid "Forum désactivé"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1498
+msgid "Choisir un forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1504
+msgid "Gestion des commentaires"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1505
+msgid "Oublie de mot de passe"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1507
+msgid "Gestion du profil"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1509
+msgid "Détail d'un message"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1511
+msgid "Reporter"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1512
+msgid "Flux RSS"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1514
+msgid "Voir les forums"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1526
+msgid "Le Template a été modifié avec succès"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1527
+msgid "La modification du Template a échoué"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1528
+msgid "Les Templates ont été appliqués sur le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1529
+msgid "Les Templates n'ont pas été appliqués sur le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1532
+msgid "Appliquer la modification des Templates sur le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1533
+msgid "Tester sur le forum"
+msgstr ""
+
+#: ../includes/adm/adm_functions.php:1534
+msgid "Gestion des templates"
+msgstr ""
+
+#: ../install/functions_install.php:62
+msgid "Vous devez accepter la licence pour continuer (cochez la case)"
+msgstr ""
+
+#: ../install/functions_install.php:75
+#, php-format
+msgid "La base de données \"%s\"  ou le serveur \"%s\" n'existe pas"
+msgstr ""
+
+#: ../install/functions_install.php:78
+#, php-format
+msgid "Impossible d'accéder à la base de données avec le nom d'utilisateur \"%s\" et le mot de passe"
+msgstr ""
+
+#: ../install/functions_install.php:81
+#, php-format
+msgid "Impossible d'accéder à la base de données \"%s\""
+msgstr ""
+
+#: ../install/includes/install3.php:17
+msgid "Configuration normale"
+msgstr ""
+
+#: ../install/includes/install3.php:174
+msgid "Un nom d'utilisateur est requis"
+msgstr ""
+
+#: ../install/includes/install3.php:175
+msgid "Le nom d'utilisateur doit avoir minimum 3 caractères"
+msgstr ""
+
+#: ../install/includes/install3.php:179
+#: ../install/includes/install3.php:183
+msgid "Veuillez un mot de passe avec 5 caractères minimum"
+msgstr ""
+
+#: ../install/includes/install3.php:184
+msgid "le mot de passe n'est pas identique au précédent"
+msgstr ""
+
+#: ../install/includes/install3.php:191
+msgid "Veuillez rentrer le nom de la base de données"
+msgstr ""
+
+#: ../install/includes/install3.php:194
+msgid "Veuillez rentrer le nom du serveur"
+msgstr ""
+
+#: ../install/includes/install3.php:197
+msgid "Veuillez rentrer le nom de l'utilisateur de la base de données"
+msgstr ""
+
+#: ../install/includes/install3.php:200
+msgid "Veuillez rentrer le mot de passe de la base de données"
+msgstr ""
+
